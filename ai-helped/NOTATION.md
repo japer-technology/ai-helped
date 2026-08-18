@@ -1,12 +1,6 @@
-The Spark!
-
 Kindest Regards, Eric Mourant +AI
 
-
-
-
-
-
+What could +AI become?
 
 
 
