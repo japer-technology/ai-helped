@@ -124,7 +124,7 @@ professional bodies.
 | --- | --- |
 | [Specification](plus-ai/SPECIFICATION.md) | Normative draft for the `+AI` notation |
 | [Declaration](plus-ai/DECLARATION-HARD-VERSION.md) | Human-readable declaration |
-| [Working notes](idea/A-NOTATION.md) | Background exploration; not normative |
+| [Working notes](.the-idea/19-August-2026.md) | Background exploration; not normative |
 | [Contributing](CONTRIBUTING.md) | How to propose improvements |
 | [Governance](GOVERNANCE.md) | How the project and specification are stewarded |
 | [Code of Conduct](CODE_OF_CONDUCT.md) | Community standards |
