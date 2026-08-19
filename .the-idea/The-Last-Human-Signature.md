@@ -721,6 +721,7 @@ As of the documented novelty analysis, no earlier proposal establishing that spe
 ## About the author
 
 **Eric Mourant +AI**
+
 Proposer of the `+AI` situational responsibility post-nominal
 
 JAPER Technology
