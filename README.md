@@ -1,5 +1,14 @@
 # The +AI Declaration
 
+<p align="center">
+  <picture>
+    <img src="AI-HELPED.png" alt="AI Helped" title="AI Helped" width="320">
+  </picture>
+</p>
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![AI](https://img.shields.io/badge/Assisted-Development-2b2bff?logo=openai&logoColor=white)](https://www.japer.technology)
+
 Artificial intelligence is becoming part of how we think, write, design, analyse, code, create and communicate.
 
 That collaboration should not be hidden.
