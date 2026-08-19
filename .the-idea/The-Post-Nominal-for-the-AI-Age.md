@@ -85,7 +85,7 @@ It speaks not only to identity, but to provenance, judgement and accountability.
 
 ---
 
-## The invention of a responsibility mark
+## A responsibility mark
 
 When Eric Mourant proposed `+AI` as a post-nominal, the idea began with a simple practical question:
 
