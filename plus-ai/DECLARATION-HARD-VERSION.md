@@ -190,6 +190,6 @@ And when AI materially contributes to something bearing your name:
 
 **AI helped. I take responsibility.**
 
-by Eric Mourant +A!
-
 **+AI**
+
+Author: Eric Mourant +A!
