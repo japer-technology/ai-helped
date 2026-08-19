@@ -615,5 +615,3 @@ And as the boundary between human and machine creation continues to dissolve, it
 Author: **Eric Mourant +AI**
 
 Email: [eric.mourant@japer.technology](mailto:eric.mourant@japer.technology)
-
-Mobile: **+61 412 646 711**
