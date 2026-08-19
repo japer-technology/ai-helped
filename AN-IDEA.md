@@ -1,8 +1,4 @@
-Kindest Regards, Eric Mourant +AI
-
-What could +AI become?
-
-
+# Kindest Regards, Eric Mourant +AI
 
 Turn `+AI` into a **small notation language**, rather than trying to make one mark carry every possible meaning.
 
