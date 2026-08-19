@@ -1,13 +1,12 @@
 # The +AI Declaration
 
+### by Eric Mourant +AI
+
 <p align="center">
   <picture>
     <img src="AI-HELPED.png" alt="AI Helped" title="AI Helped" width="320">
   </picture>
 </p>
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![AI](https://img.shields.io/badge/Assisted-Development-2b2bff?logo=openai&logoColor=white)](https://www.japer.technology)
 
 Artificial intelligence is becoming part of how we think, write, design, analyse, code, create and communicate.
 
@@ -137,3 +136,6 @@ the [MIT License](LICENSE). The specification's open-use terms for the `+AI`
 notation are stated in [section 19](plus-ai/SPECIFICATION.md#19-open-use): use
 of the notation does not require registration, membership, payment,
 certification, approval, or a particular AI provider.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![AI](https://img.shields.io/badge/Assisted-Development-2b2bff?logo=openai&logoColor=white)](https://www.japer.technology)
