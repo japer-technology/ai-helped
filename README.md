@@ -136,6 +136,3 @@ the [MIT License](LICENSE). The specification's open-use terms for the `+AI`
 notation are stated in [section 19](plus-ai/SPECIFICATION.md#19-open-use): use
 of the notation does not require registration, membership, payment,
 certification, approval, or a particular AI provider.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![AI](https://img.shields.io/badge/Assisted-Development-2b2bff?logo=openai&logoColor=white)](https://www.japer.technology)
