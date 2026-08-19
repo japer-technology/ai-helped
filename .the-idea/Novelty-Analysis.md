@@ -1,4 +1,4 @@
-# Claimability
+# Bovelty Analysis
 
 ## Bottom line
 
