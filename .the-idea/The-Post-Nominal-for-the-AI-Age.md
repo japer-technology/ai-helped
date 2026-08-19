@@ -3,7 +3,7 @@
 ## Why `+AI` could become the human responsibility mark for a world made with machines
 
 **By Eric Mourant +AI**
-Inventor of the `+AI` post-nominal
+The `+AI` post-nominal
 
 ---
 
