@@ -1,4 +1,4 @@
-# Bovelty Analysis
+# Novelty Analysis
 
 ## Bottom line
 
