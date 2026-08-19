@@ -1,0 +1,713 @@
+# +AI-530 Autonomous AI Release
+
+**Status:** Draft
+**Version:** 0.1.0
+**Identifier:** `+AI-530`
+**Canonical root declaration:** `AI[auto]`
+**Dependencies:** `+AI-001`, `+AI-020`
+**Related specification:** `+AI-100`
+
+---
+
+# 1. Purpose
+
+This specification defines a declaration for releases materially performed or determined by an AI System or Agent where no qualifying human or organisational adoption applies to the specific ArtifactVersion and Release before release.
+
+The canonical declaration is:
+
+```text
+AI[auto]
+```
+
+This is a separate root declaration.
+
+It is not an extension of `+AI`.
+
+---
+
+# 2. Design principle
+
+`+AI` expresses human or organisational accountability for an AI-assisted release.
+
+`AI[auto]` expresses a different condition:
+
+> **The release occurred through AI or agent activity without a qualifying `+AI` human or organisational adoption of that specific release beforehand.**
+
+The distinction concerns release accountability, not whether humans were involved somewhere in the wider system.
+
+---
+
+# 3. Canonical notation
+
+The canonical notation is:
+
+```text
+AI[auto]
+```
+
+`auto` is a root discriminator defined by this specification.
+
+It MUST NOT be interpreted as an extension of the `+AI` root.
+
+Therefore:
+
+```text
++AI[auto]
+```
+
+is non-conforming.
+
+---
+
+# 4. Canonical meaning
+
+A conforming `AI[auto]` declaration asserts that:
+
+1. an AI System or Agent materially participated in determining or executing the applicable Release;
+2. the applicable ArtifactVersion and Release are identifiable;
+3. no qualifying Party Adoption satisfying `+AI-100` applied to that ArtifactVersion and Release before release.
+
+These conditions collectively constitute an **autonomous AI release** for purposes of the `+AI` specification family.
+
+---
+
+# 5. Meaning of autonomous
+
+In this specification, **autonomous** refers specifically to the release state.
+
+It does NOT necessarily mean that:
+
+```text
+no human configured the system
+no human supplied prompts
+no human supplied source material
+no human created software
+no human authorised the agent generally
+no human defined policy
+no human can interrupt operation
+the AI is technically self-governing
+```
+
+The decisive issue is whether a qualifying Party knowingly adopted the specific ArtifactVersion for the specific Release before release.
+
+---
+
+# 6. Artifact-specific adoption
+
+General authority does not constitute artifact-specific adoption.
+
+The following do not automatically prevent `AI[auto]` classification:
+
+```text
+standing permission to publish
+scheduled autonomous operation
+general approval of an agent
+approval of a workflow
+approval of a publication policy
+approval of a content category
+permission to make routine decisions
+```
+
+If the specific released ArtifactVersion was not knowingly adopted by a Party before release, the release may remain autonomous under this specification.
+
+---
+
+# 7. Release execution versus release autonomy
+
+An Agent physically executing a release does not automatically make the release autonomous.
+
+Example:
+
+```text
+Human examines ArtifactVersion V7
+Human knowingly adopts V7 for Release R
+Agent uploads V7 automatically
+```
+
+This release may qualify for:
+
+```text
+Human +AI
+```
+
+because qualifying human adoption preceded the automated execution.
+
+---
+
+# 8. Autonomous example
+
+Example:
+
+```text
+Human authorises Agent A to publish daily summaries
+Agent A generates summary V34
+No human adopts V34
+Agent A publishes V34
+```
+
+The release is:
+
+```text
+AI[auto]
+```
+
+even though the Agent had standing human authority to publish.
+
+---
+
+# 9. Human involvement
+
+Human participation elsewhere in the provenance graph does not invalidate `AI[auto]`.
+
+For example, an autonomous release may contain:
+
+```text
+human-authored source material
+human-created prompts
+human-designed templates
+human-written software
+human policy constraints
+human operational oversight
+```
+
+The mark does not claim absence of human involvement.
+
+It claims absence of qualifying artifact-specific human or organisational adoption for that Release.
+
+---
+
+# 10. Material AI control
+
+An AI System or Agent materially controls a Release where its activity materially determines one or more of:
+
+```text
+which artifact is released
+the substantive content released
+whether release occurs
+when release occurs
+to whom release occurs
+which version is released
+```
+
+Purely mechanical infrastructure does not necessarily constitute material AI control.
+
+---
+
+# 11. Mechanical automation
+
+Traditional deterministic automation MUST NOT be classified as `AI[auto]` solely because it operates without human intervention.
+
+Example:
+
+```text
+a fixed cron job copies an already human-approved file
+```
+
+does not become an autonomous AI release merely because publication is automated.
+
+An AI System or Agent must materially participate in the relevant release state.
+
+---
+
+# 12. AI-generated but human-adopted work
+
+An artifact may be almost entirely generated by AI and still fall under `+AI` rather than `AI[auto]`.
+
+Example:
+
+```text
+AI generates 100% of draft
+Human knowingly adopts exact ArtifactVersion
+Agent publishes it
+```
+
+The appropriate root may be:
+
+```text
+Human +AI
+```
+
+The proportion of AI-generated content does not determine the root declaration.
+
+---
+
+# 13. Human-created but autonomously released work
+
+Conversely, an artifact may contain predominantly human-created content and still have an autonomous Release.
+
+Example:
+
+```text
+Human writes document V1
+Agent later autonomously selects V1 and sends it under standing authority
+No human adopts that specific Release
+```
+
+If AI materially determined the release, the release may qualify as:
+
+```text
+AI[auto]
+```
+
+even though AI did not author the artifact.
+
+---
+
+# 14. Mutual exclusivity for one Release
+
+For the same Party-adoption state, ArtifactVersion and Release:
+
+```text
++AI
+```
+
+and:
+
+```text
+AI[auto]
+```
+
+are mutually exclusive.
+
+A Release cannot simultaneously have:
+
+```text
+qualifying artifact-specific Party Adoption
+```
+
+and:
+
+```text
+no qualifying artifact-specific Party Adoption
+```
+
+---
+
+# 15. Different Releases
+
+The same ArtifactVersion MAY have different root declarations for different Releases.
+
+Example:
+
+```text
+Release R1:
+Agent publishes V1 without human adoption
+→ AI[auto]
+
+Release R2:
+Human later reviews and adopts V1, then republishes it
+→ Human +AI
+```
+
+No contradiction exists because the declarations apply to different Release events.
+
+---
+
+# 16. Subsequent human adoption
+
+Human adoption after an autonomous Release MUST NOT retroactively convert the earlier Release into `+AI`.
+
+The autonomous historical record SHOULD remain intact.
+
+A Party MAY subsequently:
+
+* adopt the same ArtifactVersion;
+* make a new ResponsibilityDeclaration;
+* and create a new Release.
+
+That later Release MAY qualify for `+AI`.
+
+---
+
+# 17. Continued publication
+
+Where an autonomously released ArtifactVersion remains continuously available and a Party later wishes to accept responsibility prospectively, the provenance record SHOULD represent a distinct adoption and responsibility event.
+
+A binding or profile MAY define whether that event constitutes:
+
+```text
+re-release
+reissue
+adoption-in-place
+new publication state
+```
+
+The original autonomous period MUST remain distinguishable.
+
+---
+
+# 18. Human review without adoption
+
+Human examination alone does not necessarily eliminate autonomous-release status.
+
+A human may:
+
+```text
+inspect
+monitor
+audit
+verify
+observe
+```
+
+an artifact without accepting it for release.
+
+To convert the release state to `+AI`, the applicable Party must perform qualifying Adoption.
+
+---
+
+# 19. Human approval
+
+A human approval action counts as Adoption only where it represents meaningful acceptance of the specific ArtifactVersion for the specific Release.
+
+Examples that MAY qualify:
+
+```text
+approve this exact report for publication
+send this exact message
+deploy this exact build
+publish this exact generated image
+```
+
+Examples that do not automatically qualify:
+
+```text
+always publish Agent A's outputs
+approve all outputs matching policy X
+click a generic pipeline approval without identifying the artifact
+```
+
+---
+
+# 20. Organisational adoption
+
+An organisation MAY perform qualifying Adoption through its authorised human governance processes.
+
+An organisation does not adopt an ArtifactVersion merely because:
+
+```text
+it owns the agent
+it operates the infrastructure
+it employs the developers
+it pays for the AI service
+it defined the general automation policy
+```
+
+A qualifying organisational adoption requires an applicable authorised act directed to the ArtifactVersion and Release.
+
+---
+
+# 21. Legal responsibility
+
+`AI[auto]` does NOT assert that no person or organisation has legal responsibility, liability or duty concerning the Release.
+
+It asserts only that no qualifying `+AI-100` Party Adoption and ResponsibilityDeclaration applies to that Release.
+
+Legal responsibility may arise independently of the `+AI` specification family.
+
+---
+
+# 22. Operator identity
+
+An autonomous-release record SHOULD identify the relevant:
+
+```text
+Agent
+AI System
+operator where known
+authority chain where known
+```
+
+Identification of an operator does not convert that operator into the responsible Party for purposes of `+AI`.
+
+---
+
+# 23. Authority
+
+An autonomous Release MAY be authorised or unauthorised.
+
+Examples include:
+
+```text
+delegated autonomous release
+release under standing policy
+release exceeding delegated authority
+release with unknown authority
+```
+
+`AI[auto]` does not itself claim that the Release was authorised.
+
+Authority is represented separately through `AuthorityGrant` records.
+
+---
+
+# 24. Delegated autonomous release
+
+A common pattern is:
+
+```text
+Party
+  │
+  └── grants standing authority ──► Agent
+                                      │
+                                      ├── generates ArtifactVersion
+                                      └── releases ArtifactVersion
+                                          without Party Adoption
+```
+
+This is still:
+
+```text
+AI[auto]
+```
+
+The provenance graph MAY additionally show that the autonomous release was delegated.
+
+---
+
+# 25. Provenance extensions
+
+Extensions whose defining specifications permit use with the autonomous root MAY be composed.
+
+For example, if `+AI-410` permits the `prov` extension for this root:
+
+```text
+AI[auto,prov]
+```
+
+may mean:
+
+```text
+autonomous AI release
+AND
+conforming provenance available
+```
+
+Cross-root compatibility MUST be explicitly declared by the extension's defining specification.
+
+---
+
+# 26. Canonical ordering
+
+Within the autonomous root:
+
+```text
+auto
+```
+
+MUST appear first.
+
+Permitted cross-root extensions follow in normal registry order.
+
+Example:
+
+```text
+AI[auto,prov,signed]
+```
+
+`auto` is not independently optional.
+
+Removing it changes the root declaration and therefore the meaning.
+
+---
+
+# 27. Human-readable identification
+
+The canonical mark is:
+
+```text
+AI[auto]
+```
+
+Where useful, an Agent or AI System MAY be identified separately.
+
+Preferred forms include:
+
+```text
+Released autonomously by Agent X
+AI[auto]
+```
+
+or:
+
+```text
+Agent: Agent X
+Release: AI[auto]
+```
+
+A human or organisation name SHOULD NOT be placed immediately before `AI[auto]` in a manner that could imply the accountability semantics of `<Responsible Party> +AI`.
+
+---
+
+# 28. Machine-readable representation
+
+A conforming record may contain:
+
+```json
+{
+  "release": {
+    "id": "release:34",
+    "artifact_version": "artifact-version:34",
+    "mode": "autonomous",
+    "performed_by": {
+      "kind": "agent",
+      "id": "agent:daily-summary"
+    }
+  },
+  "autonomous_release": {
+    "spec": "+AI-530@0",
+    "notation": "AI[auto]",
+    "qualifying_party_adoption": false
+  }
+}
+```
+
+A simple Boolean MUST NOT replace the underlying graph where the binding is capable of representing the relevant entities and relationships.
+
+---
+
+# 29. Autonomous-release predicate
+
+For ArtifactVersion `V` and Release `R`:
+
+```text
+AutonomousAIRelease(V,R) :=
+    Release(R,V)
+AND AIOrAgentMateriallyControlsRelease(R)
+AND NOT EXISTS Party P:
+        QualifyingAdoption(P,V,R)
+```
+
+The canonical notation:
+
+```text
+AI[auto]
+```
+
+is valid only where `AutonomousAIRelease(V,R)` is true.
+
+---
+
+# 30. Transition predicate
+
+If a Party later adopts the same ArtifactVersion for a new Release `R2`:
+
+```text
+QualifyingAdoption(P,V,R2) = true
+```
+
+then `R2` may qualify for `+AI`.
+
+This does not alter the classification of earlier Release `R1`.
+
+---
+
+# 31. What `AI[auto]` does not mean
+
+`AI[auto]` does NOT mean:
+
+```text
+the artifact is wholly AI-generated
+no humans were involved
+the AI has legal personhood
+the AI accepts responsibility
+no human or organisation has legal liability
+the release was authorised
+the release was safe
+the artifact is correct
+the artifact was unreviewed
+the artifact was unverified
+the agent acted without constraints
+```
+
+It declares a release-accountability state, not a theory of agency or legal responsibility.
+
+---
+
+# 32. Invalid uses
+
+### 32.1 Human-adopted release
+
+A human knowingly adopts exact ArtifactVersion V1 before an Agent publishes V1.
+
+`AI[auto]` MUST NOT be used for that Release.
+
+### 32.2 Non-AI automation
+
+A deterministic script sends an already approved report at 09:00.
+
+Without material AI participation in the release state, `AI[auto]` MUST NOT be used merely because execution was automatic.
+
+### 32.3 General agent ownership
+
+An organisation owns and operates an Agent.
+
+That fact alone neither establishes nor defeats `AI[auto]`.
+
+The specific adoption state controls classification.
+
+### 32.4 Retroactive relabelling
+
+An autonomously published artifact is approved by a human three hours later.
+
+The original Release MUST NOT be retrospectively relabelled `+AI`.
+
+---
+
+# 33. Relationship to `+AI`
+
+The two root declarations answer different questions.
+
+```text
++AI
+```
+
+asks:
+
+> **Has an identifiable Party adopted this AI-assisted artifact for this Release and accepted responsibility under `+AI-100`?**
+
+```text
+AI[auto]
+```
+
+asks:
+
+> **Did AI or agent activity materially control this Release without such Party Adoption beforehand?**
+
+They are complementary parts of the same provenance and accountability architecture.
+
+---
+
+# 34. Canonical public explanation
+
+Where a short explanation is required:
+
+> **`AI[auto]` means an AI system or agent materially controlled this release and no qualifying human or organisational adoption of this specific release occurred beforehand.**
+
+A shorter public explanation MAY be:
+
+# **AI released this autonomously. No +AI adoption preceded the release.**
+
+---
+
+# 35. Canonical distinction
+
+The fundamental distinction is:
+
+```text
+Human adoption before release
+        ↓
+       +AI
+```
+
+versus:
+
+```text
+No qualifying human adoption before AI-controlled release
+        ↓
+    AI[auto]
+```
+
+The canonical rule is:
+
+# **Automation does not determine accountability. Adoption does.**
