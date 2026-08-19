@@ -350,7 +350,7 @@ But much human creation has always been collaborative.
 
 Writers work with editors. Architects work with engineers. Researchers build on previous research. Directors shape the performances of actors and the work of cinematographers, designers and composers. Executives sign reports assembled by teams. Software incorporates libraries written by people the developer has never met.
 
-Authorship has never always meant that one person performed every underlying act.
+Authorship has never meant that one person performed every underlying act.
 
 It has often meant that one person exercised sufficient direction, judgement, selection and responsibility to place their name on the result.
 
@@ -390,7 +390,8 @@ That commitment must be renewed with each use.
 
 ### In correspondence
 
-Kindest regards,  
+Kindest regards,
+
 **Eric Mourant +AI**
 
 ### In a report
