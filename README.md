@@ -1,4 +1,4 @@
-# The +AI Declaration or Post-Nominal
+# The +AI Declaration
 
 ### by Eric Mourant +AI
 
