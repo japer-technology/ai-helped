@@ -6,7 +6,7 @@
   </picture>
 </p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![AI](https://img.shields.io/badge/Assisted-Development-2b2bff?logo=openai&logoColor=white)](https://www.japer.technology)
 
 Artificial intelligence is becoming part of how we think, write, design, analyse, code, create and communicate.
@@ -108,3 +108,32 @@ And when AI helps you create something you are willing to stand behind:
 # **AI helped. I stand behind it.**
 
 ## **+AI**
+
+---
+
+## Project status
+
+The `+AI` specification is a public **draft**. It is intended as an open
+convention, not a certification, legal opinion, warranty, or substitute for
+disclosures required by law, regulation, publishers, employers, or
+professional bodies.
+
+## Repository guide
+
+| Resource | Purpose |
+| --- | --- |
+| [Specification](plus-ai/SPECIFICATION.md) | Normative draft for the `+AI` notation |
+| [Declaration](plus-ai/DECLARATION-HARD-VERSION.md) | Human-readable declaration |
+| [Working notes](idea/A-NOTATION.md) | Background exploration; not normative |
+| [Contributing](CONTRIBUTING.md) | How to propose improvements |
+| [Governance](GOVERNANCE.md) | How the project and specification are stewarded |
+| [Code of Conduct](CODE_OF_CONDUCT.md) | Community standards |
+| [Security policy](SECURITY.md) | Private vulnerability reporting |
+
+## License and open use
+
+The repository's documentation and other covered materials are available under
+the [MIT License](LICENSE). The specification's open-use terms for the `+AI`
+notation are stated in [section 19](plus-ai/SPECIFICATION.md#19-open-use): use
+of the notation does not require registration, membership, payment,
+certification, approval, or a particular AI provider.
