@@ -522,11 +522,8 @@ And as the boundary between human and machine creation continues to dissolve, it
 
 ---
 
-## About the inventor
+## by
 
 **Eric Mourant +AI**
-Inventor of the `+AI` post-nominal
-JAPER Technology
-
 **Email:** [eric.mourant@japer.technology](mailto:eric.mourant@japer.technology)
-**Telephone:** +61 412 646 711
+**Mobile:** +61 412 646 711
