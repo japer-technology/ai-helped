@@ -142,6 +142,8 @@ No approved model.
 
 No gatekeeper.
 
+No gold star.
+
 The notation belongs to anyone willing to make the declaration.
 
 Use it in email.
@@ -191,3 +193,5 @@ And when AI materially contributes to something bearing your name:
 **AI helped. I take responsibility.**
 
 **+AI**
+
+###### by Eric Mourant +AI
