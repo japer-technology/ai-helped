@@ -2451,7 +2451,7 @@
         0.2126 * channelToLinear(channels[0]) +
         0.7152 * channelToLinear(channels[1]) +
         0.0722 * channelToLinear(channels[2]);
-      return luminance > 0.43 ? "#111013" : "#FFFFFF";
+      return luminance > 0.179 ? "#111013" : "#FFFFFF";
     }
 
     function hslToHex(hue, saturation, lightness) {
