@@ -90,13 +90,11 @@ The notation is small because the behaviour needs to be easy.
 
 The principle behind it is larger:
 
-# **Use AI openly.
-
-Keep responsibility human.**
+# **Use AI openly. Keep responsibility human.**
 
 And when AI helps you create something you are willing to stand behind:
 
-# **Add `+AI`.**
+# **Add `+AI`**
 
 ---
 
