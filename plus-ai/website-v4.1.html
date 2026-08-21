@@ -239,17 +239,11 @@
       align-self: stretch;
       min-width: 7.4rem;
       padding: 0 2rem 0 0.35rem;
-      color: var(--ink);
-      background: var(--surface);
+      background: transparent;
       border: 0;
       border-radius: inherit;
       font-weight: 720;
       cursor: pointer;
-    }
-
-    .language-control select option {
-      color: var(--ink);
-      background: var(--surface);
     }
 
     .language-control::after {
@@ -336,17 +330,17 @@
       border-radius: 1rem;
     }
 
-    .hero h2 {
+    .hero h1 {
       max-width: 14ch;
       margin: 0;
-      font-size: clamp(2.75rem, 7.2vw, 6.5rem);
+      font-size: clamp(3.15rem, 8.8vw, 8.2rem);
       font-weight: 840;
       letter-spacing: -0.075em;
       line-height: 0.89;
       text-wrap: balance;
     }
 
-    .hero h2 .mark {
+    .hero h1 .mark {
       display: block;
       color: var(--accent);
       transition: color 220ms ease;
@@ -932,8 +926,8 @@
         padding-inline: 0.55rem;
       }
 
-      .hero h2 {
-        font-size: clamp(2.4rem, 13vw, 3.8rem);
+      .hero h1 {
+        font-size: clamp(2.75rem, 16vw, 4.5rem);
       }
 
       .hero-actions {
@@ -1037,31 +1031,31 @@
       <label class="language-control">
         <span data-text="language">Language</span>
         <select id="languageSelect" aria-label="Choose language">
-          <option value="en">English / English</option>
-          <option value="ar">Arabic / العربية</option>
-          <option value="bn">Bengali / বাংলা</option>
-          <option value="fil">Filipino / Filipino</option>
-          <option value="fr">French / Français</option>
-          <option value="de">German / Deutsch</option>
-          <option value="ha">Hausa / Hausa</option>
-          <option value="hi">Hindi / हिन्दी</option>
-          <option value="id">Indonesian / Bahasa Indonesia</option>
-          <option value="ja">Japanese / 日本語</option>
-          <option value="ko">Korean / 한국어</option>
-          <option value="zh">Mandarin / 中文</option>
-          <option value="mr">Marathi / मराठी</option>
-          <option value="fa">Persian / فارسی</option>
-          <option value="pt">Portuguese / Português</option>
-          <option value="pa">Punjabi / ਪੰਜਾਬੀ</option>
-          <option value="ru">Russian / Русский</option>
-          <option value="es">Spanish / Español</option>
-          <option value="sw">Swahili / Kiswahili</option>
-          <option value="ta">Tamil / தமிழ்</option>
-          <option value="te">Telugu / తెలుగు</option>
-          <option value="th">Thai / ไทย</option>
-          <option value="tr">Turkish / Türkçe</option>
-          <option value="ur">Urdu / اردو</option>
-          <option value="vi">Vietnamese / Tiếng Việt</option>
+          <option value="en">English</option>
+          <option value="ar">العربية</option>
+          <option value="bn">বাংলা</option>
+          <option value="fil">Filipino</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+          <option value="hau">Hausa</option>
+          <option value="hi">हिन्दी</option>
+          <option value="id">Bahasa Indonesia</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="zh">中文</option>
+          <option value="mr">मराठी</option>
+          <option value="fa">فارسی</option>
+          <option value="pt">Português</option>
+          <option value="pa">ਪੰਜਾਬੀ</option>
+          <option value="ru">Русский</option>
+          <option value="es">Español</option>
+          <option value="sw">Kiswahili</option>
+          <option value="ta">தமிழ்</option>
+          <option value="te">తెలుగు</option>
+          <option value="th">ไทย</option>
+          <option value="tr">Türkçe</option>
+          <option value="ur">اردو</option>
+          <option value="vi">Tiếng Việt</option>
         </select>
       </label>
       <button class="control" id="themeToggle" type="button" aria-label="Use dark mode">
@@ -1078,7 +1072,7 @@
     <section class="hero" id="meaning" aria-labelledby="heroTitle">
       <div class="hero-copy">
         <p class="eyebrow" data-text="followedLink">+AI Post Nominal Description</p>
-        <h2 id="heroTitle"><span class="mark">+AI</span><span data-title="heroTitle">AI helped.<br>I take responsibility.</span></h2>
+        <h1 id="heroTitle"><span class="mark">+AI</span><span data-title="heroTitle">AI helped.<br>I take responsibility.</span></h1>
         <p class="hero-lead" data-html="heroLead">
           The person or organisation whose name carried this link is making a simple declaration:
           <strong>artificial intelligence materially assisted the work, and they accept responsibility for releasing it.</strong>
@@ -1165,8 +1159,8 @@
     const DEFAULT_EXAMPLE_NAME = "Eric Mourant";
     const DEFAULT_EXAMPLE_COMPANY = "JAPER Technology";
     const supportedLanguages = [
-      "en", "ar", "bn", "fil", "fr", "de", "ha", "hi", "id", "ja", "ko", "zh",
-      "mr", "fa", "pt", "pa", "ru", "es", "sw", "ta", "te", "th", "tr", "ur", "vi"
+      "en", "ar", "bn", "fil", "fr", "de", "hau", "hi", "id", "ja", "ko", "zh", "mr", "fa",
+      "pt", "pa", "ru", "es", "sw", "ta", "te", "th", "tr", "ur", "vi"
     ];
 
     const interfaceCopy = {
@@ -1209,46 +1203,6 @@
         versionFooter: "Specification v0.1",
         translationNote: "",
         colourChanged: "Highlight colour changed to {colour}."
-      },
-      ja: {
-        documentTitle: "+AI — AIが支援しました。私が責任を負います。",
-        description: "+AIは、人工知能が作業を実質的に支援し、特定の個人または組織がその成果物に対する責任を引き受けることを意味します。",
-        skip: "説明へ移動",
-        language: "言語",
-        languageAria: "言語を選択",
-        theme: "ダークモード",
-        themeDark: "ダークモード",
-        themeLight: "ライトモード",
-        themeDarkAria: "ダークモードを使用",
-        themeLightAria: "ライトモードを使用",
-        highlight: "アクセント",
-        highlightAria: "アクセントカラーをランダムに選択",
-        followedLink: "+AI後置表記の説明",
-        heroTitle: "AIが支援しました。私が責任を負います。",
-        heroLead: "名前にこのリンクが付されていた個人または組織は、次の簡潔な宣言をしています。<strong>人工知能が作業を実質的に支援し、その個人または組織が成果物を公開する責任を引き受けます。</strong>",
-        readSpec: "仕様を読む",
-        meansHeading: "このマークが示すこと",
-        meaningOneTitle: "AIが関与した",
-        meaningOneBody: "AIが成果物の作成、分析、変換、または提示を実質的に支援しました。",
-        meaningTwoTitle: "人が選択した",
-        meaningTwoBody: "個人または組織が結果を認識したうえで採用し、公開しました。",
-        meaningThreeTitle: "責任は人にある",
-        meaningThreeBody: "記名された主体は、AIシステムやその提供者に説明責任を転嫁しません。",
-        plainTitle: "透明な支援。明確な責任。",
-        plainLead: "このマークは責任の宣言であり、AIが著者であるという主張でも、成果物が正しいという保証でもありません。",
-        plainBody: "成果物のうちAIに由来する割合を示すものではありません。AIが結果に実質的な影響を与え、その使用を決定したことについて、特定可能な個人または組織が責任を負うことを示します。",
-        plainQuote: "3文字で、関与と責任の両方を明確にします。",
-        fullDocument: "全文",
-        specification: "仕様",
-        statusLabel: "状態",
-        statusValue: "草案",
-        versionLabel: "バージョン",
-        markLabel: "正規マーク",
-        contents: "目次",
-        footerLine: "開かれた表記。人による責任。",
-        versionFooter: "仕様 v0.1",
-        translationNote: "参考訳です。内容に相違がある場合は、英語の原文を規範文書とします。",
-        colourChanged: "アクセントカラーを{colour}に変更しました。"
       },
       es: {
         documentTitle: "+AI — La IA ayudó. Yo asumo la responsabilidad.",
@@ -1328,54 +1282,52 @@
         footerLine: "Notation ouverte. Responsabilité humaine.",
         versionFooter: "Spécification v0.1",
         translationNote: "Traduction fournie à titre informatif. En cas de divergence, le texte anglais original constitue le document normatif.",
-        colourChanged: "La couleur d’accentuation est maintenant {colour}."
+        colourChanged: "La couleur d'accentuation est maintenant {colour}."
       },
-    
-          ar: {
-        documentTitle: "+AI — ساعد الذكاء الاصطناعي. أنا أتحمل المسؤولية.",
-        description: "+AI يعني أن الذكاء الاصطناعي ساهم بشكل جوهري في العمل، وأن شخصاً أو مؤسسة محددة تقبل المسؤولية عنه.",
+      ar: {
+        documentTitle: "+AI — ساعدت الذكاء الاصطناعي. أنا أتحمل المسؤولية.",
+        description: "+AI يعني أن الذكاء الاصطناعي ساعد بشكل مادي في العمل وأن شخصًا أو منظمة محددة تقبل المسؤولية عنه.",
         skip: "انتقل إلى الشرح",
         language: "اللغة",
         languageAria: "اختر اللغة",
         theme: "الوضع الداكن",
         themeDark: "الوضع الداكن",
         themeLight: "الوضع الفاتح",
-        themeDarkAria: "استخدم الوضع الداكن",
-        themeLightAria: "استخدم الوضع الفاتح",
-        highlight: "لون التمييز",
-        highlightAria: "اختر لون تمييز عشوائياً",
-        followedLink: "وصف اللاحقة الاسمية +AI",
-        heroTitle: "ساعد الذكاء الاصطناعي. أنا أتحمل المسؤولية.",
-        heroLead: "الشخص أو المؤسسة التي ظهر هذا الرابط إلى جانب اسمها تصدر تصريحاً بسيطاً: <strong>ساهم الذكاء الاصطناعي بشكل جوهري في العمل، وهي تتحمل مسؤولية نشره.</strong>",
+        themeDarkAria: "استخدام الوضع الداكن",
+        themeLightAria: "استخدام الوضع الفاتح",
+        highlight: "تسليط الضوء",
+        highlightAria: "اختر لون تسليط ضوء عشوائي",
+        followedLink: "+AI وصف ما بعد الاسم",
+        heroTitle: "ساعدت الذكاء الاصطناعي. أنا أتحمل المسؤولية.",
+        heroLead: "الشخص أو المنظمة الذي حمل اسمه هذا الرابط يقدم إعلانًا بسيطًا: <strong>ساعد الذكاء الاصطناعي بشكل مادي في العمل، وهم يقبلون المسؤولية عن نشره.</strong>",
         readSpec: "اقرأ المواصفة",
-        meansHeading: "ما الذي تعنيه العلامة",
+        meansHeading: "ما يقوله العلامة",
         meaningOneTitle: "شارك الذكاء الاصطناعي",
-        meaningOneBody: "ساهم الذكاء الاصطناعي بشكل جوهري في إنشاء العمل أو تحليله أو تحويله أو عرضه.",
-        meaningTwoTitle: "اختار الإنسان",
-        meaningTwoBody: "اعتمد شخص أو مؤسسة النتيجة عن علم وقام بنشرها.",
-        meaningThreeTitle: "تبقى المسؤولية بشرية",
-        meaningThreeBody: "لا ينقل الطرف المسمى المساءلة إلى نظام ذكاء اصطناعي أو إلى مزوده.",
-        plainTitle: "مساعدة شفافة. مسؤولية واضحة.",
-        plainLead: "العلامة إعلان عن المسؤولية، وليست ادعاءً بأن الذكاء الاصطناعي هو المؤلف، ولا ضماناً بأن العمل صحيح.",
-        plainBody: "لا توضح العلامة مقدار العمل الذي جاء من الذكاء الاصطناعي. بل توضح أن الذكاء الاصطناعي أثّر بشكل جوهري في النتيجة، وأن شخصاً أو مؤسسة يمكن تحديد هويتها تقف وراء قرار استخدامها.",
+        meaningOneBody: "ساعده الذكاء الاصطناعي بشكل مادي في إنشاء أو تحليل أو تحويل أو عرض العمل.",
+        meaningTwoTitle: "اختار إنسان",
+        meaningTwoBody: "شخص أو منظمة اعتمد ونشر النتيجة عن علم.",
+        meaningThreeTitle: "المسؤولية تبقى بشرية",
+        meaningThreeBody: "الطرف المسمى لا ينقل المحاسبة إلى نظام أو مزود ذكاء اصطناعي.",
+        plainTitle: "مساعدة شفافة. محاسبة مرئية.",
+        plainLead: "العلامة إعلان عن المحاسبة، وليس claim أن الذكاء الاصطناعي هو المؤلف وليست ضمانًا أن العمل صحيح.",
+        plainBody: "لا يقول كم جزء من العمل جاء من الذكاء الاصطناعي. إنه يقول إن الذكاء الاصطناعي أثر بشكل مادي في النتيجة وأن شخصًا أو منظمة محددة تقف وراء قرار استخدامه.",
         plainQuote: "ثلاثة أحرف تجعل المشاركة والمسؤولية مرئيتين.",
         fullDocument: "المستند الكامل",
         specification: "المواصفة",
         statusLabel: "الحالة",
         statusValue: "مسودة",
         versionLabel: "الإصدار",
-        markLabel: "العلامة المعتمدة",
+        markLabel: "العلامة القياسية",
         contents: "المحتويات",
-        footerLine: "ترميز مفتوح. مسؤولية بشرية.",
+        footerLine: "تدوين مفتوح. مسؤولية بشرية.",
         versionFooter: "المواصفة v0.1",
-        translationNote: "هذه ترجمة معلوماتية. في حال وجود أي تعارض، يُعد النص الإنجليزي الأصلي الوثيقة المعيارية.",
-        colourChanged: "تم تغيير لون التمييز إلى {colour}."
+        translationNote: "ترجمة للمعلومات فقط. في حالة التعارض، يعتبر النص الإنجليزي الأصلي المستند المعياري.",
+        colourChanged: "تم تغيير لون التسليط الضوء إلى {colour}."
       },
-
       bn: {
-        documentTitle: "+AI — AI সাহায্য করেছে। দায়িত্ব আমার।",
-        description: "+AI-এর অর্থ হলো কৃত্রিম বুদ্ধিমত্তা কাজে উল্লেখযোগ্যভাবে সহায়তা করেছে এবং একজন চিহ্নিত ব্যক্তি বা প্রতিষ্ঠান এর দায়িত্ব গ্রহণ করছে।",
-        skip: "ব্যাখ্যায় যান",
+        documentTitle: "+AI — AI সাহায্য করেছে। আমি দায়িত্ব নিচ্ছি।",
+        description: "+AI এর অর্থ কৃত্রিম বুদ্ধিমত্তা materially assisted the work and a named person or organisation accepts responsibility for it.",
+        skip: "ব্যাখ্যায় যান",
         language: "ভাষা",
         languageAria: "ভাষা নির্বাচন করুন",
         theme: "ডার্ক মোড",
@@ -1384,121 +1336,118 @@
         themeDarkAria: "ডার্ক মোড ব্যবহার করুন",
         themeLightAria: "লাইট মোড ব্যবহার করুন",
         highlight: "হাইলাইট",
-        highlightAria: "এলোমেলো হাইলাইট রং নির্বাচন করুন",
-        followedLink: "+AI পোস্ট-নোমিনাল-এর বিবরণ",
-        heroTitle: "AI সাহায্য করেছে। দায়িত্ব আমার।",
-        heroLead: "যে ব্যক্তি বা প্রতিষ্ঠানের নামের সঙ্গে এই লিংকটি ছিল, তারা একটি সরল ঘোষণা করছে: <strong>কৃত্রিম বুদ্ধিমত্তা কাজে উল্লেখযোগ্যভাবে সহায়তা করেছে এবং তারা এটি প্রকাশের দায়িত্ব গ্রহণ করছে।</strong>",
-        readSpec: "স্পেসিফিকেশন পড়ুন",
-        meansHeading: "চিহ্নটি যা বলে",
-        meaningOneTitle: "AI অংশ নিয়েছে",
-        meaningOneBody: "AI কাজটি তৈরি, বিশ্লেষণ, রূপান্তর বা উপস্থাপনে উল্লেখযোগ্য সহায়তা করেছে।",
-        meaningTwoTitle: "মানুষ সিদ্ধান্ত নিয়েছে",
-        meaningTwoBody: "একজন ব্যক্তি বা প্রতিষ্ঠান জেনেশুনে ফলাফলটি গ্রহণ ও প্রকাশ করেছে।",
-        meaningThreeTitle: "দায়িত্ব মানুষেরই থাকে",
-        meaningThreeBody: "নামযুক্ত পক্ষ কোনো AI সিস্টেম বা প্রদানকারীর কাছে দায়বদ্ধতা হস্তান্তর করে না।",
-        plainTitle: "স্বচ্ছ সহায়তা। দৃশ্যমান দায়বদ্ধতা।",
-        plainLead: "এই চিহ্নটি দায়বদ্ধতার ঘোষণা; এটি AI-কে লেখক বলে দাবি করে না এবং কাজটি সঠিক—এমন নিশ্চয়তাও দেয় না।",
-        plainBody: "কাজের কত অংশ AI থেকে এসেছে, এটি তা বলে না। এটি বলে AI ফলাফলে উল্লেখযোগ্য প্রভাব ফেলেছে এবং একজন শনাক্তযোগ্য ব্যক্তি বা প্রতিষ্ঠান সেটি ব্যবহারের সিদ্ধান্তের দায়িত্ব নিচ্ছে।",
-        plainQuote: "তিনটি অক্ষর অংশগ্রহণ ও দায়িত্ব—দুটোকেই দৃশ্যমান করে।",
-        fullDocument: "সম্পূর্ণ নথি",
+        highlightAria: "একটি র্যান্ডম হাইলাইট রঙ বেছে নিন",
+        followedLink: "+AI Post Nominal Description",
+        heroTitle: "AI সাহায্য করেছে। আমি দায়িত্ব নিচ্ছি।",
+        heroLead: "যার নামে এই লিঙ্ক ছিল সেই ব্যক্তি বা সংস্থা একটি সরল ঘোষণা করছেন: <strong>কৃত্রিম বুদ্ধিমত্তা কাজে materially assisted, এবং তারা এটি প্রকাশের জন্য দায়িত্ব গ্রহণ করছে।</strong>",
+        readSpec: "স্পেসিফিকেশন পড়ুন",
+        meansHeading: "চিহ্নটি কী বলে",
+        meaningOneTitle: "AI অংশ নিয়েছে",
+        meaningOneBody: "AI material helped create, analyse, transform or present the work.",
+        meaningTwoTitle: "একজন মানুষ বেছে নিয়েছেন",
+        meaningTwoBody: "একজন ব্যক্তি বা সংস্থা জানতে পেরে ফলাফল গ্রহণ এবং প্রকাশ করেছে।",
+        meaningThreeTitle: "দায়িত্ব মানুষেরই থাকে",
+        meaningThreeBody: "নাম করা পক্ষ কোনো AI সিস্টেম বা প্রদানকারীকে দায়িত্ব স্থানান্তর করে না।",
+        plainTitle: "স্বচ্ছ সাহায্য। দৃশ্যমান দায়িত্বশীলতা।",
+        plainLead: "চিহ্নটি হলো একটি দায়িত্ব ঘোষণা, এটি দাবি করে না যে AI হল লেখক এবং এটি গ্যারান্টি দেয় না যে কাজটি সঠিক।",
+        plainBody: "এটি বলে না কতটা কাজ AI থেকে এসেছে। এটি বলে যে AI materially influenced the result and an identifiable person or organisation stands behind the decision to use it.",
+        plainQuote: "তিনটি অক্ষর both participation and responsibility visible করে।",
+        fullDocument: "পূর্ণ নথি",
         specification: "স্পেসিফিকেশন",
-        statusLabel: "অবস্থা",
-        statusValue: "খসড়া",
-        versionLabel: "সংস্করণ",
+        statusLabel: "স্থিতি",
+        statusValue: "খসড়া",
+        versionLabel: "ভার্সন",
         markLabel: "ক্যানোনিক্যাল চিহ্ন",
-        contents: "সূচিপত্র",
-        footerLine: "উন্মুক্ত নোটেশন। মানবিক দায়িত্ব।",
-        versionFooter: "স্পেসিফিকেশন v0.1",
-        translationNote: "এটি তথ্যগত অনুবাদ। কোনো অসঙ্গতি থাকলে মূল ইংরেজি পাঠই মান্য নথি হিসেবে গণ্য হবে।",
-        colourChanged: "হাইলাইটের রং {colour} করা হয়েছে।"
+        contents: "বিষয়সূচী",
+        footerLine: "ओपन नोटेशन। मानव उत्तरदायित्व।",
+        versionFooter: "Specification v0.1",
+        translationNote: "",
+        colourChanged: "Highlight colour changed to {colour}."
       },
-
       fil: {
-        documentTitle: "+AI — Tumulong ang AI. Ako ang may pananagutan.",
-        description: "Ang +AI ay nangangahulugang may mahalagang ambag ang artificial intelligence sa gawain at isang kinikilalang tao o organisasyon ang tumatanggap ng pananagutan para rito.",
-        skip: "Pumunta sa paliwanag",
+        documentTitle: "+AI — Tumulong ang AI. Ako ang kumuha ng responsibilidad.",
+        description: "+AI ay nangangahulugan na ang artificial intelligence ay materially assisted the work and a named person or organisation accepts responsibility for it.",
+        skip: "Lumipat sa paliwanag",
         language: "Wika",
         languageAria: "Pumili ng wika",
         theme: "Dark mode",
         themeDark: "Dark mode",
         themeLight: "Light mode",
-        themeDarkAria: "Gamitin ang dark mode",
-        themeLightAria: "Gamitin ang light mode",
+        themeDarkAria: "Gumamit ng dark mode",
+        themeLightAria: "Gumamit ng light mode",
         highlight: "Highlight",
-        highlightAria: "Pumili ng random na kulay ng highlight",
-        followedLink: "Paglalarawan ng +AI post-nominal",
-        heroTitle: "Tumulong ang AI. Ako ang may pananagutan.",
-        heroLead: "Ang tao o organisasyong may pangalang may kasamang link na ito ay gumagawa ng isang simpleng pahayag: <strong>may mahalagang ambag ang artificial intelligence sa gawain, at tinatanggap nila ang pananagutan sa pagpapalabas nito.</strong>",
+        highlightAria: "Pumili ng random na highlight color",
+        followedLink: "+AI Post Nominal Description",
+        heroTitle: "Tumulong ang AI. Ako ang kumuha ng responsibilidad.",
+        heroLead: "Ang taong o organisasyon na may pangalan na dala ang link na ito ay gumagawa ng isang simpleng deklarasyon: <strong>artificial intelligence materially assisted the work, and they accept responsibility for releasing it.</strong>",
         readSpec: "Basahin ang specification",
-        meansHeading: "Ang sinasabi ng marka",
-        meaningOneTitle: "Lumahok ang AI",
-        meaningOneBody: "Malaki ang naitulong ng AI sa paglikha, pagsusuri, pagbabago o paglalahad ng gawain.",
-        meaningTwoTitle: "Tao ang pumili",
-        meaningTwoBody: "Sadyang pinagtibay at inilabas ng isang tao o organisasyon ang resulta.",
-        meaningThreeTitle: "Nananatiling tao ang may pananagutan",
-        meaningThreeBody: "Hindi inililipat ng pinangalanang panig ang pananagutan sa isang AI system o provider.",
-        plainTitle: "Malinaw na tulong. Nakikitang pananagutan.",
-        plainLead: "Ang marka ay isang deklarasyon ng pananagutan, hindi isang pag-aangking AI ang may-akda at hindi rin garantiya na tama ang gawain.",
-        plainBody: "Hindi nito sinasabi kung gaano kalaking bahagi ng gawain ang nagmula sa AI. Sinasabi nitong may mahalagang impluwensiya ang AI sa resulta at may isang makikilalang tao o organisasyong naninindigan sa desisyong gamitin ito.",
-        plainQuote: "Tatlong karakter ang nagpapakita ng parehong pakikilahok at pananagutan.",
+        meansHeading: "Anong sinasabi ng mark",
+        meaningOneTitle: "Umaliw ang AI",
+        meaningOneBody: "Materially helped ng AI to create, analyse, transform or present the work.",
+        meaningTwoTitle: "Pumili ang isang tao",
+        meaningTwoBody: "Isang taong o organisasyon ay knowingly adopted and released the result.",
+        meaningThreeTitle: "Tumitirang responsibilidad ang tao",
+        meaningThreeBody: "Ang named party does not transfer accountability to an AI system or provider.",
+        plainTitle: "Transparent na tulong. Visible na accountability.",
+        plainLead: "Ang mark ay isang accountability declaration, hindi isang claim na AI ang author at hindi isang guarantee na tama ang work.",
+        plainBody: "Hindi ito nagsasabi kung gaano kahaba ng work came from AI. It says AI materially influenced the result and an identifiable person or organisation stands behind the decision to use it.",
+        plainQuote: "Three characters make both participation and responsibility visible.",
         fullDocument: "Buong dokumento",
         specification: "Specification",
         statusLabel: "Katayuan",
         statusValue: "Draft",
         versionLabel: "Bersyon",
-        markLabel: "Canonical na marka",
-        contents: "Nilalaman",
-        footerLine: "Bukas na notation. Pananagutang pantao.",
+        markLabel: "Canonical mark",
+        contents: "Mga Nilalaman",
+        footerLine: "Open notation. Human responsibility.",
         versionFooter: "Specification v0.1",
-        translationNote: "Ang saling ito ay para sa impormasyon. Kung may pagkakaiba, ang orihinal na tekstong Ingles ang normatibong dokumento.",
-        colourChanged: "Ang kulay ng highlight ay ginawang {colour}."
+        translationNote: "Paliwanag na pagsasalin. Sa kaso ng pagkakaiba, ang orihinal na Ingles na teksto ang normative document.",
+        colourChanged: "Ang highlight color ay nagbago sa {colour}."
       },
-
       de: {
         documentTitle: "+AI — KI hat geholfen. Ich übernehme die Verantwortung.",
-        description: "+AI bedeutet, dass künstliche Intelligenz wesentlich an der Arbeit mitgewirkt hat und eine benannte Person oder Organisation dafür Verantwortung übernimmt.",
+        description: "+AI bedeutet, dass künstliche Intelligenz materially assisted the work and a named person or organisation accepts responsibility for it.",
         skip: "Zur Erklärung springen",
         language: "Sprache",
-        languageAria: "Sprache auswählen",
+        languageAria: "Sprache wählen",
         theme: "Dunkelmodus",
         themeDark: "Dunkelmodus",
         themeLight: "Hellmodus",
         themeDarkAria: "Dunkelmodus verwenden",
         themeLightAria: "Hellmodus verwenden",
-        highlight: "Akzent",
-        highlightAria: "Zufällige Akzentfarbe auswählen",
-        followedLink: "Beschreibung des +AI-Postnominals",
+        highlight: "Hervorhebung",
+        highlightAria: "Wählen Sie eine zufällige Hervhebungsfarbe",
+        followedLink: "+AI Post-Nominal-Beschreibung",
         heroTitle: "KI hat geholfen. Ich übernehme die Verantwortung.",
-        heroLead: "Die Person oder Organisation, deren Name mit diesem Link versehen war, gibt eine einfache Erklärung ab: <strong>Künstliche Intelligenz hat wesentlich an der Arbeit mitgewirkt, und die genannte Partei übernimmt die Verantwortung für deren Veröffentlichung.</strong>",
+        heroLead: "Die Person oder Organisation, deren Name diesen Link trägt, macht eine einfache Erklärung: <strong>künstliche Intelligenz materially assisted the work, and they accept responsibility for releasing it.</strong>",
         readSpec: "Spezifikation lesen",
-        meansHeading: "Was das Zeichen aussagt",
-        meaningOneTitle: "KI war beteiligt",
-        meaningOneBody: "KI hat wesentlich dabei geholfen, die Arbeit zu erstellen, zu analysieren, zu verändern oder zu präsentieren.",
-        meaningTwoTitle: "Ein Mensch hat entschieden",
-        meaningTwoBody: "Eine Person oder Organisation hat das Ergebnis bewusst übernommen und veröffentlicht.",
-        meaningThreeTitle: "Die Verantwortung bleibt beim Menschen",
-        meaningThreeBody: "Die benannte Partei überträgt die Verantwortlichkeit nicht auf ein KI-System oder dessen Anbieter.",
-        plainTitle: "Transparente Unterstützung. Sichtbare Verantwortung.",
-        plainLead: "Das Zeichen ist eine Verantwortungserklärung, keine Behauptung, dass KI der Urheber sei, und keine Garantie für die Richtigkeit der Arbeit.",
-        plainBody: "Es sagt nicht aus, welcher Anteil der Arbeit von KI stammt. Es sagt aus, dass KI das Ergebnis wesentlich beeinflusst hat und eine identifizierbare Person oder Organisation hinter der Entscheidung steht, es zu verwenden.",
-        plainQuote: "Drei Zeichen machen sowohl Beteiligung als auch Verantwortung sichtbar.",
+        meansHeading: "Was die Markierung sagt",
+        meaningOneTitle: "KI hat teilgenommen",
+        meaningOneBody: "KI hat materially helped create, analyse, transform or present the work.",
+        meaningTwoTitle: "Ein Mensch hat gewählt",
+        meaningTwoBody: "Eine Person oder Organisation hat knowingly adopted and released the result.",
+        meaningThreeTitle: "Verantwortung bleibt menschlich",
+        meaningThreeBody: "Die genannte Partei überträgt die Verantwortung nicht auf ein KI-System oder einen Anbieter.",
+        plainTitle: "Transparente Unterstützung. Sichtbare Verantwortlichkeit.",
+        plainLead: "Die Markierung ist eine Verantwortlichkeitserklärung, kein Anspruch, dass KI der Autor ist und keine Garantie, dass das Werk korrekt ist.",
+        plainBody: "Es wird nicht gesagt, wie viel Arbeit von KI stammt. Es sagt, dass KI materially influenced the result and an identifiable person or organisation stands behind the decision to use it.",
+        plainQuote: "Drei Zeichen machen Teilnahme und Verantwortung sichtbar.",
         fullDocument: "Vollständiges Dokument",
         specification: "Spezifikation",
         statusLabel: "Status",
         statusValue: "Entwurf",
         versionLabel: "Version",
-        markLabel: "Kanonisches Zeichen",
+        markLabel: "Kanonische Markierung",
         contents: "Inhalt",
         footerLine: "Offene Notation. Menschliche Verantwortung.",
         versionFooter: "Spezifikation v0.1",
-        translationNote: "Diese Übersetzung dient der Information. Bei Abweichungen ist der englische Originaltext das maßgebliche normative Dokument.",
-        colourChanged: "Die Akzentfarbe wurde auf {colour} geändert."
+        translationNote: "Informationsübersetzung. Bei Abweichungen ist der ursprüngliche englische Text das normative Dokument.",
+        colourChanged: "Hervorhebungsfarbe geändert zu {colour}."
       },
-
-      ha: {
-        documentTitle: "+AI — AI ya taimaka. Ni ne ke da alhakin.",
-        description: "+AI yana nufin cewa basirar wucin gadi ta taimaka sosai wajen aikin kuma wani mutum ko ƙungiya da aka bayyana suna karɓar alhakin sa.",
-        skip: "Tsallaka zuwa bayani",
+      hau: {
+        documentTitle: "+AI — AI ya taimakawa. Ina ɗaukar alhakin.",
+        description: "+AI yana nufin artificial intelligence ta taimaka mata ma'ana kuma mutum ko kungiya mai suna yana karbar alhakin shi.",
+        skip: "Fadi zuwa bayani",
         language: "Harshe",
         languageAria: "Zaɓi harshe",
         theme: "Yanayin duhu",
@@ -1506,367 +1455,118 @@
         themeLight: "Yanayin haske",
         themeDarkAria: "Yi amfani da yanayin duhu",
         themeLightAria: "Yi amfani da yanayin haske",
-        highlight: "Launin haskakawa",
-        highlightAria: "Zaɓi launin haskakawa bazuwar",
-        followedLink: "Bayanin +AI post-nominal",
-        heroTitle: "AI ya taimaka. Ni ne ke da alhakin.",
-        heroLead: "Mutumin ko ƙungiyar da sunanta ke ɗauke da wannan mahaɗin suna yin bayani mai sauƙi: <strong>basirar wucin gadi ta taimaka sosai wajen aikin, kuma suna karɓar alhakin fitar da shi.</strong>",
-        readSpec: "Karanta ƙayyadaddun bayanai",
-        meansHeading: "Abin da alamar ke faɗa",
-        meaningOneTitle: "AI ya shiga",
-        meaningOneBody: "AI ya taimaka sosai wajen ƙirƙira, nazari, sauyawa ko gabatar da aikin.",
-        meaningTwoTitle: "Mutum ne ya zaɓa",
-        meaningTwoBody: "Wani mutum ko ƙungiya sun amince da sakamakon da gangan kuma suka fitar da shi.",
-        meaningThreeTitle: "Alhaki yana nan a hannun ɗan Adam",
-        meaningThreeBody: "Wanda aka bayyana sunansa ba ya miƙa alhakin ga tsarin AI ko mai samar da shi.",
-        plainTitle: "Taimako a bayyane. Alhaki a bayyane.",
-        plainLead: "Alamar sanarwar ɗaukar alhaki ce, ba ikirarin cewa AI ne marubuci ba kuma ba garanti ba ne cewa aikin daidai ne.",
-        plainBody: "Ba ta bayyana yawan aikin da ya fito daga AI ba. Tana nuna cewa AI ya yi tasiri mai muhimmanci ga sakamakon kuma wani mutum ko ƙungiya da za a iya ganewa suna tsayawa bayan shawarar amfani da shi.",
-        plainQuote: "Haruffa uku suna bayyana shiga da alhaki.",
+        highlight: "Nuna",
+        highlightAria: "Zaɓi launin nuba bazuwa",
+        followedLink: "+AI Bayan Suna Bayani",
+        heroTitle: "AI ya taimakawa. Ina ɗaukar alhakin.",
+        heroLead: "Mutum ko kungiya wacce sunanta ya ɗauki wannan link ɗin yana yin sanarwar saukake: <strong>artificial intelligence ta taimaka mata ma'ana a aikin, kuma suna karbar alhakin fitar da shi.</strong>",
+        readSpec: "Karanta spec",
+        meansHeading: "Abin da alamar ke cewa",
+        meaningOneTitle: "AI ya shiga ciki",
+        meaningOneBody: "AI ya taimaka mata ma'ana don ƙirƙira, bincike, canza ko nuna aiki.",
+        meaningTwoTitle: "Mutum ya zaɓa",
+        meaningTwoBody: "Mutum ko kungiya sun san sun karɓi kuma su fitar da sakamakon.",
+        meaningThreeTitle: "Alhakin yana neman mutane",
+        meaningThreeBody: "Anan ba a canza alhaki ga tsarin AI ko mai bayarwa ba.",
+        plainTitle: "Taimako mai bayani. Alhaki mai ganewa.",
+        plainLead: "Alamar sanarwar alhaki ce, ba da'awar cewa AI marubucin bane kuma ba tabbacin cewa aiki yayi daidai ba.",
+        plainBody: "Baya ce ya nawa na aikin ya zo daga AI. Tana cewa AI ta tasiri mata ma'ana sakamakon kuma mutum ko kungiya mai gano tana bayan yanke shawarar amfani da shi.",
+        plainQuote: "Haruffa uku suna nuna shirye-shiryen da alhakin.",
         fullDocument: "Cikakken takarda",
-        specification: "Ƙayyadaddun bayanai",
-        statusLabel: "Matsayi",
-        statusValue: "Daftari",
-        versionLabel: "Sigar",
-        markLabel: "Alamar asali",
-        contents: "Abubuwan ciki",
-        footerLine: "Buɗaɗɗen notation. Alhakin ɗan Adam.",
-        versionFooter: "Ƙayyadaddun bayanai v0.1",
-        translationNote: "Wannan fassara ce don bayani. Idan akwai saɓani, ainihin rubutun Turanci shi ne takardar hukuma.",
-        colourChanged: "An canza launin haskakawa zuwa {colour}."
+        specification: "Spec",
+        statusLabel: "Halin",
+        statusValue: "Tsare-tsare",
+        versionLabel: "Sigara",
+        markLabel: "Alamar ka'onika",
+        contents: "Abubuwa",
+        footerLine: "Rubutu buɗe. Alhakin mutane.",
+        versionFooter: "Spec v0.1",
+        translationNote: "Fassara don bayani. A cikin sa'anar kuskure, Ingishi na asali shi ne dokar takarda.",
+        colourChanged: "Launin nuna ya canza zuwa {colour}."
       },
-
       hi: {
-        documentTitle: "+AI — AI ने मदद की। ज़िम्मेदारी मेरी है।",
-        description: "+AI का अर्थ है कि कृत्रिम बुद्धिमत्ता ने कार्य में महत्वपूर्ण सहायता की और कोई नामित व्यक्ति या संगठन उसकी ज़िम्मेदारी स्वीकार करता है।",
-        skip: "व्याख्या पर जाएँ",
+        documentTitle: "+AI — AI ने मदद की। मैं जवाबदेही लेता हूँ।",
+        description: "+AI का अर्थ है कि कृत्रिम बुद्धिमत्ता ने काम में सामग्री सहायता दी और एक नामित व्यक्ति या संगठन इसके लिए जवाबदेह स्वीकार करता है।",
+        skip: "व्याख्या पर जाएं",
         language: "भाषा",
         languageAria: "भाषा चुनें",
         theme: "डार्क मोड",
         themeDark: "डार्क मोड",
         themeLight: "लाइट मोड",
-        themeDarkAria: "डार्क मोड का उपयोग करें",
-        themeLightAria: "लाइट मोड का उपयोग करें",
+        themeDarkAria: "डार्क मोड उपयोग करें",
+        themeLightAria: "लाइट मोड उपयोग करें",
         highlight: "हाइलाइट",
-        highlightAria: "कोई रैंडम हाइलाइट रंग चुनें",
-        followedLink: "+AI पोस्ट-नॉमिनल का विवरण",
-        heroTitle: "AI ने मदद की। ज़िम्मेदारी मेरी है।",
-        heroLead: "जिस व्यक्ति या संगठन के नाम के साथ यह लिंक था, वह एक सरल घोषणा कर रहा है: <strong>कृत्रिम बुद्धिमत्ता ने कार्य में महत्वपूर्ण सहायता की, और वह पक्ष इसे जारी करने की ज़िम्मेदारी स्वीकार करता है।</strong>",
+        highlightAria: "एक यादृच्छिक हाइलाइट रंग चुनें",
+        followedLink: "+AI पोस्ट नॉमिनल विवरण",
+        heroTitle: "AI ने मदद की। मैं जवाबदेही लेता हूँ।",
+        heroLead: "जिस व्यक्ति या संगठन के नाम पर यह लिंक था, वह एक सरल घोषणा कर रहा है: <strong>कृत्रिम बुद्धिमत्ता ने काम में सामग्री सहायता दी, और वे इसे जारी करने के लिए जवाबदेह स्वीकार करते हैं।</strong>",
         readSpec: "विनिर्देश पढ़ें",
-        meansHeading: "यह चिह्न क्या कहता है",
+        meansHeading: "चिह्न क्या कहता है",
         meaningOneTitle: "AI ने भाग लिया",
-        meaningOneBody: "AI ने कार्य को बनाने, विश्लेषित करने, रूपांतरित करने या प्रस्तुत करने में महत्वपूर्ण सहायता की।",
-        meaningTwoTitle: "मनुष्य ने निर्णय लिया",
-        meaningTwoBody: "किसी व्यक्ति या संगठन ने परिणाम को जानते-बूझते अपनाया और जारी किया।",
-        meaningThreeTitle: "ज़िम्मेदारी मनुष्य की रहती है",
-        meaningThreeBody: "नामित पक्ष जवाबदेही किसी AI प्रणाली या उसके प्रदाता को हस्तांतरित नहीं करता।",
-        plainTitle: "पारदर्शी सहायता। स्पष्ट जवाबदेही।",
-        plainLead: "यह चिह्न जवाबदेही की घोषणा है; यह न तो AI को लेखक बताता है और न ही कार्य के सही होने की गारंटी देता है।",
-        plainBody: "यह नहीं बताता कि कार्य का कितना हिस्सा AI से आया। यह बताता है कि AI ने परिणाम को महत्वपूर्ण रूप से प्रभावित किया और कोई पहचान योग्य व्यक्ति या संगठन उसे उपयोग करने के निर्णय की ज़िम्मेदारी लेता है।",
-        plainQuote: "तीन अक्षर भागीदारी और ज़िम्मेदारी दोनों को दृश्यमान बनाते हैं।",
-        fullDocument: "पूरा दस्तावेज़",
+        meaningOneBody: "AI ने काम को बनाने, विश्लेषण करने, परिवर्तित करने या प्रस्तुत करने में सामग्री सहायता की।",
+        meaningTwoTitle: "एक मानव ने चुना",
+        meaningTwoBody: "एक व्यक्ति या संगठन जानबूझकर परिणम को अपनाया और जारी किया।",
+        meaningThreeTitle: "जवाबदेही मानव ही रहती है",
+        meaningThreeBody: "नामित पक्ष किसी AI सिस्टम या प्रदाता को जवाबदेही स्थानांतरित नहीं करता।",
+        plainTitle: "पारदर्शक सहायता। दृश्यमान जवाबदेही।",
+        plainLead: "चिह्न एक जवाबदेही घोषणा है, यह दावा नहीं कि AI लेखक है और न ही यह गारंटी कि काम सही है।",
+        plainBody: "यह नहीं कहता कि काम का कितना भाग AI से आया। यह कहता है कि AI ने परिणाम को सामग्री प्रभावित किया और एक पहचान योग्य व्यक्ति या संगठन इसे उपयोग करने के निर्णय के पीछे खड़ा है।",
+        plainQuote: "तीन अक्षर भागीदारी और जवाबदेही को दृश्यमान बनाते हैं।",
+        fullDocument: "पूर्ण दस्तावेज़",
         specification: "विनिर्देश",
         statusLabel: "स्थिति",
-        statusValue: "मसौदा",
+        statusValue: "खसड़ा",
         versionLabel: "संस्करण",
-        markLabel: "मानक चिह्न",
-        contents: "विषय-सूची",
-        footerLine: "खुला संकेत। मानवीय ज़िम्मेदारी।",
+        markLabel: "प्रमाणित चिह्न",
+        contents: "सूची",
+        footerLine: "खुला संकेतन। मानवीय जवाबदेही।",
         versionFooter: "विनिर्देश v0.1",
-        translationNote: "यह अनुवाद केवल जानकारी के लिए है। किसी असंगति की स्थिति में मूल अंग्रेज़ी पाठ मानक दस्तावेज़ माना जाएगा।",
-        colourChanged: "हाइलाइट रंग बदलकर {colour} कर दिया गया है।"
+        translationNote: "जानकारी के लिए अनुवाद। विरोधाभास की स्थिति में, मूल अंग्रेजी पाठ नियामक दस्तावेज़ है।",
+        colourChanged: "हाइलाइट रंग {colour} पर बदल गया।"
       },
-
-      id: {
-        documentTitle: "+AI — AI membantu. Saya bertanggung jawab.",
-        description: "+AI berarti kecerdasan buatan memberikan bantuan yang berarti pada suatu karya dan seseorang atau organisasi yang disebutkan menerima tanggung jawab atasnya.",
-        skip: "Lewati ke penjelasan",
-        language: "Bahasa",
-        languageAria: "Pilih bahasa",
-        theme: "Mode gelap",
-        themeDark: "Mode gelap",
-        themeLight: "Mode terang",
-        themeDarkAria: "Gunakan mode gelap",
-        themeLightAria: "Gunakan mode terang",
-        highlight: "Sorotan",
-        highlightAria: "Pilih warna sorotan secara acak",
-        followedLink: "Deskripsi post-nominal +AI",
-        heroTitle: "AI membantu. Saya bertanggung jawab.",
-        heroLead: "Orang atau organisasi yang namanya disertai tautan ini membuat pernyataan sederhana: <strong>kecerdasan buatan memberikan bantuan yang berarti pada karya tersebut, dan pihak itu menerima tanggung jawab untuk menerbitkannya.</strong>",
-        readSpec: "Baca spesifikasi",
-        meansHeading: "Apa yang dinyatakan tanda ini",
-        meaningOneTitle: "AI berpartisipasi",
-        meaningOneBody: "AI membantu secara berarti dalam membuat, menganalisis, mengubah, atau menyajikan karya.",
-        meaningTwoTitle: "Manusia memilih",
-        meaningTwoBody: "Seseorang atau organisasi secara sadar mengadopsi dan menerbitkan hasilnya.",
-        meaningThreeTitle: "Tanggung jawab tetap pada manusia",
-        meaningThreeBody: "Pihak yang disebutkan tidak mengalihkan akuntabilitas kepada sistem atau penyedia AI.",
-        plainTitle: "Bantuan transparan. Tanggung jawab terlihat.",
-        plainLead: "Tanda ini merupakan pernyataan tanggung jawab, bukan klaim bahwa AI adalah pengarang dan bukan jaminan bahwa karya tersebut benar.",
-        plainBody: "Tanda ini tidak menyatakan berapa banyak karya yang berasal dari AI. Tanda ini menyatakan bahwa AI secara berarti memengaruhi hasil dan seseorang atau organisasi yang dapat diidentifikasi bertanggung jawab atas keputusan untuk menggunakannya.",
-        plainQuote: "Tiga karakter membuat partisipasi dan tanggung jawab terlihat.",
-        fullDocument: "Dokumen lengkap",
-        specification: "Spesifikasi",
-        statusLabel: "Status",
-        statusValue: "Draf",
-        versionLabel: "Versi",
-        markLabel: "Tanda kanonis",
-        contents: "Daftar isi",
-        footerLine: "Notasi terbuka. Tanggung jawab manusia.",
-        versionFooter: "Spesifikasi v0.1",
-        translationNote: "Terjemahan ini disediakan untuk informasi. Jika terdapat perbedaan, teks asli dalam bahasa Inggris merupakan dokumen normatif.",
-        colourChanged: "Warna sorotan diubah menjadi {colour}."
-      },
-
-      ko: {
-        documentTitle: "+AI — AI가 도왔습니다. 책임은 제가 집니다.",
-        description: "+AI는 인공지능이 작업에 실질적으로 기여했으며, 명시된 개인 또는 조직이 그 결과에 대한 책임을 받아들인다는 의미입니다.",
-        skip: "설명으로 이동",
-        language: "언어",
-        languageAria: "언어 선택",
-        theme: "다크 모드",
-        themeDark: "다크 모드",
-        themeLight: "라이트 모드",
-        themeDarkAria: "다크 모드 사용",
-        themeLightAria: "라이트 모드 사용",
-        highlight: "강조 색상",
-        highlightAria: "무작위 강조 색상 선택",
-        followedLink: "+AI 후치 표기 설명",
-        heroTitle: "AI가 도왔습니다. 책임은 제가 집니다.",
-        heroLead: "이 링크가 이름에 표시된 개인 또는 조직은 다음과 같은 간단한 선언을 합니다. <strong>인공지능이 작업에 실질적으로 기여했으며, 해당 당사자가 그 결과를 공개한 책임을 받아들입니다.</strong>",
-        readSpec: "명세 읽기",
-        meansHeading: "이 표식이 의미하는 것",
-        meaningOneTitle: "AI가 참여했습니다",
-        meaningOneBody: "AI가 작업의 작성, 분석, 변환 또는 표현에 실질적으로 도움을 주었습니다.",
-        meaningTwoTitle: "사람이 선택했습니다",
-        meaningTwoBody: "개인 또는 조직이 결과를 인지한 상태에서 채택하고 공개했습니다.",
-        meaningThreeTitle: "책임은 사람에게 남습니다",
-        meaningThreeBody: "명시된 당사자는 AI 시스템이나 제공자에게 책임을 전가하지 않습니다.",
-        plainTitle: "투명한 지원. 명확한 책임.",
-        plainLead: "이 표식은 책임 선언이며, AI가 저자라는 주장도 아니고 작업의 정확성을 보장하는 것도 아닙니다.",
-        plainBody: "작업 중 어느 정도가 AI에서 비롯되었는지를 나타내지 않습니다. AI가 결과에 실질적인 영향을 미쳤으며, 식별 가능한 개인 또는 조직이 그 결과를 사용하기로 한 결정에 책임을 진다는 뜻입니다.",
-        plainQuote: "세 글자가 참여와 책임을 모두 드러냅니다.",
-        fullDocument: "전체 문서",
-        specification: "명세",
-        statusLabel: "상태",
-        statusValue: "초안",
-        versionLabel: "버전",
-        markLabel: "정식 표식",
-        contents: "목차",
-        footerLine: "열린 표기. 인간의 책임.",
-        versionFooter: "명세 v0.1",
-        translationNote: "이 번역은 참고용입니다. 내용에 차이가 있는 경우 영어 원문을 규범 문서로 합니다.",
-        colourChanged: "강조 색상이 {colour}(으)로 변경되었습니다."
-      },
-
-      zh: {
-        documentTitle: "+AI — AI提供了帮助。责任由我承担。",
-        description: "+AI表示人工智能对该作品提供了实质性协助，并由具名的个人或组织对其承担责任。",
-        skip: "跳到说明",
-        language: "语言",
-        languageAria: "选择语言",
-        theme: "深色模式",
-        themeDark: "深色模式",
-        themeLight: "浅色模式",
-        themeDarkAria: "使用深色模式",
-        themeLightAria: "使用浅色模式",
-        highlight: "强调色",
-        highlightAria: "随机选择一种强调色",
-        followedLink: "+AI后置名衔说明",
-        heroTitle: "AI提供了帮助。责任由我承担。",
-        heroLead: "姓名旁带有此链接的个人或组织正在作出一项简单声明：<strong>人工智能对该作品提供了实质性协助，而该个人或组织承担发布该作品的责任。</strong>",
-        readSpec: "阅读规范",
-        meansHeading: "该标记所表达的含义",
-        meaningOneTitle: "AI参与了工作",
-        meaningOneBody: "AI对作品的创建、分析、转换或呈现提供了实质性帮助。",
-        meaningTwoTitle: "由人作出选择",
-        meaningTwoBody: "个人或组织在知情的情况下采纳并发布了该结果。",
-        meaningThreeTitle: "责任仍由人承担",
-        meaningThreeBody: "具名方不会将责任转移给AI系统或其提供商。",
-        plainTitle: "透明的协助。明确的责任。",
-        plainLead: "该标记是一项责任声明，并非声称AI是作者，也不保证作品正确无误。",
-        plainBody: "它并不说明作品中有多少内容来自AI。它说明AI对结果产生了实质性影响，并且有可识别的个人或组织对采用该结果的决定负责。",
-        plainQuote: "三个字符，同时体现参与和责任。",
-        fullDocument: "完整文档",
-        specification: "规范",
-        statusLabel: "状态",
-        statusValue: "草案",
-        versionLabel: "版本",
-        markLabel: "规范标记",
-        contents: "目录",
-        footerLine: "开放标记。人类责任。",
-        versionFooter: "规范 v0.1",
-        translationNote: "本译文仅供参考。如有任何差异，以英文原文作为规范性文件。",
-        colourChanged: "强调色已更改为{colour}。"
-      },
-
-      mr: {
-        documentTitle: "+AI — AI ने मदत केली. जबाबदारी माझी आहे.",
-        description: "+AI म्हणजे कृत्रिम बुद्धिमत्तेने कामात लक्षणीय मदत केली असून, एखादी नामनिर्दिष्ट व्यक्ती किंवा संस्था त्याची जबाबदारी स्वीकारते.",
-        skip: "स्पष्टीकरणाकडे जा",
-        language: "भाषा",
-        languageAria: "भाषा निवडा",
-        theme: "डार्क मोड",
-        themeDark: "डार्क मोड",
-        themeLight: "लाइट मोड",
-        themeDarkAria: "डार्क मोड वापरा",
-        themeLightAria: "लाइट मोड वापरा",
-        highlight: "हायलाइट",
-        highlightAria: "यादृच्छिक हायलाइट रंग निवडा",
-        followedLink: "+AI पोस्ट-नॉमिनलचे वर्णन",
-        heroTitle: "AI ने मदत केली. जबाबदारी माझी आहे.",
-        heroLead: "ज्या व्यक्तीच्या किंवा संस्थेच्या नावासोबत ही लिंक होती, ती एक साधी घोषणा करत आहे: <strong>कृत्रिम बुद्धिमत्तेने कामात लक्षणीय मदत केली आणि ते काम प्रकाशित करण्याची जबाबदारी ती व्यक्ती किंवा संस्था स्वीकारते.</strong>",
-        readSpec: "तपशील वाचा",
-        meansHeading: "हे चिन्ह काय सांगते",
-        meaningOneTitle: "AI सहभागी झाले",
-        meaningOneBody: "AI ने काम तयार करणे, विश्लेषण करणे, रूपांतरित करणे किंवा सादर करणे यामध्ये लक्षणीय मदत केली.",
-        meaningTwoTitle: "मानवाने निवड केली",
-        meaningTwoBody: "एखाद्या व्यक्तीने किंवा संस्थेने जाणीवपूर्वक निकाल स्वीकारला आणि प्रकाशित केला.",
-        meaningThreeTitle: "जबाबदारी मानवाकडेच राहते",
-        meaningThreeBody: "नामनिर्दिष्ट पक्ष जबाबदारी AI प्रणाली किंवा तिच्या प्रदात्याकडे हस्तांतरित करत नाही.",
-        plainTitle: "पारदर्शक सहाय्य. स्पष्ट जबाबदारी.",
-        plainLead: "हे चिन्ह जबाबदारीची घोषणा आहे; AI लेखक आहे असा दावा किंवा काम अचूक असल्याची हमी नाही.",
-        plainBody: "कामाचा किती भाग AI कडून आला हे ते सांगत नाही. AI ने निकालावर लक्षणीय प्रभाव टाकला आणि तो वापरण्याच्या निर्णयामागे ओळखता येणारी व्यक्ती किंवा संस्था उभी आहे, हे ते सांगते.",
-        plainQuote: "तीन अक्षरे सहभाग आणि जबाबदारी दोन्ही स्पष्ट करतात.",
-        fullDocument: "संपूर्ण दस्तऐवज",
-        specification: "तपशील",
-        statusLabel: "स्थिती",
-        statusValue: "मसुदा",
-        versionLabel: "आवृत्ती",
-        markLabel: "मानक चिन्ह",
-        contents: "अनुक्रमणिका",
-        footerLine: "मुक्त संकेत. मानवी जबाबदारी.",
-        versionFooter: "तपशील v0.1",
-        translationNote: "हा अनुवाद माहितीच्या उद्देशाने दिला आहे. कोणतीही विसंगती असल्यास मूळ इंग्रजी मजकूर हा प्रमाणित दस्तऐवज मानला जाईल.",
-        colourChanged: "हायलाइट रंग {colour} करण्यात आला आहे."
-      },
-
-      fa: {
-        documentTitle: "+AI — هوش مصنوعی کمک کرد. من مسئولیت را می‌پذیرم.",
-        description: "+AI یعنی هوش مصنوعی به‌طور مؤثر در کار کمک کرده و یک فرد یا سازمان مشخص مسئولیت آن را می‌پذیرد.",
-        skip: "رفتن به توضیح",
-        language: "زبان",
-        languageAria: "انتخاب زبان",
-        theme: "حالت تاریک",
-        themeDark: "حالت تاریک",
-        themeLight: "حالت روشن",
-        themeDarkAria: "استفاده از حالت تاریک",
-        themeLightAria: "استفاده از حالت روشن",
-        highlight: "رنگ تأکیدی",
-        highlightAria: "انتخاب تصادفی رنگ تأکیدی",
-        followedLink: "توضیح پسوند اسمی +AI",
-        heroTitle: "هوش مصنوعی کمک کرد. من مسئولیت را می‌پذیرم.",
-        heroLead: "فرد یا سازمانی که این پیوند همراه نام او بوده، یک اعلام ساده می‌کند: <strong>هوش مصنوعی به‌طور مؤثر در انجام این کار کمک کرده و آن فرد یا سازمان مسئولیت انتشار آن را می‌پذیرد.</strong>",
-        readSpec: "مشخصات را بخوانید",
-        meansHeading: "این نشان چه می‌گوید",
-        meaningOneTitle: "هوش مصنوعی مشارکت داشت",
-        meaningOneBody: "هوش مصنوعی به‌طور مؤثر در ایجاد، تحلیل، تبدیل یا ارائه کار کمک کرده است.",
-        meaningTwoTitle: "انسان انتخاب کرد",
-        meaningTwoBody: "یک فرد یا سازمان آگاهانه نتیجه را پذیرفته و منتشر کرده است.",
-        meaningThreeTitle: "مسئولیت انسانی باقی می‌ماند",
-        meaningThreeBody: "طرف نام‌برده پاسخ‌گویی را به یک سامانه یا ارائه‌دهنده هوش مصنوعی منتقل نمی‌کند.",
-        plainTitle: "کمک شفاف. مسئولیت آشکار.",
-        plainLead: "این نشان اعلام مسئولیت است؛ نه ادعایی مبنی بر اینکه هوش مصنوعی نویسنده است و نه تضمینی برای درست بودن کار.",
-        plainBody: "این نشان نمی‌گوید چه مقدار از کار از هوش مصنوعی آمده است. می‌گوید هوش مصنوعی تأثیری اساسی بر نتیجه داشته و یک فرد یا سازمان قابل شناسایی مسئول تصمیم به استفاده از آن است.",
-        plainQuote: "سه نویسه، هم مشارکت و هم مسئولیت را آشکار می‌کنند.",
-        fullDocument: "سند کامل",
-        specification: "مشخصات",
-        statusLabel: "وضعیت",
-        statusValue: "پیش‌نویس",
-        versionLabel: "نسخه",
-        markLabel: "نشان رسمی",
-        contents: "فهرست مطالب",
-        footerLine: "نشانه‌گذاری باز. مسئولیت انسانی.",
-        versionFooter: "مشخصات v0.1",
-        translationNote: "این ترجمه صرفاً برای اطلاع‌رسانی است. در صورت هرگونه اختلاف، متن اصلی انگلیسی سند هنجاری محسوب می‌شود.",
-        colourChanged: "رنگ تأکیدی به {colour} تغییر کرد."
-      },
-
       pt: {
         documentTitle: "+AI — A IA ajudou. Eu assumo a responsabilidade.",
-        description: "+AI significa que a inteligência artificial contribuiu materialmente para o trabalho e que uma pessoa ou organização identificada aceita a responsabilidade por ele.",
+        description: "+AI significa que a inteligência artificial assistiu materialmente o trabalho e uma pessoa ou organização nomeada aceita a responsabilidade por isso.",
         skip: "Ir para a explicação",
         language: "Idioma",
         languageAria: "Escolher idioma",
         theme: "Modo escuro",
         themeDark: "Modo escuro",
         themeLight: "Modo claro",
-        themeDarkAria: "Usar o modo escuro",
-        themeLightAria: "Usar o modo claro",
+        themeDarkAria: "Usar modo escuro",
+        themeLightAria: "Usar modo claro",
         highlight: "Destaque",
         highlightAria: "Escolher uma cor de destaque aleatória",
-        followedLink: "Descrição do pós-nominal +AI",
+        followedLink: "+AI Descrição Post Nominal",
         heroTitle: "A IA ajudou. Eu assumo a responsabilidade.",
-        heroLead: "A pessoa ou organização cujo nome incluía este link está a fazer uma declaração simples: <strong>a inteligência artificial contribuiu materialmente para o trabalho e essa parte aceita a responsabilidade pela sua publicação.</strong>",
+        heroLead: "A pessoa ou organização cujo nome carregava este link está fazendo uma declaração simples: <strong>a inteligência artificial assistiu materialmente o trabalho, e eles aceitam a responsabilidade por publicá-lo.</strong>",
         readSpec: "Ler a especificação",
-        meansHeading: "O que a marca declara",
+        meansHeading: "O que a marca diz",
         meaningOneTitle: "A IA participou",
-        meaningOneBody: "A IA ajudou de forma material a criar, analisar, transformar ou apresentar o trabalho.",
-        meaningTwoTitle: "Um ser humano decidiu",
-        meaningTwoBody: "Uma pessoa ou organização adotou e publicou conscientemente o resultado.",
+        meaningOneBody: "A IA ajudou materialmente a criar, analisar, transformar ou apresentar o trabalho.",
+        meaningTwoTitle: "Um humano escolheu",
+        meaningTwoBody: "Uma pessoa ou organização adotou e liberou conscientemente o resultado.",
         meaningThreeTitle: "A responsabilidade permanece humana",
-        meaningThreeBody: "A parte identificada não transfere a responsabilidade para um sistema ou fornecedor de IA.",
+        meaningThreeBody: "A parte nomeada não transfere a responsabilidade para um sistema ou provedor de IA.",
         plainTitle: "Assistência transparente. Responsabilidade visível.",
-        plainLead: "A marca é uma declaração de responsabilidade, não uma afirmação de que a IA é a autora nem uma garantia de que o trabalho está correto.",
-        plainBody: "Não indica que proporção do trabalho veio da IA. Indica que a IA influenciou materialmente o resultado e que uma pessoa ou organização identificável assume a decisão de o utilizar.",
-        plainQuote: "Três caracteres tornam visíveis tanto a participação como a responsabilidade.",
+        plainLead: "A marca é uma declaração de responsabilidade, não uma reivindicação de que a IA é o autor e não uma garantia de que o trabalho está correto.",
+        plainBody: "Não diz quanto do trabalho veio da IA. Diz que a IA influenciou materialmente o resultado e uma pessoa ou organização identificável está por trás da decisão de usá-lo.",
+        plainQuote: "Três caracteres tornam a participação e a responsabilidade visíveis.",
         fullDocument: "Documento completo",
         specification: "Especificação",
-        statusLabel: "Estado",
+        statusLabel: "Status",
         statusValue: "Rascunho",
         versionLabel: "Versão",
-        markLabel: "Marca canónica",
-        contents: "Conteúdo",
+        markLabel: "Marca canônica",
+        contents: "Conteúdos",
         footerLine: "Notação aberta. Responsabilidade humana.",
         versionFooter: "Especificação v0.1",
-        translationNote: "Esta tradução é fornecida para fins informativos. Em caso de divergência, o texto original em inglês constitui o documento normativo.",
-        colourChanged: "A cor de destaque foi alterada para {colour}."
+        translationNote: "Tradução para informações. Em caso de divergência, o texto original em inglês é o documento normativo.",
+        colourChanged: "A cor de destaque mudou para {colour}."
       },
-
-      pa: {
-        documentTitle: "+AI — AI ਨੇ ਮਦਦ ਕੀਤੀ। ਜ਼ਿੰਮੇਵਾਰੀ ਮੇਰੀ ਹੈ।",
-        description: "+AI ਦਾ ਅਰਥ ਹੈ ਕਿ ਕ੍ਰਿਤ੍ਰਿਮ ਬੁੱਧੀ ਨੇ ਕੰਮ ਵਿੱਚ ਮਹੱਤਵਪੂਰਨ ਸਹਾਇਤਾ ਕੀਤੀ ਅਤੇ ਕੋਈ ਨਾਮਿਤ ਵਿਅਕਤੀ ਜਾਂ ਸੰਸਥਾ ਇਸ ਦੀ ਜ਼ਿੰਮੇਵਾਰੀ ਸਵੀਕਾਰ ਕਰਦੀ ਹੈ।",
-        skip: "ਵਿਆਖਿਆ ਵੱਲ ਜਾਓ",
-        language: "ਭਾਸ਼ਾ",
-        languageAria: "ਭਾਸ਼ਾ ਚੁਣੋ",
-        theme: "ਡਾਰਕ ਮੋਡ",
-        themeDark: "ਡਾਰਕ ਮੋਡ",
-        themeLight: "ਲਾਈਟ ਮੋਡ",
-        themeDarkAria: "ਡਾਰਕ ਮੋਡ ਵਰਤੋ",
-        themeLightAria: "ਲਾਈਟ ਮੋਡ ਵਰਤੋ",
-        highlight: "ਹਾਈਲਾਈਟ",
-        highlightAria: "ਕੋਈ ਬੇਤਰਤੀਬ ਹਾਈਲਾਈਟ ਰੰਗ ਚੁਣੋ",
-        followedLink: "+AI ਪੋਸਟ-ਨੋਮਿਨਲ ਦਾ ਵੇਰਵਾ",
-        heroTitle: "AI ਨੇ ਮਦਦ ਕੀਤੀ। ਜ਼ਿੰਮੇਵਾਰੀ ਮੇਰੀ ਹੈ।",
-        heroLead: "ਜਿਸ ਵਿਅਕਤੀ ਜਾਂ ਸੰਸਥਾ ਦੇ ਨਾਮ ਨਾਲ ਇਹ ਲਿੰਕ ਸੀ, ਉਹ ਇੱਕ ਸਧਾਰਣ ਘੋਸ਼ਣਾ ਕਰ ਰਹੇ ਹਨ: <strong>ਕ੍ਰਿਤ੍ਰਿਮ ਬੁੱਧੀ ਨੇ ਕੰਮ ਵਿੱਚ ਮਹੱਤਵਪੂਰਨ ਸਹਾਇਤਾ ਕੀਤੀ ਅਤੇ ਉਹ ਇਸਨੂੰ ਜਾਰੀ ਕਰਨ ਦੀ ਜ਼ਿੰਮੇਵਾਰੀ ਸਵੀਕਾਰ ਕਰਦੇ ਹਨ।</strong>",
-        readSpec: "ਵਿਸ਼ੇਸ਼ਤਾ ਪੜ੍ਹੋ",
-        meansHeading: "ਇਹ ਨਿਸ਼ਾਨ ਕੀ ਕਹਿੰਦਾ ਹੈ",
-        meaningOneTitle: "AI ਨੇ ਭਾਗ ਲਿਆ",
-        meaningOneBody: "AI ਨੇ ਕੰਮ ਨੂੰ ਬਣਾਉਣ, ਵਿਸ਼ਲੇਸ਼ਣ ਕਰਨ, ਬਦਲਣ ਜਾਂ ਪੇਸ਼ ਕਰਨ ਵਿੱਚ ਮਹੱਤਵਪੂਰਨ ਸਹਾਇਤਾ ਕੀਤੀ।",
-        meaningTwoTitle: "ਮਨੁੱਖ ਨੇ ਚੋਣ ਕੀਤੀ",
-        meaningTwoBody: "ਕਿਸੇ ਵਿਅਕਤੀ ਜਾਂ ਸੰਸਥਾ ਨੇ ਜਾਣਬੁੱਝ ਕੇ ਨਤੀਜੇ ਨੂੰ ਅਪਣਾਇਆ ਅਤੇ ਜਾਰੀ ਕੀਤਾ।",
-        meaningThreeTitle: "ਜ਼ਿੰਮੇਵਾਰੀ ਮਨੁੱਖ ਕੋਲ ਰਹਿੰਦੀ ਹੈ",
-        meaningThreeBody: "ਨਾਮਿਤ ਪੱਖ ਜਵਾਬਦੇਹੀ ਕਿਸੇ AI ਪ੍ਰਣਾਲੀ ਜਾਂ ਪ੍ਰਦਾਤਾ ਨੂੰ ਨਹੀਂ ਸੌਂਪਦਾ।",
-        plainTitle: "ਪਾਰਦਰਸ਼ੀ ਸਹਾਇਤਾ। ਸਪਸ਼ਟ ਜ਼ਿੰਮੇਵਾਰੀ।",
-        plainLead: "ਇਹ ਨਿਸ਼ਾਨ ਜ਼ਿੰਮੇਵਾਰੀ ਦੀ ਘੋਸ਼ਣਾ ਹੈ; ਇਹ ਨਾ ਤਾਂ AI ਨੂੰ ਲੇਖਕ ਦੱਸਦਾ ਹੈ ਅਤੇ ਨਾ ਹੀ ਕੰਮ ਦੇ ਸਹੀ ਹੋਣ ਦੀ ਗਾਰੰਟੀ ਦਿੰਦਾ ਹੈ।",
-        plainBody: "ਇਹ ਨਹੀਂ ਦੱਸਦਾ ਕਿ ਕੰਮ ਦਾ ਕਿੰਨਾ ਹਿੱਸਾ AI ਤੋਂ ਆਇਆ। ਇਹ ਦੱਸਦਾ ਹੈ ਕਿ AI ਨੇ ਨਤੀਜੇ ਨੂੰ ਮਹੱਤਵਪੂਰਨ ਤੌਰ 'ਤੇ ਪ੍ਰਭਾਵਿਤ ਕੀਤਾ ਅਤੇ ਕੋਈ ਪਛਾਣਯੋਗ ਵਿਅਕਤੀ ਜਾਂ ਸੰਸਥਾ ਇਸਨੂੰ ਵਰਤਣ ਦੇ ਫੈਸਲੇ ਦੀ ਜ਼ਿੰਮੇਵਾਰੀ ਲੈਂਦੀ ਹੈ।",
-        plainQuote: "ਤਿੰਨ ਅੱਖਰ ਭਾਗੀਦਾਰੀ ਅਤੇ ਜ਼ਿੰਮੇਵਾਰੀ ਦੋਵੇਂ ਨੂੰ ਦਿਖਾਉਂਦੇ ਹਨ।",
-        fullDocument: "ਪੂਰਾ ਦਸਤਾਵੇਜ਼",
-        specification: "ਵਿਸ਼ੇਸ਼ਤਾ",
-        statusLabel: "ਸਥਿਤੀ",
-        statusValue: "ਖਰੜਾ",
-        versionLabel: "ਸੰਸਕਰਣ",
-        markLabel: "ਮਿਆਰੀ ਨਿਸ਼ਾਨ",
-        contents: "ਸਮੱਗਰੀ",
-        footerLine: "ਖੁੱਲ੍ਹਾ ਸੰਕੇਤ। ਮਨੁੱਖੀ ਜ਼ਿੰਮੇਵਾਰੀ।",
-        versionFooter: "ਵਿਸ਼ੇਸ਼ਤਾ v0.1",
-        translationNote: "ਇਹ ਅਨੁਵਾਦ ਜਾਣਕਾਰੀ ਲਈ ਹੈ। ਕਿਸੇ ਵੀ ਅੰਤਰ ਦੀ ਸਥਿਤੀ ਵਿੱਚ ਮੂਲ ਅੰਗਰੇਜ਼ੀ ਪਾਠ ਮਿਆਰੀ ਦਸਤਾਵੇਜ਼ ਹੋਵੇਗਾ।",
-        colourChanged: "ਹਾਈਲਾਈਟ ਰੰਗ {colour} ਕਰ ਦਿੱਤਾ ਗਿਆ ਹੈ।"
-      },
-
       ru: {
         documentTitle: "+AI — ИИ помог. Я принимаю ответственность.",
-        description: "+AI означает, что искусственный интеллект существенно помог в работе, а указанное лицо или организация принимает за неё ответственность.",
+        description: "+AI означает, что искусственный интеллект оказал материальную помощь в работе, и указанное лицо или организация принимают за это ответственность.",
         skip: "Перейти к объяснению",
         language: "Язык",
         languageAria: "Выбрать язык",
@@ -1875,23 +1575,23 @@
         themeLight: "Светлый режим",
         themeDarkAria: "Использовать тёмный режим",
         themeLightAria: "Использовать светлый режим",
-        highlight: "Акцент",
-        highlightAria: "Выбрать случайный акцентный цвет",
-        followedLink: "Описание постноминала +AI",
+        highlight: "Выделение",
+        highlightAria: "Выбрать случайный цвет выделения",
+        followedLink: "+AI Описание после имени",
         heroTitle: "ИИ помог. Я принимаю ответственность.",
-        heroLead: "Человек или организация, рядом с именем которых была эта ссылка, делают простое заявление: <strong>искусственный интеллект существенно помог в работе, а указанная сторона принимает ответственность за её публикацию.</strong>",
+        heroLead: "Лицо или организация, чье имя содержало эту ссылку, делают простое заявление: <strong>искусственный интеллект оказал материальную помощь в работе, и они принимают ответственность за его публикацию.</strong>",
         readSpec: "Читать спецификацию",
-        meansHeading: "Что означает этот знак",
+        meansHeading: "Что говорит знак",
         meaningOneTitle: "ИИ участвовал",
-        meaningOneBody: "ИИ существенно помог создать, проанализировать, преобразовать или представить работу.",
-        meaningTwoTitle: "Решение принял человек",
-        meaningTwoBody: "Человек или организация осознанно приняли результат и опубликовали его.",
-        meaningThreeTitle: "Ответственность остаётся за человеком",
-        meaningThreeBody: "Указанная сторона не перекладывает ответственность на систему ИИ или её поставщика.",
-        plainTitle: "Прозрачная помощь. Видимая ответственность.",
-        plainLead: "Этот знак является заявлением об ответственности, а не утверждением, что ИИ является автором, и не гарантией правильности работы.",
-        plainBody: "Он не указывает, какая доля работы создана ИИ. Он сообщает, что ИИ существенно повлиял на результат и идентифицируемый человек или организация отвечает за решение его использовать.",
-        plainQuote: "Три символа делают видимыми и участие, и ответственность.",
+        meaningOneBody: "ИИ оказала материальную помощь в создании, анализе, преобразовании или представлении работы.",
+        meaningTwoTitle: "Человек выбрал",
+        meaningTwoBody: "Лицо или организация осознанно приняли и выпустили результат.",
+        meaningThreeTitle: "Ответственность остается за человеком",
+        meaningThreeBody: "Указанная сторона не передает подотчетность системе или поставщику ИИ.",
+        plainTitle: "Прозрачная помощь. Видимая подотчетность.",
+        plainLead: "Знак является заявлением о подотчетности, а не утверждением, что ИИ является автором, и не гарантией того, что работа правильная.",
+        plainBody: "Не говорит, какая часть работы пришла от ИИ. Говорит, что ИИ оказала материальное влияние на результат, и идентифицируемое лицо или организация стоят за решением использовать его.",
+        plainQuote: "Три символа делают участие и ответственность видимыми.",
         fullDocument: "Полный документ",
         specification: "Спецификация",
         statusLabel: "Статус",
@@ -1899,221 +1599,55 @@
         versionLabel: "Версия",
         markLabel: "Канонический знак",
         contents: "Содержание",
-        footerLine: "Открытое обозначение. Ответственность человека.",
+        footerLine: "Открытая нотация. Человеческая ответственность.",
         versionFooter: "Спецификация v0.1",
-        translationNote: "Этот перевод предоставлен в информационных целях. В случае расхождений нормативным документом является оригинальный английский текст.",
-        colourChanged: "Акцентный цвет изменён на {colour}."
+        translationNote: "Перевод для информации. В случае расхождений оригинальный английский текст является нормативным документом.",
+        colourChanged: "Цвет выделения изменен на {colour}."
       },
-
-      sw: {
-        documentTitle: "+AI — AI ilisaidia. Ninawajibika.",
-        description: "+AI inamaanisha kuwa akili bandia ilisaidia kwa kiasi kikubwa katika kazi na mtu au shirika lililotajwa linakubali kuwajibika kwa kazi hiyo.",
-        skip: "Ruka hadi maelezo",
-        language: "Lugha",
-        languageAria: "Chagua lugha",
-        theme: "Hali ya giza",
-        themeDark: "Hali ya giza",
-        themeLight: "Hali ya mwanga",
-        themeDarkAria: "Tumia hali ya giza",
-        themeLightAria: "Tumia hali ya mwanga",
-        highlight: "Rangi ya kuangazia",
-        highlightAria: "Chagua rangi ya kuangazia bila mpangilio",
-        followedLink: "Maelezo ya post-nominal ya +AI",
-        heroTitle: "AI ilisaidia. Ninawajibika.",
-        heroLead: "Mtu au shirika ambalo jina lake lilikuwa na kiungo hiki linatoa tamko rahisi: <strong>akili bandia ilisaidia kwa kiasi kikubwa katika kazi, na upande huo unakubali kuwajibika kwa kuitoa.</strong>",
-        readSpec: "Soma vipimo",
-        meansHeading: "Alama hii inasema nini",
-        meaningOneTitle: "AI ilishiriki",
-        meaningOneBody: "AI ilisaidia kwa kiasi kikubwa kuunda, kuchambua, kubadilisha au kuwasilisha kazi.",
-        meaningTwoTitle: "Binadamu alichagua",
-        meaningTwoBody: "Mtu au shirika lilikubali na kutoa matokeo kwa uamuzi wa kufahamu.",
-        meaningThreeTitle: "Uwajibikaji unabaki kwa binadamu",
-        meaningThreeBody: "Upande uliotajwa hauhamishi uwajibikaji kwa mfumo wa AI au mtoa huduma wake.",
-        plainTitle: "Msaada wa wazi. Uwajibikaji unaoonekana.",
-        plainLead: "Alama hii ni tamko la uwajibikaji, si dai kwamba AI ndiyo mwandishi wala si dhamana kwamba kazi ni sahihi.",
-        plainBody: "Haielezi ni kiasi gani cha kazi kilitokana na AI. Inaeleza kuwa AI iliathiri matokeo kwa kiasi kikubwa na mtu au shirika linaloweza kutambulika linawajibikia uamuzi wa kuyatumia.",
-        plainQuote: "Herufi tatu zinafanya ushiriki na uwajibikaji vionekane.",
-        fullDocument: "Hati kamili",
-        specification: "Vipimo",
-        statusLabel: "Hali",
-        statusValue: "Rasimu",
-        versionLabel: "Toleo",
-        markLabel: "Alama rasmi",
-        contents: "Yaliyomo",
-        footerLine: "Alama huria. Uwajibikaji wa binadamu.",
-        versionFooter: "Vipimo v0.1",
-        translationNote: "Tafsiri hii imetolewa kwa taarifa. Iwapo kuna tofauti, maandishi asilia ya Kiingereza ndiyo hati ya kikanuni.",
-        colourChanged: "Rangi ya kuangazia imebadilishwa kuwa {colour}."
+      id: {
+        documentTitle: "+AI — AI membantu. Saya bertanggung jawab.",
+        description: "+AI berarti kecerdasan artifisial materially assisted the work and a named person or organisation accepts responsibility for it.",
+        skip: "Lompat ke penjelasan",
+        language: "Bahasa",
+        languageAria: "Pilih bahasa",
+        theme: "Mode gelap",
+        themeDark: "Mode gelap",
+        themeLight: "Mode terang",
+        themeDarkAria: "Gunakan mode gelap",
+        themeLightAria: "Gunakan mode terang",
+        highlight: "Sorotan",
+        highlightAria: "Pilih warna sorotan acak",
+        followedLink: "+AI Deskripsi Post Nominal",
+        heroTitle: "AI membantu. Saya bertanggung jawab.",
+        heroLead: "Orang atau organisasi yang namanya membawa tautan ini membuat deklarasi sederhana: <strong>kecerdasan artifisial materially assisted the work, and they accept responsibility for releasing it.</strong>",
+        readSpec: "Baca spesifikasi",
+        meansHeading: "Apa yang dikatakan tanda",
+        meaningOneTitle: "AI berpartisipasi",
+        meaningOneBody: "AI materially helped create, analyse, transform or present the work.",
+        meaningTwoTitle: "Seorang manusia memilih",
+        meaningTwoBody: "Seorang orang atau organisasi dengan sadar mengadopsi dan merilis hasilnya.",
+        meaningThreeTitle: "Tanggung jawab tetap manusiawi",
+        meaningThreeBody: "Pihak yang dinamakan tidak mentransfer akuntabilitas ke sistem atau penyedia AI.",
+        plainTitle: "Bantuan transparan. Akuntabilitas yang terlihat.",
+        plainLead: "Tanda ini adalah deklarasi akuntabilitas, bukan klaim bahwa AI adalah penulis dan bukan jaminan bahwa pekerjaan tersebut benar.",
+        plainBody: "Tidak mengatakan berapa banyak pekerjaan yang berasal dari AI. Mengatakan bahwa AI materially influenced the result and an identifiable person or organisation stands behind the decision to use it.",
+        plainQuote: "Tiga karakter membuat partisipasi dan tanggung jawab terlihat.",
+        fullDocument: "Dokumen lengkap",
+        specification: "Spesifikasi",
+        statusLabel: "Status",
+        statusValue: "Draf",
+        versionLabel: "Versi",
+        markLabel: "Tanda kanonik",
+        contents: "Konten",
+        footerLine: "Notasi terbuka. Tanggung jawab manusia.",
+        versionFooter: "Spesifikasi v0.1",
+        translationNote: "Terjemahan untuk informasi. Dalam hal perbedaan, teks bahasa Inggris asli adalah dokumen normatif.",
+        colourChanged: "Warna sorotan berubah menjadi {colour}."
       },
-
-      ta: {
-        documentTitle: "+AI — AI உதவியது. பொறுப்பு என்னுடையது.",
-        description: "+AI என்பது செயற்கை நுண்ணறிவு பணிக்கு குறிப்பிடத்தக்க வகையில் உதவியது என்றும், பெயரிடப்பட்ட ஒரு நபர் அல்லது நிறுவனம் அதற்கான பொறுப்பை ஏற்கிறது என்றும் பொருள்.",
-        skip: "விளக்கத்திற்குச் செல்லவும்",
-        language: "மொழி",
-        languageAria: "மொழியைத் தேர்ந்தெடுக்கவும்",
-        theme: "இருண்ட பயன்முறை",
-        themeDark: "இருண்ட பயன்முறை",
-        themeLight: "ஒளிரும் பயன்முறை",
-        themeDarkAria: "இருண்ட பயன்முறையைப் பயன்படுத்தவும்",
-        themeLightAria: "ஒளிரும் பயன்முறையைப் பயன்படுத்தவும்",
-        highlight: "சிறப்புநிறம்",
-        highlightAria: "சீரற்ற சிறப்புநிறத்தைத் தேர்ந்தெடுக்கவும்",
-        followedLink: "+AI பின்-பெயர் குறியீட்டின் விளக்கம்",
-        heroTitle: "AI உதவியது. பொறுப்பு என்னுடையது.",
-        heroLead: "இந்த இணைப்பு பெயருடன் இடம்பெற்ற நபர் அல்லது நிறுவனம் ஒரு எளிய அறிவிப்பை செய்கிறது: <strong>செயற்கை நுண்ணறிவு பணிக்கு குறிப்பிடத்தக்க வகையில் உதவியது, மேலும் அதை வெளியிடுவதற்கான பொறுப்பை அந்த நபர் அல்லது நிறுவனம் ஏற்கிறது.</strong>",
-        readSpec: "விவரக்குறிப்பைப் படிக்கவும்",
-        meansHeading: "இந்தக் குறி என்ன கூறுகிறது",
-        meaningOneTitle: "AI பங்கேற்றது",
-        meaningOneBody: "AI பணியை உருவாக்க, பகுப்பாய்வு செய்ய, மாற்ற அல்லது வழங்க குறிப்பிடத்தக்க வகையில் உதவியது.",
-        meaningTwoTitle: "மனிதர் தேர்வு செய்தார்",
-        meaningTwoBody: "ஒரு நபர் அல்லது நிறுவனம் முடிவை அறிந்தே ஏற்றுக்கொண்டு வெளியிட்டது.",
-        meaningThreeTitle: "பொறுப்பு மனிதரிடமே உள்ளது",
-        meaningThreeBody: "பெயரிடப்பட்ட தரப்பு பொறுப்பை AI அமைப்பிற்கோ அதன் வழங்குநருக்கோ மாற்றுவதில்லை.",
-        plainTitle: "வெளிப்படையான உதவி. தெளிவான பொறுப்பு.",
-        plainLead: "இந்தக் குறி ஒரு பொறுப்பு அறிவிப்பு; AI தான் ஆசிரியர் என்ற கூற்றோ, பணி சரியானது என்ற உத்தரவாதமோ அல்ல.",
-        plainBody: "பணியின் எவ்வளவு பகுதி AI-இலிருந்து வந்தது என்பதை இது கூறாது. AI முடிவில் குறிப்பிடத்தக்க தாக்கத்தை ஏற்படுத்தியது என்றும், அதை பயன்படுத்தும் முடிவிற்குப் பின்னால் அடையாளம் காணக்கூடிய நபர் அல்லது நிறுவனம் உள்ளது என்றும் இது கூறுகிறது.",
-        plainQuote: "மூன்று எழுத்துகள் பங்கேற்பையும் பொறுப்பையும் வெளிப்படுத்துகின்றன.",
-        fullDocument: "முழு ஆவணம்",
-        specification: "விவரக்குறிப்பு",
-        statusLabel: "நிலை",
-        statusValue: "வரைவு",
-        versionLabel: "பதிப்பு",
-        markLabel: "அதிகாரப்பூர்வ குறி",
-        contents: "உள்ளடக்கம்",
-        footerLine: "திறந்த குறியீடு. மனிதப் பொறுப்பு.",
-        versionFooter: "விவரக்குறிப்பு v0.1",
-        translationNote: "இந்த மொழிபெயர்ப்பு தகவலுக்காக வழங்கப்படுகிறது. ஏதேனும் முரண்பாடு இருந்தால், அசல் ஆங்கில உரையே அதிகாரப்பூர்வ ஆவணமாகும்.",
-        colourChanged: "சிறப்புநிறம் {colour} ஆக மாற்றப்பட்டது."
-      },
-
-      te: {
-        documentTitle: "+AI — AI సహాయం చేసింది. బాధ్యత నాది.",
-        description: "+AI అంటే కృత్రిమ మేధస్సు పనికి గణనీయంగా సహాయం చేసింది మరియు పేరు పేర్కొన్న వ్యక్తి లేదా సంస్థ దానికి బాధ్యత స్వీకరిస్తుంది.",
-        skip: "వివరణకు వెళ్లండి",
-        language: "భాష",
-        languageAria: "భాషను ఎంచుకోండి",
-        theme: "డార్క్ మోడ్",
-        themeDark: "డార్క్ మోడ్",
-        themeLight: "లైట్ మోడ్",
-        themeDarkAria: "డార్క్ మోడ్ ఉపయోగించండి",
-        themeLightAria: "లైట్ మోడ్ ఉపయోగించండి",
-        highlight: "హైలైట్",
-        highlightAria: "యాదృచ్ఛిక హైలైట్ రంగును ఎంచుకోండి",
-        followedLink: "+AI పోస్ట్-నామినల్ వివరణ",
-        heroTitle: "AI సహాయం చేసింది. బాధ్యత నాది.",
-        heroLead: "ఈ లింక్ పేరు పక్కన ఉన్న వ్యక్తి లేదా సంస్థ ఒక సరళమైన ప్రకటన చేస్తోంది: <strong>కృత్రిమ మేధస్సు పనికి గణనీయంగా సహాయం చేసింది మరియు దాన్ని విడుదల చేసిన బాధ్యతను ఆ వ్యక్తి లేదా సంస్థ స్వీకరిస్తుంది.</strong>",
-        readSpec: "వివరణాత్మక ప్రమాణాన్ని చదవండి",
-        meansHeading: "ఈ గుర్తు ఏమి చెబుతుంది",
-        meaningOneTitle: "AI పాల్గొంది",
-        meaningOneBody: "AI పనిని సృష్టించడం, విశ్లేషించడం, మార్చడం లేదా ప్రదర్శించడంలో గణనీయంగా సహాయం చేసింది.",
-        meaningTwoTitle: "మనిషి నిర్ణయించాడు",
-        meaningTwoBody: "ఒక వ్యక్తి లేదా సంస్థ ఫలితాన్ని తెలిసి స్వీకరించి విడుదల చేసింది.",
-        meaningThreeTitle: "బాధ్యత మనిషిదిగానే ఉంటుంది",
-        meaningThreeBody: "పేరు పేర్కొన్న పక్షం బాధ్యతను AI వ్యవస్థకు లేదా దాని ప్రదాతకు బదిలీ చేయదు.",
-        plainTitle: "పారదర్శక సహాయం. స్పష్టమైన బాధ్యత.",
-        plainLead: "ఈ గుర్తు బాధ్యత ప్రకటన; AI రచయిత అని చెప్పడం కాదు, అలాగే పని సరైనదని హామీ ఇవ్వడం కూడా కాదు.",
-        plainBody: "పనిలో ఎంత భాగం AI నుండి వచ్చిందో ఇది చెప్పదు. AI ఫలితాన్ని గణనీయంగా ప్రభావితం చేసిందని మరియు దాన్ని ఉపయోగించే నిర్ణయానికి గుర్తించగల వ్యక్తి లేదా సంస్థ బాధ్యత వహిస్తుందని ఇది చెబుతుంది.",
-        plainQuote: "మూడు అక్షరాలు పాల్గొనడాన్ని మరియు బాధ్యతను రెండింటినీ కనిపించేలా చేస్తాయి.",
-        fullDocument: "పూర్తి పత్రం",
-        specification: "వివరణాత్మక ప్రమాణం",
-        statusLabel: "స్థితి",
-        statusValue: "ముసాయిదా",
-        versionLabel: "సంస్కరణ",
-        markLabel: "ప్రామాణిక గుర్తు",
-        contents: "విషయ సూచిక",
-        footerLine: "తెరవెనుక గుర్తింపు. మానవ బాధ్యత.",
-        versionFooter: "వివరణాత్మక ప్రమాణం v0.1",
-        translationNote: "ఈ అనువాదం సమాచార ప్రయోజనం కోసం మాత్రమే. ఏవైనా వ్యత్యాసాలు ఉంటే అసలు ఆంగ్ల పాఠమే ప్రామాణిక పత్రం.",
-        colourChanged: "హైలైట్ రంగు {colour}కి మార్చబడింది."
-      },
-
-      th: {
-        documentTitle: "+AI — AI ช่วยสร้างงานนี้ ฉันรับผิดชอบ",
-        description: "+AI หมายความว่าปัญญาประดิษฐ์มีส่วนช่วยอย่างมีสาระสำคัญต่อผลงาน และบุคคลหรือองค์กรที่ระบุชื่อยอมรับความรับผิดชอบต่อผลงานนั้น",
-        skip: "ข้ามไปยังคำอธิบาย",
-        language: "ภาษา",
-        languageAria: "เลือกภาษา",
-        theme: "โหมดมืด",
-        themeDark: "โหมดมืด",
-        themeLight: "โหมดสว่าง",
-        themeDarkAria: "ใช้โหมดมืด",
-        themeLightAria: "ใช้โหมดสว่าง",
-        highlight: "สีเน้น",
-        highlightAria: "เลือกสีเน้นแบบสุ่ม",
-        followedLink: "คำอธิบายคำต่อท้ายชื่อ +AI",
-        heroTitle: "AI ช่วยสร้างงานนี้ ฉันรับผิดชอบ",
-        heroLead: "บุคคลหรือองค์กรที่มีลิงก์นี้กำกับชื่อกำลังประกาศอย่างเรียบง่ายว่า <strong>ปัญญาประดิษฐ์มีส่วนช่วยอย่างมีสาระสำคัญต่อผลงาน และบุคคลหรือองค์กรนั้นยอมรับความรับผิดชอบในการเผยแพร่ผลงานดังกล่าว</strong>",
-        readSpec: "อ่านข้อกำหนด",
-        meansHeading: "เครื่องหมายนี้บอกอะไร",
-        meaningOneTitle: "AI มีส่วนร่วม",
-        meaningOneBody: "AI มีส่วนช่วยอย่างมีสาระสำคัญในการสร้าง วิเคราะห์ แปลง หรือ प्रस्तुतผลงาน",
-        meaningTwoTitle: "มนุษย์เป็นผู้เลือก",
-        meaningTwoBody: "บุคคลหรือองค์กรรับและเผยแพร่ผลลัพธ์โดยรู้และตั้งใจ",
-        meaningThreeTitle: "ความรับผิดชอบยังคงเป็นของมนุษย์",
-        meaningThreeBody: "ฝ่ายที่ระบุชื่อไม่ได้โอนความรับผิดชอบไปยังระบบ AI หรือผู้ให้บริการ AI",
-        plainTitle: "ความช่วยเหลือที่โปร่งใส ความรับผิดชอบที่มองเห็นได้",
-        plainLead: "เครื่องหมายนี้เป็นคำประกาศความรับผิดชอบ ไม่ใช่การกล่าวอ้างว่า AI เป็นผู้ประพันธ์ และไม่ใช่การรับประกันว่าผลงานถูกต้อง",
-        plainBody: "เครื่องหมายนี้ไม่ได้บอกว่างานส่วนใดหรือมากเพียงใดมาจาก AI แต่บอกว่า AI มีอิทธิพลอย่างมีสาระสำคัญต่อผลลัพธ์ และมีบุคคลหรือองค์กรที่ระบุตัวตนได้ยืนอยู่เบื้องหลังการตัดสินใจนำผลลัพธ์นั้นไปใช้",
-        plainQuote: "สามตัวอักษรทำให้ทั้งการมีส่วนร่วมและความรับผิดชอบมองเห็นได้",
-        fullDocument: "เอกสารฉบับเต็ม",
-        specification: "ข้อกำหนด",
-        statusLabel: "สถานะ",
-        statusValue: "ฉบับร่าง",
-        versionLabel: "เวอร์ชัน",
-        markLabel: "เครื่องหมายมาตรฐาน",
-        contents: "สารบัญ",
-        footerLine: "สัญลักษณ์แบบเปิด ความรับผิดชอบของมนุษย์",
-        versionFooter: "ข้อกำหนด v0.1",
-        translationNote: "คำแปลนี้จัดทำขึ้นเพื่อให้ข้อมูล หากมีความแตกต่าง ให้ถือข้อความต้นฉบับภาษาอังกฤษเป็นเอกสารเชิงบรรทัดฐาน",
-        colourChanged: "เปลี่ยนสีเน้นเป็น {colour} แล้ว"
-      },
-
-      tr: {
-        documentTitle: "+AI — Yapay zekâ yardımcı oldu. Sorumluluğu ben üstleniyorum.",
-        description: "+AI, yapay zekânın çalışmaya önemli ölçüde katkıda bulunduğu ve adı belirtilen bir kişi veya kuruluşun bunun sorumluluğunu kabul ettiği anlamına gelir.",
-        skip: "Açıklamaya geç",
-        language: "Dil",
-        languageAria: "Dil seç",
-        theme: "Koyu mod",
-        themeDark: "Koyu mod",
-        themeLight: "Açık mod",
-        themeDarkAria: "Koyu modu kullan",
-        themeLightAria: "Açık modu kullan",
-        highlight: "Vurgu",
-        highlightAria: "Rastgele bir vurgu rengi seç",
-        followedLink: "+AI sonadının açıklaması",
-        heroTitle: "Yapay zekâ yardımcı oldu. Sorumluluğu ben üstleniyorum.",
-        heroLead: "Adının yanında bu bağlantı bulunan kişi veya kuruluş basit bir beyanda bulunmaktadır: <strong>yapay zekâ çalışmaya önemli ölçüde katkıda bulunmuş ve söz konusu taraf çalışmayı yayımlamanın sorumluluğunu kabul etmiştir.</strong>",
-        readSpec: "Şartnameyi oku",
-        meansHeading: "Bu işaret ne söylüyor",
-        meaningOneTitle: "Yapay zekâ katıldı",
-        meaningOneBody: "Yapay zekâ çalışmanın oluşturulmasına, analizine, dönüştürülmesine veya sunulmasına önemli ölçüde yardımcı oldu.",
-        meaningTwoTitle: "İnsan karar verdi",
-        meaningTwoBody: "Bir kişi veya kuruluş sonucu bilinçli olarak benimsedi ve yayımladı.",
-        meaningThreeTitle: "Sorumluluk insanda kalır",
-        meaningThreeBody: "Adı belirtilen taraf hesap verebilirliği bir AI sistemine veya sağlayıcısına devretmez.",
-        plainTitle: "Şeffaf destek. Görünür sorumluluk.",
-        plainLead: "Bu işaret bir sorumluluk beyanıdır; yapay zekânın yazar olduğu iddiası veya çalışmanın doğru olduğuna dair bir garanti değildir.",
-        plainBody: "Çalışmanın ne kadarının yapay zekâdan geldiğini söylemez. Yapay zekânın sonucu önemli ölçüde etkilediğini ve tanımlanabilir bir kişi veya kuruluşun bu sonucu kullanma kararının arkasında durduğunu ifade eder.",
-        plainQuote: "Üç karakter hem katılımı hem de sorumluluğu görünür kılar.",
-        fullDocument: "Tam belge",
-        specification: "Şartname",
-        statusLabel: "Durum",
-        statusValue: "Taslak",
-        versionLabel: "Sürüm",
-        markLabel: "Standart işaret",
-        contents: "İçindekiler",
-        footerLine: "Açık gösterim. İnsan sorumluluğu.",
-        versionFooter: "Şartname v0.1",
-        translationNote: "Bu çeviri bilgilendirme amacıyla sunulmuştur. Herhangi bir farklılık durumunda özgün İngilizce metin normatif belgedir.",
-        colourChanged: "Vurgu rengi {colour} olarak değiştirildi."
-      },
-
       ur: {
-        documentTitle: "+AI — AI نے مدد کی۔ ذمہ داری میری ہے۔",
-        description: "+AI کا مطلب ہے کہ مصنوعی ذہانت نے کام میں نمایاں مدد کی اور کوئی نامزد شخص یا ادارہ اس کی ذمہ داری قبول کرتا ہے۔",
-        skip: "وضاحت پر جائیں",
+        documentTitle: "+AI — AI نے مدد کی۔ میں ذمہ داری لیتا ہوں۔",
+        description: "+AI کا مطلب ہے کہ مصنوعی ذہانت نے کام میں مواد کی مدد کی اور ایک نامزد شخص یا تنظیم اس کے لیے ذمہ دار قبول کرتی ہے۔",
+        skip: "تشریح پر جائیں",
         language: "زبان",
         languageAria: "زبان منتخب کریں",
         theme: "ڈارک موڈ",
@@ -2121,86 +1655,75 @@
         themeLight: "لائٹ موڈ",
         themeDarkAria: "ڈارک موڈ استعمال کریں",
         themeLightAria: "لائٹ موڈ استعمال کریں",
-        highlight: "نمایاں رنگ",
-        highlightAria: "کوئی بے ترتیب نمایاں رنگ منتخب کریں",
-        followedLink: "+AI پوسٹ نومینل کی وضاحت",
-        heroTitle: "AI نے مدد کی۔ ذمہ داری میری ہے۔",
-        heroLead: "جس شخص یا ادارے کے نام کے ساتھ یہ لنک موجود تھا، وہ ایک سادہ اعلان کر رہا ہے: <strong>مصنوعی ذہانت نے کام میں نمایاں مدد کی، اور وہ شخص یا ادارہ اسے جاری کرنے کی ذمہ داری قبول کرتا ہے۔</strong>",
-        readSpec: "تفصیلات پڑھیں",
-        meansHeading: "یہ نشان کیا کہتا ہے",
+        highlight: "ہائی لائٹ",
+        highlightAria: "ایک بے ترتیب ہائی لائٹ رنگ منتخب کریں",
+        followedLink: "+AI پوسٹ نومینل تفصیل",
+        heroTitle: "AI نے مدد کی۔ میں ذمہ داری لیتا ہوں۔",
+        heroLead: "جس شخص یا تنظیم کے نام پر یہ لنک تھا، وہ ایک سادہ اعلان کر رہا ہے: <strong>مصنوعی ذہانت نے کام میں مواد کی مدد کی، اور وہ اسے جاری کرنے کے لیے ذمہ دار قبول کرتے ہیں۔</strong>",
+        readSpec: "تفصیل پڑھیں",
+        meansHeading: "نشان کیا کہتا ہے",
         meaningOneTitle: "AI نے حصہ لیا",
-        meaningOneBody: "AI نے کام تخلیق کرنے، تجزیہ کرنے، تبدیل کرنے یا پیش کرنے میں نمایاں مدد کی۔",
-        meaningTwoTitle: "انسان نے فیصلہ کیا",
-        meaningTwoBody: "کسی شخص یا ادارے نے جان بوجھ کر نتیجہ قبول کیا اور اسے جاری کیا۔",
-        meaningThreeTitle: "ذمہ داری انسان ہی کی رہتی ہے",
-        meaningThreeBody: "نامزد فریق جوابدہی کسی AI نظام یا اس کے فراہم کنندہ کو منتقل نہیں کرتا۔",
-        plainTitle: "شفاف معاونت۔ واضح ذمہ داری۔",
-        plainLead: "یہ نشان ذمہ داری کا اعلان ہے؛ یہ نہ تو AI کو مصنف قرار دیتا ہے اور نہ ہی اس بات کی ضمانت دیتا ہے کہ کام درست ہے۔",
-        plainBody: "یہ نہیں بتاتا کہ کام کا کتنا حصہ AI سے آیا۔ یہ بتاتا ہے کہ AI نے نتیجے پر نمایاں اثر ڈالا اور کوئی قابل شناخت شخص یا ادارہ اسے استعمال کرنے کے فیصلے کی ذمہ داری لیتا ہے۔",
-        plainQuote: "تین حروف شرکت اور ذمہ داری دونوں کو نمایاں کرتے ہیں۔",
+        meaningOneBody: "AI نے کام کو بنانے، تجزیہ کرنے، تبدیل کرنے یا پیش کرنے میں مواد کی مدد کی۔",
+        meaningTwoTitle: "ایک انسان نے منتخب کیا",
+        meaningTwoBody: "ایک شخص یا تنظیم جان بوجھ کر نتیجہ اپنایا اور جاری کیا۔",
+        meaningThreeTitle: "ذمہ داری انسانی ہی رہتی ہے",
+        meaningThreeBody: "نامزد پارٹی کسی AI سسٹم یا فراہم کنندہ کو ذمہ داری منتقل نہیں کرتی۔",
+        plainTitle: "شفاف مدد۔ نظر آنے والی ذمہ داری۔",
+        plainLead: "نشان ایک ذمہ داری کا اعلان ہے، یہ دعویٰ نہیں کہ AI مؤلف ہے اور نہ ہی ضمانت ہے کہ کام درست ہے۔",
+        plainBody: "یہ نہیں کہتا کہ کام کا کتنا حصہ AI سے آیا۔ یہ کہتا ہے کہ AI نے نتیجے کو مواد متاثر کیا اور ایک قابل شناخت شخص یا تنظیم اسے استعمال کرنے کے فیصلے کے پیچھے کھڑی ہے۔",
+        plainQuote: "تین حروف شرکت اور ذمہ داری کو نظر آنے والا بناتے ہیں۔",
         fullDocument: "مکمل دستاویز",
-        specification: "تفصیلات",
-        statusLabel: "حیثیت",
-        statusValue: "مسودہ",
+        specification: "تفصیل",
+        statusLabel: "حالت",
+        statusValue: "ڈرافٹ",
         versionLabel: "ورژن",
-        markLabel: "معیاری نشان",
-        contents: "مندرجات",
-        footerLine: "کھلی علامت۔ انسانی ذمہ داری۔",
-        versionFooter: "تفصیلات v0.1",
-        translationNote: "یہ ترجمہ صرف معلومات کے لیے فراہم کیا گیا ہے۔ کسی اختلاف کی صورت میں اصل انگریزی متن ہی معیاری دستاویز ہوگا۔",
-        colourChanged: "نمایاں رنگ تبدیل کرکے {colour} کر دیا گیا ہے۔"
+        markLabel: "قانونی نشان",
+        contents: "مواد",
+        footerLine: "کھلا نوٹیشن۔ انسانی ذمہ داری۔",
+        versionFooter: "تفصیل v0.1",
+        translationNote: "معلومات کے لیے ترجمہ۔ تضاد کی صورت میں، اصل انگریزی متن معیاری دستاویز ہے۔",
+        colourChanged: "ہائی لائٹ رنگ {colour} پر بدل گیا۔"
       },
-
-      vi: {
-        documentTitle: "+AI — AI đã hỗ trợ. Tôi chịu trách nhiệm.",
-        description: "+AI có nghĩa là trí tuệ nhân tạo đã hỗ trợ đáng kể cho tác phẩm và một cá nhân hoặc tổ chức được nêu tên chấp nhận trách nhiệm đối với tác phẩm đó.",
-        skip: "Chuyển đến phần giải thích",
-        language: "Ngôn ngữ",
-        languageAria: "Chọn ngôn ngữ",
-        theme: "Chế độ tối",
-        themeDark: "Chế độ tối",
-        themeLight: "Chế độ sáng",
-        themeDarkAria: "Sử dụng chế độ tối",
-        themeLightAria: "Sử dụng chế độ sáng",
-        highlight: "Màu nhấn",
-        highlightAria: "Chọn ngẫu nhiên một màu nhấn",
-        followedLink: "Mô tả hậu danh +AI",
-        heroTitle: "AI đã hỗ trợ. Tôi chịu trách nhiệm.",
-        heroLead: "Cá nhân hoặc tổ chức có tên đi kèm liên kết này đang đưa ra một tuyên bố đơn giản: <strong>trí tuệ nhân tạo đã hỗ trợ đáng kể cho tác phẩm, và bên đó chấp nhận trách nhiệm về việc công bố tác phẩm.</strong>",
-        readSpec: "Đọc đặc tả",
-        meansHeading: "Dấu hiệu này nói gì",
-        meaningOneTitle: "AI đã tham gia",
-        meaningOneBody: "AI đã hỗ trợ đáng kể trong việc tạo, phân tích, chuyển đổi hoặc trình bày tác phẩm.",
-        meaningTwoTitle: "Con người đã lựa chọn",
-        meaningTwoBody: "Một cá nhân hoặc tổ chức đã chủ động chấp nhận và công bố kết quả.",
-        meaningThreeTitle: "Trách nhiệm vẫn thuộc về con người",
-        meaningThreeBody: "Bên được nêu tên không chuyển trách nhiệm giải trình cho một hệ thống AI hoặc nhà cung cấp AI.",
-        plainTitle: "Hỗ trợ minh bạch. Trách nhiệm rõ ràng.",
-        plainLead: "Dấu hiệu này là một tuyên bố về trách nhiệm, không phải tuyên bố rằng AI là tác giả và cũng không đảm bảo rằng tác phẩm là chính xác.",
-        plainBody: "Nó không nói bao nhiêu phần của tác phẩm đến từ AI. Nó cho biết AI đã ảnh hưởng đáng kể đến kết quả và một cá nhân hoặc tổ chức có thể xác định được chịu trách nhiệm về quyết định sử dụng kết quả đó.",
-        plainQuote: "Ba ký tự làm rõ cả sự tham gia lẫn trách nhiệm.",
-        fullDocument: "Tài liệu đầy đủ",
-        specification: "Đặc tả",
-        statusLabel: "Trạng thái",
-        statusValue: "Bản nháp",
-        versionLabel: "Phiên bản",
-        markLabel: "Dấu chuẩn",
-        contents: "Nội dung",
-        footerLine: "Ký hiệu mở. Trách nhiệm của con người.",
-        versionFooter: "Đặc tả v0.1",
-        translationNote: "Bản dịch này chỉ nhằm mục đích cung cấp thông tin. Nếu có bất kỳ khác biệt nào, văn bản tiếng Anh gốc là tài liệu quy chuẩn.",
-        colourChanged: "Màu nhấn đã được đổi thành {colour}."
-      }
-    
-    };
-
-    for (const language of supportedLanguages) {
-      if (!interfaceCopy[language]) {
-        interfaceCopy[language] = { ...interfaceCopy.en };
-      }
-    }
-
-    const specificationCopy = {
+      ja: {
+        documentTitle: "+AI — AIが手伝いました。私が責任を負います。",
+        description: "+AIとは、人工知能が作業 materially assisted され、名前の付いた個人または組織がそれに対する責任を受け入れることを意味します。",
+        skip: "説明にスキップ",
+        language: "言語",
+        languageAria: "言語を選択",
+        theme: "ダークモード",
+        themeDark: "ダークモード",
+        themeLight: "ライトモード",
+        themeDarkAria: "ダークモードを使用",
+        themeLightAria: "ライトモードを使用",
+        highlight: "ハイライト",
+        highlightAria: "ランダムなハイライト色を選択",
+        followedLink: "+AI 名後の説明",
+        heroTitle: "AIが手伝いました。私が責任を負います。",
+        heroLead: "このリンクの名前を担っていた個人または組織は、簡単な宣言を行っています：<strong>人工知能が作業 materially assisted され、それ releasing の責任を受け入れます。</strong>",
+        readSpec: "仕様を読む",
+        meansHeading: "マークが言うこと",
+        meaningOneTitle: "AIが参加した",
+        meaningOneBody: "AIが materially helped create, analyse, transform or present the work.",
+        meaningTwoTitle: "人間が選択した",
+        meaningTwoBody: "個人または組織が knowingly adopted and released the result.",
+        meaningThreeTitle: "責任は人間のまま",
+        meaningThreeBody: "名付けられた当事者は、AIシステムやプロバイダーに説明責任を移転しません。",
+        plainTitle: "透明な支援。見える責任。",
+        plainLead: "このマークは説明責任の宣言であり、AIが著者であるという主張でもなく、作業が正しいという保証でもありません。",
+        plainBody: "作業のどの部分がAIから来たかを言うものではありません。AI materially influenced the result and an identifiable person or organisation stands behind the decision to use it.",
+        plainQuote: "3文字で参加と責任が目に見えるようになります。",
+        fullDocument: "完全なドキュメント",
+        specification: "仕様",
+        statusLabel: "状態",
+        statusValue: "草案",
+        versionLabel: "バージョン",
+        markLabel: "標準マーク",
+        contents: "目次",
+        footerLine: "オープンな表記。人間の責任。",
+        versionFooter: "仕様 v0.1",
+        translationNote: "情報用の翻訳。差異がある場合は、元の英語テキストが規範的なドキュメントです。",
+        colourChanged: "ハイライト色が{colour}に変更されました。"
+      },
       en: [
         {
           number: "1",
@@ -2538,346 +2061,6 @@
             <p>The public shorthand is:</p>
             <p class="canonical">AI helped. I take responsibility.</p>
             <p>The canonical mark is:</p>
-            <p class="canonical">+AI</p>`
-        }
-      ],
-      ja: [
-        {
-          number: "1",
-          title: "目的",
-          body: `
-            <p><code>+AI</code>表記は、成果物が人工知能による実質的な支援を受けたことを示すと同時に、その成果物に対する責任を引き受ける個人または組織を特定するための簡潔な方法です。</p>
-            <p>正規の表現は次のとおりです。</p>
-            <p class="canonical"><code>&lt;責任主体&gt; +AI</code></p>
-            <p>例：</p>
-            <p><strong>Eric Mourant +AI</strong></p>
-            <p>基本的な意味は次のとおりです。</p>
-            <p class="canonical">AIが支援しました。私が責任を負います。</p>`
-        },
-        {
-          number: "2",
-          title: "設計原則",
-          body: `
-            <p><code>+AI</code>は、成果物が「人によって作成された」か「AIによって作成された」かを判定するものではありません。</p>
-            <p>現代の成果物は、作成の過程で人と人工知能システムの間を何度も行き来することがあります。</p>
-            <p>その代わりに、<code>+AI</code>は次の2つの事実を伝えます。</p>
-            <ol>
-              <li>人工知能が作業を実質的に支援したこと。</li>
-              <li>特定可能な個人または組織が、その成果物に対する責任を引き受けること。</li>
-            </ol>
-            <p>したがって、この規格が扱うのは排他的な著作者性ではなく、<strong>AIの関与と人の説明責任</strong>です。</p>`
-        },
-        {
-          number: "3",
-          title: "規範用語",
-          body: `
-            <p><strong>～しなければならない (MUST)</strong>、<strong>～してはならない (MUST NOT)</strong>、<strong>～することが望ましい (SHOULD)</strong>、<strong>～しないことが望ましい (SHOULD NOT)</strong>、および<strong>～してもよい (MAY)</strong>という用語は、本仕様における規範的要件を示します。</p>
-            <p><strong>～しなければならない</strong>は、絶対的な要件を示します。</p>
-            <p><strong>～してはならない</strong>は、絶対的な禁止を示します。</p>
-            <p><strong>～することが望ましい</strong>は、正当な理由がある場合には従わないことも認められる、強い推奨を示します。</p>
-            <p><strong>～しないことが望ましい</strong>は、通常は避けるべきものの、特定の状況では正当化される可能性がある行為を示します。</p>
-            <p><strong>～してもよい</strong>は、任意の行為を示します。</p>`
-        },
-        {
-          number: "4",
-          title: "正規表記",
-          body: `
-            <p>正規マークは次のとおりです。</p>
-            <p class="canonical"><code>+AI</code></p>
-            <p>人が読める正規形式は次のとおりです。</p>
-            <p><strong><code>&lt;責任主体&gt; +AI</code></strong></p>
-            <p>例：</p>
-            <p><strong>Eric Mourant +AI</strong></p>
-            <p data-company-example><strong>JAPER Technology +AI</strong></p>
-            <p>このマークでは大文字と小文字が区別されます。</p>
-            <p>正規形式では、次の要素を使用しなければなりません。</p>
-            <ul>
-              <li>プラス記号<code>+</code>。</li>
-              <li>その直後に続く大文字のラテン文字<code>AI</code>。</li>
-              <li>内部に空白を含めないこと。</li>
-            </ul>
-            <p>したがって、<code>+AI</code>が正規形式です。</p>
-            <p>次の表記は正規形式と同等ではありません。</p>
-            <p><code>+Ai</code> &nbsp; <code>+aI</code> &nbsp; <code>+ ai</code> &nbsp; <code>AI+</code> &nbsp; <code>AI assisted</code></p>
-            <p>本仕様の拡張によって将来バリエーションを定義してもよいものとしますが、明示的に定義されない限り、それらが<code>+AI</code>の正規の意味を持つとみなしてはなりません。</p>`
-        },
-        {
-          number: "5",
-          title: "マークの意味",
-          body: `
-            <p><code>+AI</code>を使用する責任主体は、次の事項を宣言します。</p>
-            <h4>5.1 AIの関与</h4>
-            <p>人工知能が、関連する成果物の作成、分析、変換、生成、評価、構成、または提示を実質的に支援しました。</p>
-            <h4>5.2 認識</h4>
-            <p>責任主体は、AIによる実質的な支援があったことを知っているか、合理的にそう考えています。</p>
-            <h4>5.3 権限</h4>
-            <p>責任主体は、関連する人工知能の利用を承認、開始、指示、または認識したうえで採用しました。</p>
-            <h4>5.4 人または組織による管理</h4>
-            <p>責任主体は、成果物を公開、送信、展開、提出、提示、またはその他の方法で公表するかどうかを決定する権限を保持していました。</p>
-            <h4>5.5 採用</h4>
-            <p>責任主体は、提示されている形式の成果物を受け入れます。</p>
-            <h4>5.6 責任</h4>
-            <p>責任主体は、成果物を公表、使用、または表明する決定に対する責任を引き受けます。</p>
-            <p>これらの要素が一体となって<code>+AI</code>宣言を構成します。</p>`
-        },
-        {
-          number: "6",
-          title: "実質的な支援",
-          body: `
-            <p>AIの関与が成果物に実質的な影響を与えた場合に、このマークを使用することが望まれます。</p>
-            <p>実質的な支援には、AIによる次の事項への貢献が含まれる場合があります。</p>
-            <ul>
-              <li>執筆。</li><li>推論。</li><li>分析。</li><li>提案。</li>
-              <li>調査結果の統合。</li><li>ソフトウェアコード。</li><li>データの解釈。</li>
-              <li>設計。</li><li>画像。</li><li>音声。</li><li>動画。</li>
-              <li>実質的な解釈を伴う翻訳。</li><li>計画。</li>
-              <li>意思決定支援。</li><li>数学的または技術的な作業。</li>
-              <li>意味を実質的に変える編集。</li>
-              <li>その他の実質的な知的作業または創作活動。</li>
-            </ul>
-            <p>付随的または純粋に機械的なAI機能には、必ずしも<code>+AI</code>が必要とは限りません。</p>
-            <p>たとえば、自動スペル修正、基本的な自動補完、定型的な書式設定など、成果物の内容に実質的な影響を与えない機能が該当します。</p>
-            <p>判断基準は、AIが生成した内容の割合ではありません。</p>
-            <p>判断基準となる問いは次のとおりです。</p>
-            <blockquote><strong>提示される成果物にAIが実質的な影響を与えたか。</strong></blockquote>`
-        },
-        {
-          number: "7",
-          title: "責任",
-          body: `
-            <p>責任は、<code>+AI</code>を定義する特性です。</p>
-            <p>責任主体はこのマークを使用しても、人工知能システム、モデル、提供者、エージェント、またはツールに責任を転嫁することはありません。</p>
-            <p>次のような趣旨の主張は、</p>
-            <blockquote>「AIが生成したので、私には責任がない。」</blockquote>
-            <p><code>+AI</code>が意図する意味と両立しません。</p>
-            <p>責任主体は、AIの支援に大きく依存してもよいものとします。</p>
-            <p>責任主体は、AIが大部分を生成したコンテンツを公開してもよいものとします。</p>
-            <p>責任主体は、自力では生み出せなかった提案を採用してもよいものとします。</p>
-            <p>責任主体が、生成された成果物を認識したうえで採用し、その公表に対する責任を引き受ける限り、これらのいずれの条件も<code>+AI</code>の使用を妨げません。</p>`
-        },
-        {
-          number: "8",
-          title: "+AIが意味しないこと",
-          body: `
-            <p>追加の宣言で明示されない限り、<code>+AI</code>は次の事項を主張するものではありません。</p>
-            <ul>
-              <li>成果物に誤りがないこと。</li>
-              <li>すべての事実に関する記述が独立して検証されていること。</li>
-              <li>すべての引用が独立して確認されていること。</li>
-              <li>成果物が特定の専門基準を満たしていること。</li>
-              <li>成果物が法的に正しいこと。</li>
-              <li>成果物が医学的に正しいこと。</li>
-              <li>成果物が特定の目的に対して安全であること。</li>
-              <li>成果物にハルシネーションが含まれていないこと。</li>
-              <li>責任主体がすべての構成要素を自ら執筆したこと。</li>
-              <li>AIが成果物の大部分を生成したこと。</li>
-              <li>AIが成果物の一部のみを生成したこと。</li>
-              <li>成果物が独創的であること。</li>
-              <li>第三者の知的財産が含まれていないこと。</li>
-              <li>機密情報がAIシステムに提供されていないこと。</li>
-              <li>特定のAI提供者、モデル、またはシステムが使用されたこと。</li>
-              <li>責任主体がAIのすべての中間出力に同意していること。</li>
-              <li>責任主体がAIシステムの内部推論を再現または説明できること。</li>
-            </ul>
-            <p><code>+AI</code>は<strong>説明責任の宣言</strong>であり、正確性の保証ではありません。</p>`
-        },
-        {
-          number: "9",
-          title: "人による確認",
-          body: `
-            <p>バージョン0.1では、成果物のすべての構成要素を、一語ずつ、または一要素ずつ人が確認することは求めません。</p>
-            <p>ただし、責任主体は、公表される成果物を認識したうえで受け入れなければなりません。</p>
-            <p>人による意味のある採用行為がない場合、未確認のAI出力をそのまま、または自動的に転送することを<code>+AI</code>で表すべきではありません。</p>
-            <p>本仕様の将来のバージョンでは、完全な確認や独立した検証を表す、より強い保証マークを定義してもよいものとします。</p>`
-        },
-        {
-          number: "10",
-          title: "個人",
-          body: `
-            <p>個人は、自分の名前の後にこの表記を付けてもよいものとします。</p>
-            <p>例：</p>
-            <p><strong>Eric Mourant +AI</strong></p>
-            <p>これは次のことを意味します。</p>
-            <blockquote>人工知能が関連する作業を実質的に支援し、Eric Mourantがその作業を公表する責任を引き受けます。</blockquote>
-            <p>このマークは、関連する成果物またはコミュニケーションに対して適用されます。</p>
-            <p>その個人が行うすべての活動で人工知能を使用していることを必ずしも意味しません。</p>`
-        },
-        {
-          number: "11",
-          title: "組織",
-          body: `
-            <p>組織は<code>+AI</code>を使用してもよいものとします。</p>
-            <p data-company-example>例：</p>
-            <p data-company-example><strong>JAPER Technology +AI</strong></p>
-            <p>これは、その組織が、適用されるガバナンスと権限の構造に従って、関連するAI支援成果物に対する責任を負うことを意味します。</p>
-            <p>有用な場合は、組織と責任を負う個人の両方を明示してもよいものとします。</p>
-            <p data-company-example>例：</p>
-            <p data-company-example><strong>JAPER Technology<br>Eric Mourant +AI</strong></p>`
-        },
-        {
-          number: "12",
-          title: "電子メールとメッセージ",
-          body: `
-            <p>個人的なコミュニケーションでは、次の形式が推奨されます。</p>
-            <p><strong>よろしくお願いいたします。<br>Eric Mourant +AI</strong></p>
-            <p>このマークから、その正規の意味を説明するページへのリンクを設定してもよいものとします。</p>
-            <p>ハイパーリンクによって、目に見える表記を変更してはなりません。</p>
-            <p>プレーンテキストだけでも宣言を十分に表現できなければなりません。</p>`
-        },
-        {
-          number: "13",
-          title: "文書",
-          body: `
-            <p>この表記は、著者、作成者、確認者、または責任主体の欄に記載してもよいものとします。</p>
-            <p>例：</p>
-            <p><strong>著者：Eric Mourant +AI</strong></p>
-            <p><strong>作成者：Eric Mourant +AI</strong></p>
-            <p data-company-example><strong>発行者：JAPER Technology +AI</strong></p>
-            <p>配置によって、どの個人または組織が責任を負うのかを明確にすることが望まれます。</p>`
-        },
-        {
-          number: "14",
-          title: "ソフトウェア",
-          body: `
-            <p>この表記は、ソフトウェアリポジトリ、コミット、ソースコードのヘッダー、文書、リリースノート、および生成された成果物で使用してもよいものとします。</p>
-            <p>例：</p>
-            <pre><code>著者：Eric Mourant +AI</code></pre>
-            <p>プロジェクトは、さらに次のように宣言してもよいものとします。</p>
-            <pre><code>このプロジェクトでは+AIを使用しています。</code></pre>
-            <p>このようなプロジェクト単位の宣言では、実務上可能な場合、責任を負う個人または組織を明示することが望まれます。</p>`
-        },
-        {
-          number: "15",
-          title: "創作物",
-          body: `
-            <p>この表記は、画像、音声、動画、デザイン、イラスト、プレゼンテーション、その他の創作物に付してもよいものとします。</p>
-            <p>例：</p>
-            <p><strong>作成者：Eric Mourant +AI</strong></p>
-            <p>このマーク自体は、どの要素がAIによって生成または変更されたかを示すものではありません。</p>
-            <p>より詳細な来歴メタデータを別途関連付けてもよいものとします。</p>`
-        },
-        {
-          number: "16",
-          title: "研究および技術的作業",
-          body: `
-            <p>このマークは、適用される機関、出版、または専門職上の要件で認められている場合、研究、科学、工学、または技術的な作業で使用してもよいものとします。</p>
-            <p><code>+AI</code>を、出版社、規制当局、雇用者、専門職団体、または法律が求める、より具体的な開示の代わりになるものと表明してはなりません。</p>
-            <p>この表記をそのような開示に追加してもよいものとします。</p>`
-        },
-        {
-          number: "17",
-          title: "機械可読表現",
-          body: `
-            <p>システムは、構造化メタデータを使用して宣言を表現してもよいものとします。</p>
-            <p>最小限の表現は次のとおりです。</p>
-            <pre><code>{
-  "provenance": "+AI"
-}</code></pre>
-            <p>より詳細な表現は次のとおりです。</p>
-            <pre data-json-example><code>{
-  "ai_assistance": {
-    "material": true,
-    "responsibility": "human",
-    "responsible_party": "Eric Mourant",
-    "notation": "+AI"
-  }
-}</code></pre>
-            <p>機械可読形式では、目に見える表記と同じ意味を維持することが望まれます。</p>`
-        },
-        {
-          number: "18",
-          title: "持続性",
-          body: `
-            <p>帰属表示が維持される場合、<code>+AI</code>表記は成果物の合理的な変換後も保持されることが望まれます。</p>
-            <p>たとえば、文書形式間の変換、アーカイブ、印刷、エクスポート、再公開、および送信が該当します。</p>
-            <p>メタデータが削除された場合でも、目に見えるプレーンテキストのマークだけで宣言を十分に伝えられることが望まれます。</p>`
-        },
-        {
-          number: "19",
-          title: "自由な利用",
-          body: `
-            <p><code>+AI</code>表記は、誰でも制限なく利用できることを意図しています。</p>
-            <p>この表記の使用に、次の事項を求めるべきではありません。</p>
-            <ul>
-              <li>登録。</li><li>会員資格。</li><li>支払い。</li><li>認証。</li>
-              <li>承認。</li><li>特定のAI製品または提供者の使用。</li>
-            </ul>
-            <p>この表記の有用性は、普遍的な慣例として機能できるかどうかにかかっています。</p>`
-        },
-        {
-          number: "20",
-          title: "中立性",
-          body: `
-            <p><code>+AI</code>は、人工知能への賛成も反対も表明しません。</p>
-            <p>AIの使用が必要だったか、望ましかったか、または支援を受けない人の作業より優れていたかを示すものではありません。</p>
-            <p>AIの実質的な関与と、個人または組織の説明責任だけを記録します。</p>`
-        },
-        {
-          number: "21",
-          title: "不実表示",
-          body: `
-            <p>個人または組織は、次の場合に<code>+AI</code>を使用すべきではありません。</p>
-            <ul>
-              <li>特定可能な責任主体が存在しない場合。</li>
-              <li>記名された主体が成果物を採用していない場合。</li>
-              <li>意味のある人の権限なしに成果物が自動的に発行される場合。</li>
-              <li>人が説明責任を負っているという誤った印象を与えるために表記が使用される場合。</li>
-            </ul>
-            <p>人による意味のある採用を伴わない自律的なAI出力は、<code>+AI</code>の正規の適用範囲外です。</p>
-            <p>将来の仕様では、自律的なAI出力の表記を定義してもよいものとします。</p>`
-        },
-        {
-          number: "22",
-          title: "著作者性との関係",
-          body: `
-            <p><code>+AI</code>は、意図的に著作者性の割合を定めません。</p>
-            <p>成果物の大部分が人に由来する素材であっても、要件を満たす場合があります。</p>
-            <p>成果物の大部分がAIに由来する素材であっても、要件を満たす場合があります。</p>
-            <p>判断基準は、次の条件を満たすかどうかです。</p>
-            <p><strong>AIが実質的に支援し、記名された主体が結果に対する責任を負うこと。</strong></p>`
-        },
-        {
-          number: "23",
-          title: "正規の一般向け説明",
-          body: `
-            <p>短い説明が必要な場合は、次の表現が推奨されます。</p>
-            <p class="canonical">AIが支援しました。私が責任を負います。</p>
-            <p>より長い説明が必要な場合は、次のとおりです。</p>
-            <blockquote><strong><code>+AI</code>は、人工知能がこの作業を実質的に支援し、記名された個人または組織がその成果物に対する責任を引き受けることを意味します。</strong></blockquote>`
-        },
-        {
-          number: "24",
-          title: "+AIテスト",
-          body: `
-            <p>マークを付ける前に、次の2つの質問の両方に<strong>はい</strong>と答えられる必要があります。</p>
-            <p><strong>AIがこれを生み出すうえで実質的に役立ったか。</strong></p>
-            <p><strong>これを公表する責任を引き受ける意思があるか。</strong></p>
-            <p>両方の答えが「はい」であれば、次のマークを使用できます。</p>
-            <p class="canonical">+AI</p>`
-        },
-        {
-          number: "25",
-          title: "将来の拡張",
-          body: `
-            <p>将来のバージョンでは、次の事項に対応する追加表記を定義してもよいものとします。</p>
-            <ul>
-              <li>軽微なAI支援。</li><li>AIを主体とする生成。</li><li>人による完全な確認。</li>
-              <li>独立した検証。</li><li>自律エージェントの活動。</li>
-              <li>暗号学的な来歴。</li><li>AIシステムの識別。</li>
-              <li>モデルの識別。</li><li>人と機械による貢献の連鎖。</li>
-            </ul>
-            <p>このような拡張でも、次の意味を表す簡潔な正規マークとして<code>+AI</code>を維持することが望まれます。</p>
-            <p class="canonical">特定可能な人が責任を負う、AI支援による成果物。</p>`
-        },
-        {
-          number: "26",
-          title: "正規の宣言",
-          body: `
-            <p><code>+AI</code>を付す個人または組織は、次の宣言を行います。</p>
-            <blockquote><strong>人工知能がこの作業を実質的に支援しました。私は、その成果物を受け入れ、公開し、送信し、展開し、またはその他の方法で公表することを選択し、その決定と提示された成果物に対する責任を負います。</strong></blockquote>
-            <p>一般向けの略式表現は次のとおりです。</p>
-            <p class="canonical">AIが支援しました。私が責任を負います。</p>
-            <p>正規マークは次のとおりです。</p>
             <p class="canonical">+AI</p>`
         }
       ],
@@ -3469,26 +2652,6 @@
       ]
     };
 
-    for (const language of supportedLanguages) {
-      if (!specificationCopy[language]) {
-        specificationCopy[language] = specificationCopy.en.map((section, index) => ({
-          ...section,
-          number: String(index + 1)
-        }));
-      }
-    }
-
-    const specificationEndCopy = {
-      en: "<p>+AI Specification v0.1</p><p>Human-AI Provenance and Accountability</p><strong>AI helped. I take responsibility.</strong>",
-      ja: "<p>+AI仕様 v0.1</p><p>人とAIの来歴および説明責任</p><strong>AIが支援しました。私が責任を負います。</strong>",
-      es: "<p>Especificación +AI v0.1</p><p>Procedencia humano-IA y responsabilidad</p><strong>La IA ayudó. Yo asumo la responsabilidad.</strong>",
-      fr: "<p>Spécification +AI v0.1</p><p>Provenance humain-IA et responsabilité</p><strong>L’IA m’a aidé. J’en assume la responsabilité.</strong>"
-    };
-
-    for (const language of supportedLanguages) {
-      specificationEndCopy[language] = specificationEndCopy.en;
-    }
-
     const elements = {
       languageSelect: document.querySelector("#languageSelect"),
       themeToggle: document.querySelector("#themeToggle"),
@@ -3604,7 +2767,7 @@
     }
 
     function applyInterfaceLanguage(language) {
-      const copy = interfaceCopy[language];
+      const copy = interfaceCopy[language] || interfaceCopy["en"];
       document.documentElement.lang = language;
       document.title = copy.documentTitle;
       elements.metaDescription.setAttribute("content", copy.description);
@@ -3658,7 +2821,7 @@
     function renderSpecification(language) {
       if (sectionObserver) sectionObserver.disconnect();
 
-      const sections = specificationCopy[language];
+      const sections = specificationCopy[language] || specificationCopy["en"];
       const fragment = document.createDocumentFragment();
       const tocFragment = document.createDocumentFragment();
 
@@ -3686,7 +2849,11 @@
 
       const end = document.createElement("div");
       end.className = "spec-end";
-      end.innerHTML = specificationEndCopy[language];
+      end.innerHTML = language === "en"
+        ? "<p>+AI Specification v0.1</p><p>Human-AI Provenance and Accountability</p><strong>AI helped. I take responsibility.</strong>"
+        : language === "es"
+          ? "<p>Especificación +AI v0.1</p><p>Procedencia humano-IA y responsabilidad</p><strong>La IA ayudó. Yo asumo la responsabilidad.</strong>"
+          : "<p>Spécification +AI v0.1</p><p>Provenance humain-IA et responsabilité</p><strong>L’IA m’a aidé. J’en assume la responsabilité.</strong>";
       fragment.append(end);
 
       elements.specContent.replaceChildren(fragment);
@@ -3779,7 +2946,7 @@
 
       applyAccent(colour);
       elements.announcement.textContent =
-        interfaceCopy[currentLanguage].colourChanged.replace("{colour}", colour);
+        (interfaceCopy[currentLanguage] || interfaceCopy["en"]).colourChanged.replace("{colour}", colour);
     }
 
     function observeSections() {
