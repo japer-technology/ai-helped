@@ -2223,6 +2223,16 @@
       specificationCopy[language] ??= specificationCopy.en;
     }
 
+    const specificationEndCopy = {
+      en: "<p>+AI Specification v0.1</p><p>Human-AI Provenance and Accountability</p><strong>AI helped. I take responsibility.</strong>",
+      es: "<p>Especificación +AI v0.1</p><p>Procedencia humano-IA y responsabilidad</p><strong>La IA ayudó. Yo asumo la responsabilidad.</strong>",
+      fr: "<p>Spécification +AI v0.1</p><p>Provenance humain-IA et responsabilité</p><strong>L’IA m’a aidé. J’en assume la responsabilité.</strong>"
+    };
+
+    for (const language of supportedLanguages) {
+      specificationEndCopy[language] ??= specificationEndCopy.en;
+    }
+
     const elements = {
       languageSelect: document.querySelector("#languageSelect"),
       themeToggle: document.querySelector("#themeToggle"),
@@ -2420,11 +2430,7 @@
 
       const end = document.createElement("div");
       end.className = "spec-end";
-      end.innerHTML = language === "es"
-        ? "<p>Especificación +AI v0.1</p><p>Procedencia humano-IA y responsabilidad</p><strong>La IA ayudó. Yo asumo la responsabilidad.</strong>"
-        : language === "fr"
-          ? "<p>Spécification +AI v0.1</p><p>Provenance humain-IA et responsabilité</p><strong>L’IA m’a aidé. J’en assume la responsabilité.</strong>"
-          : "<p>+AI Specification v0.1</p><p>Human-AI Provenance and Accountability</p><strong>AI helped. I take responsibility.</strong>";
+      end.innerHTML = specificationEndCopy[language];
       fragment.append(end);
 
       elements.specContent.replaceChildren(fragment);
