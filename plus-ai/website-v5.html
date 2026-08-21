@@ -1037,31 +1037,31 @@
       <label class="language-control">
         <span data-text="language">Language</span>
         <select id="languageSelect" aria-label="Choose language">
-          <option value="en">English</option>
-          <option value="ar">Arabic</option>
-          <option value="bn">Bengali</option>
-          <option value="fil">Filipino</option>
-          <option value="fr">French</option>
-          <option value="de">German</option>
-          <option value="ha">Hausa</option>
-          <option value="hi">Hindi</option>
-          <option value="id">Indonesian</option>
-          <option value="ja">Japanese</option>
-          <option value="ko">Korean</option>
-          <option value="zh">Mandarin</option>
-          <option value="mr">Marathi</option>
-          <option value="fa">Persian</option>
-          <option value="pt">Portuguese</option>
-          <option value="pa">Punjabi</option>
-          <option value="ru">Russian</option>
-          <option value="es">Spanish</option>
-          <option value="sw">Swahili</option>
-          <option value="ta">Tamil</option>
-          <option value="te">Telugu</option>
-          <option value="th">Thai</option>
-          <option value="tr">Turkish</option>
-          <option value="ur">Urdu</option>
-          <option value="vi">Vietnamese</option>
+          <option value="en">English / English</option>
+          <option value="ar">Arabic / العربية</option>
+          <option value="bn">Bengali / বাংলা</option>
+          <option value="fil">Filipino / Filipino</option>
+          <option value="fr">French / Français</option>
+          <option value="de">German / Deutsch</option>
+          <option value="ha">Hausa / Hausa</option>
+          <option value="hi">Hindi / हिन्दी</option>
+          <option value="id">Indonesian / Bahasa Indonesia</option>
+          <option value="ja">Japanese / 日本語</option>
+          <option value="ko">Korean / 한국어</option>
+          <option value="zh">Mandarin / 中文</option>
+          <option value="mr">Marathi / मराठी</option>
+          <option value="fa">Persian / فارسی</option>
+          <option value="pt">Portuguese / Português</option>
+          <option value="pa">Punjabi / ਪੰਜਾਬੀ</option>
+          <option value="ru">Russian / Русский</option>
+          <option value="es">Spanish / Español</option>
+          <option value="sw">Swahili / Kiswahili</option>
+          <option value="ta">Tamil / தமிழ்</option>
+          <option value="te">Telugu / తెలుగు</option>
+          <option value="th">Thai / ไทย</option>
+          <option value="tr">Turkish / Türkçe</option>
+          <option value="ur">Urdu / اردو</option>
+          <option value="vi">Vietnamese / Tiếng Việt</option>
         </select>
       </label>
       <button class="control" id="themeToggle" type="button" aria-label="Use dark mode">
@@ -1333,7 +1333,7 @@
     };
 
     for (const language of supportedLanguages) {
-      interfaceCopy[language] ??= interfaceCopy.en;
+      interfaceCopy[language] = { ...interfaceCopy.en };
     }
 
     const specificationCopy = {
@@ -2606,7 +2606,10 @@
     };
 
     for (const language of supportedLanguages) {
-      specificationCopy[language] ??= specificationCopy.en;
+      specificationCopy[language] = specificationCopy.en.map((section, index) => ({
+        ...section,
+        number: String(index + 1)
+      }));
     }
 
     const specificationEndCopy = {
@@ -2617,7 +2620,7 @@
     };
 
     for (const language of supportedLanguages) {
-      specificationEndCopy[language] ??= specificationEndCopy.en;
+      specificationEndCopy[language] = specificationEndCopy.en;
     }
 
     const elements = {
