@@ -330,17 +330,17 @@
       border-radius: 1rem;
     }
 
-    .hero h1 {
+    .hero h2 {
       max-width: 14ch;
       margin: 0;
-      font-size: clamp(3.15rem, 8.8vw, 8.2rem);
+      font-size: clamp(2.75rem, 7.2vw, 6.5rem);
       font-weight: 840;
       letter-spacing: -0.075em;
       line-height: 0.89;
       text-wrap: balance;
     }
 
-    .hero h1 .mark {
+    .hero h2 .mark {
       display: block;
       color: var(--accent);
       transition: color 220ms ease;
@@ -926,8 +926,8 @@
         padding-inline: 0.55rem;
       }
 
-      .hero h1 {
-        font-size: clamp(2.75rem, 16vw, 4.5rem);
+      .hero h2 {
+        font-size: clamp(2.4rem, 13vw, 3.8rem);
       }
 
       .hero-actions {
@@ -1031,9 +1031,31 @@
       <label class="language-control">
         <span data-text="language">Language</span>
         <select id="languageSelect" aria-label="Choose language">
+          <option value="ar">Arabic</option>
+          <option value="bn">Bengali</option>
           <option value="en">English</option>
-          <option value="es">Español</option>
-          <option value="fr">Français</option>
+          <option value="fil">Filipino</option>
+          <option value="fr">French</option>
+          <option value="de">German</option>
+          <option value="ha">Hausa</option>
+          <option value="hi">Hindi</option>
+          <option value="id">Indonesian</option>
+          <option value="ja">Japanese</option>
+          <option value="ko">Korean</option>
+          <option value="zh">Mandarin</option>
+          <option value="mr">Marathi</option>
+          <option value="fa">Persian</option>
+          <option value="pt">Portuguese</option>
+          <option value="pa">Punjabi</option>
+          <option value="ru">Russian</option>
+          <option value="es">Spanish</option>
+          <option value="sw">Swahili</option>
+          <option value="ta">Tamil</option>
+          <option value="te">Telugu</option>
+          <option value="th">Thai</option>
+          <option value="tr">Turkish</option>
+          <option value="ur">Urdu</option>
+          <option value="vi">Vietnamese</option>
         </select>
       </label>
       <button class="control" id="themeToggle" type="button" aria-label="Use dark mode">
@@ -1050,7 +1072,7 @@
     <section class="hero" id="meaning" aria-labelledby="heroTitle">
       <div class="hero-copy">
         <p class="eyebrow" data-text="followedLink">+AI Post Nominal Description</p>
-        <h1 id="heroTitle"><span class="mark">+AI</span><span data-title="heroTitle">AI helped.<br>I take responsibility.</span></h1>
+        <h2 id="heroTitle"><span class="mark">+AI</span><span data-title="heroTitle">AI helped.<br>I take responsibility.</span></h2>
         <p class="hero-lead" data-html="heroLead">
           The person or organisation whose name carried this link is making a simple declaration:
           <strong>artificial intelligence materially assisted the work, and they accept responsibility for releasing it.</strong>
@@ -1136,7 +1158,10 @@
     const DEFAULT_ACCENT = "#AC43D9";
     const DEFAULT_EXAMPLE_NAME = "Eric Mourant";
     const DEFAULT_EXAMPLE_COMPANY = "JAPER Technology";
-    const supportedLanguages = ["en", "es", "fr"];
+    const supportedLanguages = [
+      "ar", "bn", "en", "fil", "fr", "de", "ha", "hi", "id", "ja", "ko", "zh",
+      "mr", "fa", "pt", "pa", "ru", "es", "sw", "ta", "te", "th", "tr", "ur", "vi"
+    ];
 
     const interfaceCopy = {
       en: {
@@ -1260,6 +1285,10 @@
         colourChanged: "La couleur d’accentuation est maintenant {colour}."
       }
     };
+
+    for (const language of supportedLanguages) {
+      interfaceCopy[language] ??= interfaceCopy.en;
+    }
 
     const specificationCopy = {
       en: [
@@ -2190,6 +2219,10 @@
       ]
     };
 
+    for (const language of supportedLanguages) {
+      specificationCopy[language] ??= specificationCopy.en;
+    }
+
     const elements = {
       languageSelect: document.querySelector("#languageSelect"),
       themeToggle: document.querySelector("#themeToggle"),
@@ -2387,11 +2420,11 @@
 
       const end = document.createElement("div");
       end.className = "spec-end";
-      end.innerHTML = language === "en"
-        ? "<p>+AI Specification v0.1</p><p>Human-AI Provenance and Accountability</p><strong>AI helped. I take responsibility.</strong>"
-        : language === "es"
-          ? "<p>Especificación +AI v0.1</p><p>Procedencia humano-IA y responsabilidad</p><strong>La IA ayudó. Yo asumo la responsabilidad.</strong>"
-          : "<p>Spécification +AI v0.1</p><p>Provenance humain-IA et responsabilité</p><strong>L’IA m’a aidé. J’en assume la responsabilité.</strong>";
+      end.innerHTML = language === "es"
+        ? "<p>Especificación +AI v0.1</p><p>Procedencia humano-IA y responsabilidad</p><strong>La IA ayudó. Yo asumo la responsabilidad.</strong>"
+        : language === "fr"
+          ? "<p>Spécification +AI v0.1</p><p>Provenance humain-IA et responsabilité</p><strong>L’IA m’a aidé. J’en assume la responsabilité.</strong>"
+          : "<p>+AI Specification v0.1</p><p>Human-AI Provenance and Accountability</p><strong>AI helped. I take responsibility.</strong>";
       fragment.append(end);
 
       elements.specContent.replaceChildren(fragment);
