@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -12,16 +12,12 @@
   <title>+AI — AI helped. I take responsibility.</title>
   <script>
     (() => {
-      try {
-        const savedTheme = localStorage.getItem("plus-ai-theme");
-        const theme = savedTheme === "dark" || savedTheme === "light"
-          ? savedTheme
-          : matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        document.documentElement.dataset.theme = theme;
-      } catch {
-        document.documentElement.dataset.theme =
-          matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      }
+      const parameters = new URLSearchParams(window.location.search);
+      const requestedTheme = (parameters.get("theme") || parameters.get("mode") || "").toLowerCase();
+      document.documentElement.dataset.theme =
+        requestedTheme === "light" || (!requestedTheme && parameters.has("light"))
+          ? "light"
+          : "dark";
     })();
   </script>
   <style>
@@ -151,53 +147,6 @@
       transition: width 80ms linear, background-color 220ms ease;
     }
 
-    .reset-accent {
-      position: fixed;
-      z-index: 110;
-      top: max(0.65rem, env(safe-area-inset-top));
-      right: max(0.65rem, env(safe-area-inset-right));
-      display: grid;
-      min-width: 6.5rem;
-      min-height: 3.25rem;
-      padding: 0.48rem 0.7rem;
-      place-content: center;
-      color: var(--on-accent);
-      background: var(--accent);
-      border: 1px solid color-mix(in srgb, var(--on-accent) 28%, transparent);
-      border-radius: 0.85rem;
-      box-shadow: 0 0.4rem 1.4rem color-mix(in srgb, var(--accent) 28%, transparent);
-      cursor: pointer;
-      transition: transform 180ms var(--ease), background-color 220ms ease, box-shadow 220ms ease;
-    }
-
-    .reset-accent:hover {
-      transform: translateY(-0.12rem);
-    }
-
-    .reset-accent:active {
-      transform: scale(0.96);
-    }
-
-    .reset-accent span,
-    .reset-accent strong {
-      display: block;
-      line-height: 1.05;
-      text-align: center;
-    }
-
-    .reset-accent span {
-      margin-bottom: 0.25rem;
-      font-size: 0.6rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .reset-accent strong {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.78rem;
-    }
-
     .site-header {
       position: sticky;
       z-index: 80;
@@ -209,7 +158,7 @@
       min-height: 4.7rem;
       padding:
         max(0.65rem, env(safe-area-inset-top))
-        max(8.3rem, calc((100% - var(--content-width)) / 2 + 1rem))
+        max(1rem, calc((100% - var(--content-width)) / 2 + 1rem))
         0.65rem
         max(1rem, calc((100% - var(--content-width)) / 2 + 1rem));
       background: var(--header);
@@ -219,16 +168,12 @@
 
     .wordmark {
       flex: 0 0 auto;
-      color: var(--ink);
+      color: var(--accent);
       font-size: 1.45rem;
       font-weight: 900;
       letter-spacing: -0.08em;
       line-height: 1;
       text-decoration: none;
-    }
-
-    .wordmark span {
-      color: var(--accent);
       transition: color 220ms ease;
     }
 
@@ -396,10 +341,13 @@
     }
 
     .hero h1 .mark {
-      display: inline-block;
-      margin-right: 0.08em;
+      display: block;
       color: var(--accent);
       transition: color 220ms ease;
+    }
+
+    [data-title] {
+      white-space: pre-line;
     }
 
     .hero-lead {
@@ -421,8 +369,7 @@
       margin-top: 2.25rem;
     }
 
-    .primary-link,
-    .random-accent {
+    .primary-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -444,16 +391,7 @@
       text-decoration: none;
     }
 
-    .random-accent {
-      gap: 0.55rem;
-      color: var(--ink);
-      background: var(--surface);
-      border: 1px solid var(--line);
-      cursor: pointer;
-    }
-
-    .primary-link:hover,
-    .random-accent:hover {
+    .primary-link:hover {
       transform: translateY(-0.16rem);
     }
 
@@ -899,7 +837,6 @@
     @media (max-width: 44rem) {
       .site-header {
         align-items: flex-start;
-        padding-right: 5.2rem;
       }
 
       .header-controls {
@@ -917,20 +854,6 @@
       .control {
         flex: 1 1 auto;
         justify-content: center;
-      }
-
-      .reset-accent {
-        min-width: 3.75rem;
-        min-height: 3.4rem;
-        padding: 0.4rem;
-      }
-
-      .reset-accent span {
-        font-size: 0.48rem;
-      }
-
-      .reset-accent strong {
-        font-size: 0.62rem;
       }
 
       .hero {
@@ -1011,8 +934,7 @@
         display: grid;
       }
 
-      .primary-link,
-      .random-accent {
+      .primary-link {
         width: 100%;
       }
 
@@ -1061,7 +983,6 @@
       }
 
       .site-header,
-      .reset-accent,
       .reading-progress,
       .hero,
       .plain-meaning,
@@ -1104,12 +1025,8 @@
   <a class="skip-link" href="#meaning" data-text="skip">Skip to the explanation</a>
   <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
 
-  <button class="reset-accent" id="resetAccent" type="button" aria-label="Reset highlight colour to #AC43D9" title="Reset highlight colour to #AC43D9">
-    <span data-text="reset">+AI</span>
-  </button>
-
   <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="+AI home"><span>+AI</span></a>
+    <a class="wordmark" href="#top" aria-label="+AI home">+AI</a>
     <div class="header-controls">
       <label class="language-control">
         <span data-text="language">Language</span>
@@ -1132,18 +1049,14 @@
   <main id="top">
     <section class="hero" id="meaning" aria-labelledby="heroTitle">
       <div class="hero-copy">
-        <p class="eyebrow" data-text="followedLink">+AI Post Nominal</p>
-        <h1 id="heroTitle"><span class="mark">+AI</span></h1><h1><span data-text="heroTitle">AI helped.<br/>I take responsibility.</span></h1>
+        <p class="eyebrow" data-text="followedLink">+AI Post Nominal Description</p>
+        <h1 id="heroTitle"><span class="mark">+AI</span><span data-title="heroTitle">AI helped.<br>I take responsibility.</span></h1>
         <p class="hero-lead" data-html="heroLead">
           The person or organisation whose name carried this link is making a simple declaration:
           <strong>artificial intelligence materially assisted the work, and they accept responsibility for releasing it.</strong>
         </p>
         <div class="hero-actions">
           <a class="primary-link" href="#specification" data-text="readSpec">Read the specification</a>
-          <button class="random-accent" id="randomAccent" type="button">
-            <span class="accent-sample" aria-hidden="true"></span>
-            <span data-text="tapColour">Tap the highlight for a new colour</span>
-          </button>
         </div>
       </div>
 
@@ -1166,7 +1079,7 @@
 
     <section class="plain-meaning" aria-labelledby="plainTitle">
       <div class="plain-meaning-grid">
-        <h2 id="plainTitle" data-text="plainTitle">Transparent assistance.<br/>Visible accountability.</h2>
+        <h2 id="plainTitle" data-title="plainTitle">Transparent assistance.<br>Visible accountability.</h2>
         <div class="plain-copy">
           <p data-text="plainLead">The mark is an accountability declaration, not a claim that AI is the author and not a guarantee that the work is correct.</p>
           <p data-text="plainBody">It does not say how much of the work came from AI. It says AI materially influenced the result and an identifiable person or organisation stands behind the decision to use it.</p>
@@ -1219,6 +1132,8 @@
 
   <script>
     const DEFAULT_ACCENT = "#AC43D9";
+    const DEFAULT_EXAMPLE_NAME = "Eric Mourant";
+    const DEFAULT_EXAMPLE_COMPANY = "JAPER Technology";
     const supportedLanguages = ["en", "es", "fr"];
 
     const interfaceCopy = {
@@ -1226,8 +1141,6 @@
         documentTitle: "+AI — AI helped. I take responsibility.",
         description: "+AI means artificial intelligence materially assisted the work and a named person or organisation accepts responsibility for it.",
         skip: "Skip to the explanation",
-        reset: "Reset",
-        resetAria: "Reset highlight colour to #AC43D9",
         language: "Language",
         languageAria: "Choose language",
         theme: "Dark mode",
@@ -1237,11 +1150,10 @@
         themeLightAria: "Use light mode",
         highlight: "Highlight",
         highlightAria: "Choose a random highlight colour",
-        followedLink: "You followed a +AI link",
+        followedLink: "+AI Post Nominal Description",
         heroTitle: "AI helped. I take responsibility.",
         heroLead: "The person or organisation whose name carried this link is making a simple declaration: <strong>artificial intelligence materially assisted the work, and they accept responsibility for releasing it.</strong>",
         readSpec: "Read the specification",
-        tapColour: "Tap the highlight for a new colour",
         meansHeading: "What the mark says",
         meaningOneTitle: "AI participated",
         meaningOneBody: "AI materially helped create, analyse, transform or present the work.",
@@ -1263,15 +1175,12 @@
         footerLine: "Open notation. Human responsibility.",
         versionFooter: "Specification v0.1",
         translationNote: "",
-        colourChanged: "Highlight colour changed to {colour}.",
-        colourReset: "Highlight colour reset to #AC43D9."
+        colourChanged: "Highlight colour changed to {colour}."
       },
       es: {
         documentTitle: "+AI — La IA ayudó. Yo asumo la responsabilidad.",
         description: "+AI significa que la inteligencia artificial ayudó materialmente y que una persona u organización identificada acepta la responsabilidad.",
         skip: "Saltar a la explicación",
-        reset: "Restablecer",
-        resetAria: "Restablecer el color destacado a #AC43D9",
         language: "Idioma",
         languageAria: "Elegir idioma",
         theme: "Modo oscuro",
@@ -1281,11 +1190,10 @@
         themeLightAria: "Usar el modo claro",
         highlight: "Color",
         highlightAria: "Elegir un color destacado al azar",
-        followedLink: "Has seguido un enlace +AI",
+        followedLink: "Descripción del posnominal +AI",
         heroTitle: "La IA ayudó. Yo asumo la responsabilidad.",
         heroLead: "La persona u organización cuyo nombre incluía este enlace hace una declaración sencilla: <strong>la inteligencia artificial contribuyó materialmente al trabajo y dicha parte acepta la responsabilidad de publicarlo.</strong>",
         readSpec: "Leer la especificación",
-        tapColour: "Toca el color para elegir uno nuevo",
         meansHeading: "Lo que declara la marca",
         meaningOneTitle: "La IA participó",
         meaningOneBody: "La IA ayudó de forma material a crear, analizar, transformar o presentar el trabajo.",
@@ -1307,15 +1215,12 @@
         footerLine: "Notación abierta. Responsabilidad humana.",
         versionFooter: "Especificación v0.1",
         translationNote: "Traducción informativa. En caso de discrepancia, el texto original en inglés es el documento normativo.",
-        colourChanged: "El color destacado ha cambiado a {colour}.",
-        colourReset: "El color destacado se ha restablecido a #AC43D9."
+        colourChanged: "El color destacado ha cambiado a {colour}."
       },
       fr: {
         documentTitle: "+AI — L’IA m’a aidé. J’en assume la responsabilité.",
         description: "+AI signifie que l’intelligence artificielle a apporté une aide substantielle et qu’une personne ou organisation identifiée en assume la responsabilité.",
         skip: "Aller à l’explication",
-        reset: "Réinitialiser",
-        resetAria: "Réinitialiser la couleur d’accentuation à #AC43D9",
         language: "Langue",
         languageAria: "Choisir la langue",
         theme: "Mode sombre",
@@ -1325,11 +1230,10 @@
         themeLightAria: "Utiliser le mode clair",
         highlight: "Couleur",
         highlightAria: "Choisir une couleur d’accentuation aléatoire",
-        followedLink: "Vous avez suivi un lien +AI",
+        followedLink: "Description du postnominal +AI",
         heroTitle: "L’IA m’a aidé. J’en assume la responsabilité.",
         heroLead: "La personne ou l’organisation dont le nom portait ce lien fait une déclaration simple : <strong>l’intelligence artificielle a contribué de manière substantielle au travail, et cette partie assume la responsabilité de sa diffusion.</strong>",
         readSpec: "Lire la spécification",
-        tapColour: "Touchez la couleur pour en choisir une autre",
         meansHeading: "Ce que déclare la marque",
         meaningOneTitle: "L’IA a participé",
         meaningOneBody: "L’IA a contribué de manière substantielle à créer, analyser, transformer ou présenter le travail.",
@@ -1351,8 +1255,7 @@
         footerLine: "Notation ouverte. Responsabilité humaine.",
         versionFooter: "Spécification v0.1",
         translationNote: "Traduction fournie à titre informatif. En cas de divergence, le texte anglais original constitue le document normatif.",
-        colourChanged: "La couleur d’accentuation est maintenant {colour}.",
-        colourReset: "La couleur d’accentuation a été réinitialisée à #AC43D9."
+        colourChanged: "La couleur d’accentuation est maintenant {colour}."
       }
     };
 
@@ -1404,7 +1307,7 @@
             <p><strong><code>&lt;Responsible Party&gt; +AI</code></strong></p>
             <p>Examples:</p>
             <p><strong>Eric Mourant +AI</strong></p>
-            <p><strong>JAPER Technology +AI</strong></p>
+            <p data-company-example><strong>JAPER Technology +AI</strong></p>
             <p>The mark is case-sensitive.</p>
             <p>The canonical form MUST use:</p>
             <ul>
@@ -1523,12 +1426,12 @@
           title: "Organisations",
           body: `
             <p>An organisation MAY use <code>+AI</code>.</p>
-            <p>Example:</p>
-            <p><strong>JAPER Technology +AI</strong></p>
+            <p data-company-example>Example:</p>
+            <p data-company-example><strong>JAPER Technology +AI</strong></p>
             <p>This means that the organisation assumes responsibility for the associated AI-assisted artifact according to its applicable governance and authority structures.</p>
             <p>Where useful, both an organisation and responsible individual MAY be identified.</p>
-            <p>Example:</p>
-            <p><strong>JAPER Technology<br>Eric Mourant +AI</strong></p>`
+            <p data-company-example>Example:</p>
+            <p data-company-example><strong>JAPER Technology<br>Eric Mourant +AI</strong></p>`
         },
         {
           number: "12",
@@ -1548,7 +1451,7 @@
             <p>Examples:</p>
             <p><strong>Author: Eric Mourant +AI</strong></p>
             <p><strong>Prepared by: Eric Mourant +AI</strong></p>
-            <p><strong>Issued by: JAPER Technology +AI</strong></p>
+            <p data-company-example><strong>Issued by: JAPER Technology +AI</strong></p>
             <p>Placement SHOULD make clear which person or organisation is assuming responsibility.</p>`
         },
         {
@@ -1736,7 +1639,7 @@
           body: `
             <p>La marca canónica es:</p><p class="canonical"><code>+AI</code></p>
             <p>La forma canónica legible es:</p><p><strong><code>&lt;Parte responsable&gt; +AI</code></strong></p>
-            <p>Ejemplos:</p><p><strong>Eric Mourant +AI</strong></p><p><strong>JAPER Technology +AI</strong></p>
+            <p>Ejemplos:</p><p><strong>Eric Mourant +AI</strong></p><p data-company-example><strong>JAPER Technology +AI</strong></p>
             <p>La marca distingue entre mayúsculas y minúsculas.</p>
             <p>La forma canónica DEBE usar:</p>
             <ul><li>un signo más <code>+</code>;</li><li>seguido inmediatamente de los caracteres latinos en mayúscula <code>AI</code>;</li><li>sin espacios internos.</li></ul>
@@ -1835,10 +1738,10 @@
           title: "Organizaciones",
           body: `
             <p>Una organización PUEDE utilizar <code>+AI</code>.</p>
-            <p>Ejemplo:</p><p><strong>JAPER Technology +AI</strong></p>
+            <p data-company-example>Ejemplo:</p><p data-company-example><strong>JAPER Technology +AI</strong></p>
             <p>Esto significa que la organización asume la responsabilidad por el artefacto asociado asistido por IA conforme a sus estructuras de gobierno y autoridad aplicables.</p>
             <p>Cuando sea útil, PUEDEN identificarse tanto una organización como una persona responsable.</p>
-            <p>Ejemplo:</p><p><strong>JAPER Technology<br>Eric Mourant +AI</strong></p>`
+            <p data-company-example>Ejemplo:</p><p data-company-example><strong>JAPER Technology<br>Eric Mourant +AI</strong></p>`
         },
         {
           number: "12",
@@ -1858,7 +1761,7 @@
             <p>Ejemplos:</p>
             <p><strong>Autor: Eric Mourant +AI</strong></p>
             <p><strong>Preparado por: Eric Mourant +AI</strong></p>
-            <p><strong>Emitido por: JAPER Technology +AI</strong></p>
+            <p data-company-example><strong>Emitido por: JAPER Technology +AI</strong></p>
             <p>La ubicación DEBERÍA dejar claro qué persona u organización asume la responsabilidad.</p>`
         },
         {
@@ -2028,7 +1931,7 @@
           body: `
             <p>La marque canonique est :</p><p class="canonical"><code>+AI</code></p>
             <p>La forme canonique lisible par l’humain est :</p><p><strong><code>&lt;Partie responsable&gt; +AI</code></strong></p>
-            <p>Exemples :</p><p><strong>Eric Mourant +AI</strong></p><p><strong>JAPER Technology +AI</strong></p>
+            <p>Exemples :</p><p><strong>Eric Mourant +AI</strong></p><p data-company-example><strong>JAPER Technology +AI</strong></p>
             <p>La marque est sensible à la casse.</p>
             <p>La forme canonique DOIT utiliser :</p>
             <ul><li>un signe plus <code>+</code> ;</li><li>immédiatement suivi des caractères latins majuscules <code>AI</code> ;</li><li>sans espace intérieur.</li></ul>
@@ -2129,10 +2032,10 @@
           title: "Organisations",
           body: `
             <p>Une organisation PEUT utiliser <code>+AI</code>.</p>
-            <p>Exemple :</p><p><strong>JAPER Technology +AI</strong></p>
+            <p data-company-example>Exemple :</p><p data-company-example><strong>JAPER Technology +AI</strong></p>
             <p>Cela signifie que l’organisation assume la responsabilité de l’objet associé assisté par l’IA selon ses structures de gouvernance et d’autorité applicables.</p>
             <p>Lorsqu’il est utile, une organisation et une personne responsable PEUVENT toutes deux être identifiées.</p>
-            <p>Exemple :</p><p><strong>JAPER Technology<br>Eric Mourant +AI</strong></p>`
+            <p data-company-example>Exemple :</p><p data-company-example><strong>JAPER Technology<br>Eric Mourant +AI</strong></p>`
         },
         {
           number: "12",
@@ -2152,7 +2055,7 @@
             <p>Exemples :</p>
             <p><strong>Auteur : Eric Mourant +AI</strong></p>
             <p><strong>Préparé par : Eric Mourant +AI</strong></p>
-            <p><strong>Publié par : JAPER Technology +AI</strong></p>
+            <p data-company-example><strong>Publié par : JAPER Technology +AI</strong></p>
             <p>Son emplacement DEVRAIT indiquer clairement la personne ou l’organisation qui assume la responsabilité.</p>`
         },
         {
@@ -2288,9 +2191,7 @@
     const elements = {
       languageSelect: document.querySelector("#languageSelect"),
       themeToggle: document.querySelector("#themeToggle"),
-      resetAccent: document.querySelector("#resetAccent"),
       headerAccent: document.querySelector("#headerAccent"),
-      randomAccent: document.querySelector("#randomAccent"),
       specContent: document.querySelector("#specContent"),
       tocList: document.querySelector("#tocList"),
       translationNote: document.querySelector("#translationNote"),
@@ -2302,6 +2203,7 @@
 
     let currentLanguage = "en";
     let sectionObserver;
+    const pageParameters = readPageParameters();
 
     function readPreference(key) {
       try {
@@ -2319,9 +2221,70 @@
       }
     }
 
+    function readFirstParameter(parameters, names) {
+      for (const name of names) {
+        if (parameters.has(name)) return parameters.get(name);
+      }
+      return null;
+    }
+
+    function normalizeLanguage(language) {
+      const baseLanguage = language?.trim().toLowerCase().split("-")[0];
+      return supportedLanguages.includes(baseLanguage) ? baseLanguage : null;
+    }
+
+    function normalizeAccent(colour) {
+      const value = colour?.trim().replace(/^#/, "") || "";
+      if (/^[0-9A-F]{3}$/i.test(value)) {
+        return `#${[...value].map((character) => character.repeat(2)).join("").toUpperCase()}`;
+      }
+      return /^[0-9A-F]{6}$/i.test(value)
+        ? `#${value.toUpperCase()}`
+        : DEFAULT_ACCENT;
+    }
+
+    function normalizeExampleParameter(value) {
+      const normalizedValue = value?.replace(/\s+/g, " ").trim();
+      return normalizedValue || null;
+    }
+
+    function readPageParameters() {
+      const parameters = new URLSearchParams(window.location.search);
+      const requestedTheme =
+        (readFirstParameter(parameters, ["theme", "mode"]) || "").trim().toLowerCase();
+      const suppliedName = normalizeExampleParameter(parameters.get("name"));
+      const suppliedCompanyName = normalizeExampleParameter(
+        readFirstParameter(parameters, ["companyname", "company"])
+      );
+      const hasCustomExamples = suppliedName || suppliedCompanyName;
+      const exampleName = suppliedName || suppliedCompanyName || DEFAULT_EXAMPLE_NAME;
+      const exampleCompanyName = hasCustomExamples
+        ? suppliedName && suppliedCompanyName && suppliedName !== suppliedCompanyName
+          ? suppliedCompanyName
+          : null
+        : DEFAULT_EXAMPLE_COMPANY;
+
+      return {
+        theme: requestedTheme === "light" || (!requestedTheme && parameters.has("light"))
+          ? "light"
+          : "dark",
+        accent: normalizeAccent(readFirstParameter(parameters, [
+          "highlight",
+          "highlightcolour",
+          "highlightcolor",
+          "accent",
+          "colour",
+          "color"
+        ])),
+        language: normalizeLanguage(readFirstParameter(parameters, ["language", "lang"])),
+        exampleName,
+        exampleCompanyName
+      };
+    }
+
     function detectLanguage() {
-      const saved = readPreference("plus-ai-language");
-      if (supportedLanguages.includes(saved)) return saved;
+      const saved = normalizeLanguage(readPreference("plus-ai-language"));
+      if (saved) return saved;
 
       const browserLanguages = navigator.languages?.length
         ? navigator.languages
@@ -2333,6 +2296,10 @@
       }
 
       return "en";
+    }
+
+    function formatTitle(title) {
+      return title.replace(/\.\s+(?=\S)/g, ".\n");
     }
 
     function applyInterfaceLanguage(language) {
@@ -2351,15 +2318,37 @@
         if (copy[key]) element.innerHTML = copy[key];
       });
 
+      document.querySelectorAll("[data-title]").forEach((element) => {
+        const key = element.dataset.title;
+        if (copy[key]) element.textContent = formatTitle(copy[key]);
+      });
+
       document.querySelector(".skip-link").textContent = copy.skip;
       document.querySelector(".language-control select").setAttribute("aria-label", copy.languageAria);
-      elements.resetAccent.setAttribute("aria-label", copy.resetAria);
-      elements.resetAccent.setAttribute("title", copy.resetAria);
       elements.headerAccent.setAttribute("aria-label", copy.highlightAria);
       updateThemeControl(copy);
 
       elements.translationNote.hidden = !copy.translationNote;
       elements.translationNote.textContent = copy.translationNote;
+    }
+
+    function personalizeExamples(root) {
+      if (!pageParameters.exampleCompanyName) {
+        root.querySelectorAll("[data-company-example]").forEach((element) => element.remove());
+      }
+
+      const textNodes = [];
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+      for (const node of textNodes) {
+        node.nodeValue = node.nodeValue.replace(
+          /Eric Mourant|JAPER Technology/g,
+          (example) => example === DEFAULT_EXAMPLE_NAME
+            ? pageParameters.exampleName
+            : pageParameters.exampleCompanyName || pageParameters.exampleName
+        );
+      }
     }
 
     function renderSpecification(language) {
@@ -2380,6 +2369,7 @@
             <span>${section.title}</span>
           </h3>
           ${section.body}`;
+        personalizeExamples(sectionElement);
         fragment.append(sectionElement);
 
         const item = document.createElement("li");
@@ -2405,7 +2395,7 @@
     }
 
     function setLanguage(language, persist = true) {
-      const resolvedLanguage = supportedLanguages.includes(language) ? language : "en";
+      const resolvedLanguage = normalizeLanguage(language) || "en";
       currentLanguage = resolvedLanguage;
       elements.languageSelect.value = resolvedLanguage;
       applyInterfaceLanguage(resolvedLanguage);
@@ -2428,7 +2418,6 @@
       const nextTheme =
         document.documentElement.dataset.theme === "dark" ? "light" : "dark";
       document.documentElement.dataset.theme = nextTheme;
-      savePreference("plus-ai-theme", nextTheme);
       updateThemeControl();
     }
 
@@ -2472,17 +2461,11 @@
         .toUpperCase()}`;
     }
 
-    function applyAccent(colour, persist = true) {
-      const normalizedColour = /^#[0-9A-F]{6}$/i.test(colour)
-        ? colour.toUpperCase()
-        : DEFAULT_ACCENT;
+    function applyAccent(colour) {
+      const normalizedColour = normalizeAccent(colour);
       document.documentElement.style.setProperty("--accent", normalizedColour);
       document.documentElement.style.setProperty("--on-accent", readableTextColour(normalizedColour));
       elements.themeColour.setAttribute("content", normalizedColour);
-      document.querySelectorAll(".reset-accent strong").forEach((element) => {
-        element.textContent = DEFAULT_ACCENT;
-      });
-      if (persist) savePreference("plus-ai-accent", normalizedColour);
       return normalizedColour;
     }
 
@@ -2498,11 +2481,6 @@
       applyAccent(colour);
       elements.announcement.textContent =
         interfaceCopy[currentLanguage].colourChanged.replace("{colour}", colour);
-    }
-
-    function resetAccent() {
-      applyAccent(DEFAULT_ACCENT);
-      elements.announcement.textContent = interfaceCopy[currentLanguage].colourReset;
     }
 
     function observeSections() {
@@ -2545,14 +2523,12 @@
     });
     elements.themeToggle.addEventListener("click", toggleTheme);
     elements.headerAccent.addEventListener("click", randomizeAccent);
-    elements.randomAccent.addEventListener("click", randomizeAccent);
-    elements.resetAccent.addEventListener("click", resetAccent);
     window.addEventListener("scroll", updateReadingProgress, { passive: true });
     window.addEventListener("resize", updateReadingProgress, { passive: true });
 
-    const storedAccent = readPreference("plus-ai-accent");
-    applyAccent(storedAccent || DEFAULT_ACCENT, false);
-    setLanguage(detectLanguage(), false);
+    document.documentElement.dataset.theme = pageParameters.theme;
+    applyAccent(pageParameters.accent);
+    setLanguage(pageParameters.language || detectLanguage(), false);
     updateReadingProgress();
   </script>
 </body>
