@@ -209,6 +209,151 @@
             <p><strong>Wanda ya shirya: Eric Mourant +AI</strong></p>
             <p data-company-example><strong>Wanda ya fitar: JAPER Technology +AI</strong></p>
             <p>YA KAMATA wurin da aka sanya ta ya bayyana a fili wane mutum ko ƙungiya ke ɗaukar alhaki.</p>`
+      },
+      {
+        number: "14",
+        title: "Shirye-shiryen kwamfuta",
+        body: `
+            <p>ANA IYA amfani da alamar a wuraren adana shirye-shirye, a rajistar sauye-sauye, a kan gaban lambar tushe, a takardun bayani, a bayanan sakin sigogi da abubuwan da aka samar.</p>
+            <p>Misali:</p>
+            <pre><code>Author: Eric Mourant +AI</code></pre>
+            <p>Aiki ANA IYA ƙari da bayyana cewa:</p>
+            <pre><code>This project uses +AI.</code></pre>
+            <p>YA KAMATA irin wannan bayani na matakin aiki ya nuna mutum ko ƙungiyar da ke ɗaukar alhaki inda hakan zai yiwu.</p>`
+      },
+      {
+        number: "15",
+        title: "Abubuwan ƙirƙira",
+        body: `
+            <p>ANA IYA sanya alamar tare da hotuna, sauti, bidiyo, ƙira, zane-zane, gabatarwa da sauran ayyukan ƙirƙira.</p>
+            <p>Misali:</p>
+            <p><strong>Wanda ya ƙirƙira Eric Mourant +AI</strong></p>
+            <p>Alamar da kanta ba ta bayyana waɗanne sassa ne hankalin wucin gadi ya samar ko ya sauya ba.</p>
+            <p>ANA IYA haɗa cikakkun bayanan asali daban.</p>`
+      },
+      {
+        number: "16",
+        title: "Bincike da aikin fasaha",
+        body: `
+            <p>ANA IYA amfani da alamar a cikin bincike, ayyukan kimiyya, injiniya ko fasaha inda buƙatun cibiyoyi, wallafa ko sana'a da suka dace suka ba da damar hakan.</p>
+            <p>AN HANA gabatar da <code>+AI</code> a matsayin abin da ke maye gurbin wani bayani na musamman da mai wallafa, mai kula da doka, ma'aikaci, ƙungiyar sana'a ko doka ke buƙata.</p>
+            <p>ANA IYA amfani da alamar don ƙara wa irin wannan bayani.</p>`
+      },
+      {
+        number: "17",
+        title: "Tsarin da injina ke iya karantawa",
+        body: `
+            <p>Tsare-tsare ANA IYA gabatar da bayanin ta hanyar bayanan da aka tsara.</p>
+            <p>Mafi ƙarancin tsari shi ne:</p>
+            <pre><code>{
+  "provenance": "+AI"
+}</code></pre>
+            <p>Tsari mafi cikakke shi ne:</p>
+            <pre data-json-example><code>{
+  "ai_assistance": {
+    "material": true,
+    "responsibility": "human",
+    "responsible_party": "Eric Mourant",
+    "notation": "+AI"
+  }
+}</code></pre>
+            <p>YA KAMATA tsarin da injina ke iya karantawa ya riƙe ma'ana ɗaya da alamar da ake gani.</p>`
+      },
+      {
+        number: "18",
+        title: "Dawwama",
+        body: `
+            <p>YA KAMATA alamar <code>+AI</code> ta wanzu bayan sauye-sauye masu ma'ana na abin da aka samar inda aka riƙe nuna asalinsa.</p>
+            <p>Misalai sun haɗa da sauya tsarin takardu, adanawa, bugawa, fitarwa, sake wallafawa da aikawa.</p>
+            <p>Inda aka cire bayanan tsarin, YA KAMATA alamar rubutu mai sauƙi da ake gani ta ci gaba da isa don isar da wannan bayani.</p>`
+      },
+      {
+        number: "19",
+        title: "Amfani na kowa",
+        body: `
+            <p>An yi alamar <code>+AI</code> don amfanin jama'a ba tare da wani takunkumi ba.</p>
+            <p>BAI KAMATA BA amfani da alamar ya buƙaci:</p>
+            <ul>
+              <li>rajista;</li><li>zama memba;</li><li>biyan kuɗi;</li><li>takardar shaida;</li>
+              <li>izini;</li><li>ko amfani da wani samfuri ko mai bayar da hankalin wucin gadi na musamman.</li>
+            </ul>
+            <p>Amfanin alamar ya dogara kan iyawarta ta zama al'ada ta duniya.</p>`
+      },
+      {
+        number: "20",
+        title: "Rashin nuna bambanci",
+        body: `
+            <p><code>+AI</code> ba ya nuna yarda ko rashin yarda da hankalin wucin gadi.</p>
+            <p>Ba ya nuna ko amfani da hankalin wucin gadi ya zama dole, abin so ko mafi kyau daga aikin ɗan adam ba tare da taimako ba.</p>
+            <p>Yana rubuta shiga mai muhimmanci na hankalin wucin gadi da ɗaukar alhaki na ɗan adam ko ƙungiya kaɗai.</p>`
+      },
+      {
+        number: "21",
+        title: "Gabatarwa ta ƙarya",
+        body: `
+            <p>BAI KAMATA BA mutum ko ƙungiya ta yi amfani da <code>+AI</code> inda:</p>
+            <ul>
+              <li>babu wani mai ɗaukar alhaki da za a iya ganewa;</li>
+              <li>wanda aka ambata bai karɓi abin da aka samar ba;</li>
+              <li>ana fitar da abin ta atomatik ba tare da wani iko mai ma'ana na ɗan adam ba;</li>
+              <li>ko kuma ana amfani da alamar don ƙirƙirar tunanin ƙarya na ɗaukar alhaki na ɗan adam.</li>
+            </ul>
+            <p>Sakamakon hankalin wucin gadi mai zaman kansa ba tare da karɓa mai ma'ana daga ɗan adam ba yana wajen iyakar asali na <code>+AI</code>.</p>
+            <p>Takardun nan gaba ANA IYA ayyana alama don sakamakon hankalin wucin gadi mai zaman kansa.</p>`
+      },
+      {
+        number: "22",
+        title: "Alaƙa da mallakar aiki",
+        body: `
+            <p><code>+AI</code> da gangan ba ya ba da kaso na mallakar aiki.</p>
+            <p>Abin da aka samar ANA IYA ƙunshi mafi yawa abin da ɗan adam ya samar kuma har yanzu ya dace.</p>
+            <p>Abin da aka samar ANA IYA ƙunshi mafi yawa abin da hankalin wucin gadi ya samar kuma har yanzu ya dace.</p>
+            <p>Gwajin da ya dace shi ne ko:</p>
+            <p><strong>hankalin wucin gadi ya taimaka a hanya mai muhimmanci, kuma wanda aka ambata yana ɗaukar alhakin sakamakon.</strong></p>`
+      },
+      {
+        number: "23",
+        title: "Bayani na asali ga jama'a",
+        body: `
+            <p>Inda ake buƙatar ɗan gajeren bayani, kalmomin da aka fi so su ne:</p>
+            <p class="canonical">AI ya taimaka. Ni ke ɗaukar alhakin.</p>
+            <p>Inda ake buƙatar bayani mai tsawo:</p>
+            <blockquote><strong><code>+AI</code> na nufin cewa hankalin wucin gadi ya taimaka a hanya mai muhimmanci ga wannan aiki kuma mutum ko ƙungiyar da aka ambata tana ɗaukar alhakin abin da aka samar.</strong></blockquote>`
+      },
+      {
+        number: "24",
+        title: "Gwajin +AI",
+        body: `
+            <p>Kafin sanya alamar, mutum zai iya amsa <strong>eh</strong> ga tambayoyi biyu:</p>
+            <p><strong>Shin hankalin wucin gadi ya taimaka a hanya mai muhimmanci wajen samar da wannan?</strong></p>
+            <p><strong>Shin ina son ɗaukar alhakin fitar da shi?</strong></p>
+            <p>Idan amsoshin biyu eh ne:</p>
+            <p class="canonical">+AI</p>`
+      },
+      {
+        number: "25",
+        title: "Ƙari na nan gaba",
+        body: `
+            <p>Sigogin nan gaba ANA IYA ayyana ƙarin alamu da suka shafi:</p>
+            <ul>
+              <li>ƙaramin taimako na hankalin wucin gadi;</li><li>samarwa ta hankalin wucin gadi da farko;</li><li>cikakkiyar dubawar ɗan adam;</li>
+              <li>tabbatarwa mai zaman kanta;</li><li>aikin wakili mai zaman kansa;</li>
+              <li>asali ta hanyar sirrin lissafi;</li><li>nuna tsarin hankalin wucin gadi;</li>
+              <li>nuna samfuri;</li><li>ko sarƙoƙi na gudummawar ɗan adam da na injina.</li>
+            </ul>
+            <p>YA KAMATA irin waɗannan ƙari su riƙe <code>+AI</code> a matsayin alamar asali mai sauƙi don:</p>
+            <p class="canonical">Aiki da taimakon AI tare da alhakin ɗan adam da za a iya ganewa.</p>`
+      },
+      {
+        number: "26",
+        title: "Bayanin asali",
+        body: `
+            <p>Mutum ko ƙungiyar da ke sanya <code>+AI</code> tana yin wannan bayani:</p>
+            <blockquote><strong>Hankalin wucin gadi ya taimaka a hanya mai muhimmanci ga wannan aiki. Na zaɓi karɓa, wallafa, aika, girka ko fitar da aikin da aka samar, kuma ina ɗaukar alhakin wannan shawara da kuma aikin yadda aka gabatar da shi.</strong></blockquote>
+            <p>Taƙaitaccen bayani ga jama'a shi ne:</p>
+            <p class="canonical">AI ya taimaka. Ni ke ɗaukar alhakin.</p>
+            <p>Alamar asali ita ce:</p>
+            <p class="canonical">+AI</p>`
       }
     ],
     end: "<p>Takardar +AI sigar 0.1</p><p>Asalin Ɗan Adam da AI da Ɗaukar Alhaki</p><strong>AI ya taimaka. Ni ke ɗaukar alhakin.</strong>"
