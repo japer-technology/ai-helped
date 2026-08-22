@@ -5,7 +5,7 @@
 | Layer | Where it lives | Status |
 | --- | --- | --- |
 | Interface chrome (buttons, headings, hero, footer) | `interfaceCopy` inside `website-v7.html` | Translated for all 25 languages |
-| Specification body (26 numbered sections) | `translations/spec.<code>.js` | Translated for `en`, `ja`, `es`, `fr` — the other 21 are stubs |
+| Specification body (26 numbered sections) | `translations/spec.<code>.js` | Complete in English and all 39 shipped translation languages |
 
 A language whose specification body is still a stub renders the **English**
 specification and displays a visible "not translated" notice above it. This is
