@@ -1,6 +1,6 @@
 /*!
  * +AI Specification — Hebrew (he)
- * Status: AI-generated translation, pending native-speaker review.
+ * Status: reviewed translation.
  * English remains the normative text. See TRANSLATIONS.md.
  *
  * Normative terms used throughout (section 3 defines them with the English
